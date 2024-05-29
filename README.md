@@ -9,8 +9,9 @@ Currently, I'm working away at Python and plan to dive into <strong>Cybersecurit
 <strong>If you wanna reach out with me</strong>, you can do so through messaging me on Discord through my username: <strong>nubbieeee</strong>!
 
 - ✨ <a href="https://nubb.pythonanywhere.com">Check out my portfolio (now live w/ PythonAnywhere!)</a>
-- <a href="https://medium.com/@nubb" target="_blank" style="decoration:none">📚 Subscribe to my programming blog on Medium!</a>
-- <a href="mailto:sherm5344@gmail.com">📩 Shoot me an email!</a>
+- 📚 <a href="https://medium.com/@nubb" target="_blank" style="decoration:none">Subscribe to my programming blog on Medium!</a>
+- 🎮 <a href="https://dmoj.ca/user/nubb" target="_blank" style="decoration:none">Check out my DMOJ profile!</a>
+- 📩 <a href="mailto:sherm5344@gmail.com">Shoot me an email!</a>
 <!--
 **nubbsterr/nubbsterr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
