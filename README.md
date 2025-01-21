@@ -1,10 +1,10 @@
 ## 👋 Hey there, I'm Nubb.
 
-I'm a Grade 11 CS Student with a passion for programming and CS-related topics.
+I'm a Grade 12 CS Student with a passion for programming and CS-related topics.
 
-The bulk of my time is spent at school, but when I'm not there, I'm probably programming in Python creating something new to show the world! I've done a lot of stuff in Python over the past 6 months, between <strong>game development</strong>, <strong>GUIs</strong>, and even <strong>web development using Flask!</strong>
+The bulk of my time is spent at school, but when I'm not there, I'm usually gaming or programming in C++ creating something new to show the world! I've done a lot of stuff in Python and Unity in the past, between <strong>game development</strong>, <strong>GUIs</strong>, and even <strong>web development using Flask!</strong>
 
-Currently, I'm working away at Python and plan to dive into <strong>Cybersecurity</strong> as that's a career path I want to pursue after high school :)
+Currently, I'm working away at C++ projects and tinkering with my ESP32. I plan to dive into <strong>Cybersecurity</strong> as my career path after/during uni :)
 
 <strong>If you wanna reach out with me</strong>, you can do so through messaging me on Discord through my username: <strong>nubbieeee</strong>!
 
