@@ -1,16 +1,14 @@
 ## 👋 Hey there, I'm Nubb.
 
-I'm a Grade 12 CS Student with a passion for programming and CS-related topics.
+I'm a Grade 12 CS Student with a passion for programming, robotics and cybersecurity!
 
-The bulk of my time is spent at school, but when I'm not there, I'm usually gaming or programming in C++ creating something new to show the world! I've done a lot of stuff in Python and Unity in the past, between <strong>game development</strong>, <strong>GUIs</strong>, and even <strong>web development using Flask!</strong>
+The bulk of my time is spent at school, most of my time afterschool is spent (currently) studying for my Security+ exam! I am also doing some homelab things which you can soon find on my GitHub! I am always open to chat on Discord, so feel free to send me a DM @ nubbieeee :)
 
-Currently, I'm working away at C++ projects and tinkering with my ESP32. I plan to dive into <strong>Cybersecurity</strong> as my career path after/during uni :)
+Check out my other socials below:
 
-<strong>If you wanna reach out with me</strong>, you can do so through messaging me on Discord through my username: <strong>nubbieeee</strong>!
-
-- ✨ <a href="https://nubb.pythonanywhere.com">Check out my portfolio (now live w/ PythonAnywhere!)</a>
-- 📚 <a href="https://medium.com/@nubb" target="_blank" style="decoration:none">Subscribe to my programming blog on Medium!</a>
-- 🎮 <a href="https://dmoj.ca/user/nubb" target="_blank" style="decoration:none">Check out my DMOJ profile!</a>
+- ✨ <a href="https://nubb.pythonanywhere.com">Check out my portfolio (now live w/ PythonAnywhere! (will revamp and rewrite in HTML/CSS later on!!))</a>
+- 📚 <a href="https://medium.com/@nubb" target="_blank" style="decoration:none">Subscribe to my programming blog on Medium! (inactive)</a>
+- 🎮 <a href="https://dmoj.ca/user/nubb" target="_blank" style="decoration:none">Check out my DMOJ profile! (inactive)</a>
 - 📩 <a href="mailto:sherm5344@gmail.com">Shoot me an email!</a>
 <!--
 **nubbsterr/nubbsterr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
