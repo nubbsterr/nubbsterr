@@ -1,0 +1,17 @@
+name: gen snake
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight
+  workflow_dispatch: # Allows manual triggering
+jobs:
+  generate_snake:
+    runs-on: ubuntu-latest # ubuntu-based runner runs this
+    steps:
+      - uses: actions/checkout@v4 
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }} 
+          outputs: |
+            dist/github-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.gif?color_snake=white&color_dots=#e2908d,#8DDFE2,#e2908d,#8DDFE2,#e2908d
