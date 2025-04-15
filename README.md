@@ -12,7 +12,7 @@ Check out my other socials below:
 - 📚 <a href="https://medium.com/@nubb" target="_blank" style="decoration:none">Subscribe to my programming blog on Medium! (inactive)</a>
 - 🎮 <a href="https://dmoj.ca/user/nubb" target="_blank" style="decoration:none">Check out my DMOJ profile! (inactive)</a>
 
-![Snake Contrib. Graph!](https://github.com/nubbsterr/nubbsterr/blob/main/dist/github-contribution-grid-snake-dark.svg)
+![Snake Contrib. Graph!](https://github.com/nubbsterr/nubbsterr/blob/output/dist/github-contribution-grid-snake-dark.svg)
 <!--
 **nubbsterr/nubbsterr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
