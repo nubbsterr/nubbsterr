@@ -1,4 +1,4 @@
-## 👋 Hey there, I'm Nubb.
+## 👋 ![svg](https://readme-typing-svg.herokuapp.com?font=B612+Mono&duration=2500&pause=1000&color=FFFFFF&width=435&lines=Hey+there%2C+I'm+Nubb.)
 
 I'm a Grade 12 CS Student with a passion for programming, robotics and cybersecurity!
 
