@@ -13,4 +13,3 @@ My current activities are:
 * Creating my own [**AV**](https://github.com/nubbsterr/Eurofighter) in Python
 
 I am always open to chat on Discord, so feel free to send me a DM @ nubbieeee :)
-![Snake Contrib. Graph!](https://github.com/nubbsterr/nubbsterr/blob/output/github-contribution-grid-snake-dark.svg)
