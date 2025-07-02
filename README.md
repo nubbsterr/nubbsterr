@@ -1,6 +1,6 @@
 ## ![svg](https://readme-typing-svg.herokuapp.com?font=B612+Mono&duration=2500&pause=1000&color=FFFFFF&width=435&lines=Hey+there%2C+I'm+Nubb.)
 
-I'm a (soon-to-be) Computer Engineering student with a passion for programming, robotics and **cybersecurit!**
+I'm a (soon-to-be) **Computer Engineering** student with a passion for programming, robotics and **cybersecurity!**
 
 My workflow/setup consists of: 
 - My desktop PC which I use for **VMs, gaming, and recording videos**. 
@@ -15,6 +15,6 @@ My current activities are:
 * Posting lab attempts and Limbus Company videos on my [**YT**](https://www.youtube.com/@0xnubb)
 * Working on my [**portfolio**](https://github.com/nubbsterr/web)
 * Creating my own [**AV**](https://github.com/nubbsterr/Eurofighter) in Python
-* Creating some tools, namely my own [**port scanner**](https://github.com/nubbsterr/sawyer) 
+* Creating my own [**port scanner**](https://github.com/nubbsterr/sawyer) 
 
-I am always open to chat on Discord, so feel free to send me a DM @ nubbieeee :)I also plan to make my own server soon so people can reach me more easily!
+I am always open to chat on Discord, so feel free to send me a DM @ nubbieeee :)
