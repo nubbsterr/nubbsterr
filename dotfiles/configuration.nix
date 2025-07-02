@@ -50,6 +50,9 @@
     backend = "glx";
     fade = true;
   };
+
+  # tlp to save battery powah
+  services.tlp.enable = true;
   
 
   # Configure keymap in X11
@@ -96,6 +99,7 @@
     obsidian
     rofi
     pfetch
+    redshift
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
