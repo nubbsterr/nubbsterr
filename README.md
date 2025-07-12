@@ -6,9 +6,7 @@ My workflow/setup consists of:
 - My desktop PC which I use for **VMs, gaming, and recording videos**. 
 - My TWO laptops which I use for **note-taking** and other activities on-the-go. 
 
-My PC runs Windows 11 and I run **Arch** (btw) on my secondary/fallback Dell laptop and NixOS on my lovely **Thinkpad T450s**. 
-- Dell runs [**chadwm**](https://github.com/siduck/chadwm) and [**siduck's st**](https://github.com/siduck/st) on Arch.
-- Thinkpad runs NixOS w/ Qtile. Dotfiles can be found in the [**dotfiles** folder](https://github.com/nubbsterr/nubbsterr/) on my GitHub.
+My PC runs Windows 11 and I run OpenSUSE w/ i3 on my lovely **Thinkpad T450s**. Dotfiles can be found [**here.** folder](https://github.com/nubbsterr/nubbsterr/)
 
 My current activities are:
 * Grinding **HTB** Academy/Labs a bunch
