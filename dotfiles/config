@@ -190,5 +190,10 @@ bar {
         status_command i3status --config /etc/i3status.conf
 }
 
+# gaps setup
+gaps inner 5px
+gaps outer 10px
+
+# nitrogen and picom
 exec_always nitrogen --restore
 exec_always --no-startup-id picom -b
