@@ -194,6 +194,7 @@ bar {
 gaps inner 5px
 gaps outer 10px
 
-# nitrogen and picom
+# nitrogen and picom and redshift
 exec_always nitrogen --restore
 exec_always --no-startup-id picom -b
+exec_always redshift -O 5000
