@@ -3,16 +3,14 @@
 I'm a (soon-to-be) **Computer Engineering** student with a passion for programming, robotics and **cybersecurity!**
 
 My workflow/setup consists of: 
-- My desktop PC which I use for **VMs, gaming, and recording videos**. 
-- My TWO laptops which I use for **note-taking** and other activities on-the-go. 
-
-My PC runs Windows 11 and I run OpenSUSE w/ i3 on my lovely **Thinkpad T450s**. Dotfiles can be found [**here.** folder](https://github.com/nubbsterr/nubbsterr/)
+- My desktop PC which I use for **VMs, gaming, and recording videos**. I dual boot w/ Arch + KDE and Windows 11. 
+    - Arch is for notetaking and occasional reverse engineering whilst Windows is for gaming. 
+- My Thinkpad which is currently running Void Linux w/ i3. Dotfiles can be found [**here.**](https://github.com/nubbsterr/nubbsterr/tree/main/dotfiles)
 
 My current activities are:
 * Grinding **HTB** Academy/Labs a bunch
-* Posting lab attempts and Limbus Company videos on my [**YT**](https://www.youtube.com/@0xnubb)
+* Posting lab attempts and Limbus Company videos on my [**YT channel!**](https://www.youtube.com/@0xnubb)
 * Working on my [**portfolio**](https://github.com/nubbsterr/web)
-* Creating my own [**AV**](https://github.com/nubbsterr/Eurofighter) in Python
-* Creating my own [**port scanner**](https://github.com/nubbsterr/sawyer) 
+* Working on my [**port scanner**](https://github.com/nubbsterr/nubbscan) 
 
 I am always open to chat on Discord, so feel free to send me a DM @ nubbieeee :)
