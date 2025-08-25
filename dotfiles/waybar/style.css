@@ -1,0 +1,68 @@
+* {
+  border: none;
+  font-family: "JetBrains Mono", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  margin: 0 4px;
+  background: transparent;
+  color: #ffffff;
+  border-radius: 12px;
+  min-width: 24px;
+  transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#workspaces button.active {
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  border-radius: 12px;
+}
+
+#clock,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#battery {
+  padding: 0 12px;
+  margin: 0 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+#clock:hover,
+#pulseaudio:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#pulseaudio.muted {
+  background: rgba(255, 0, 0, 0.3);
+}
+
+#battery.critical:not(.charging) {
+  background: rgba(255, 0, 0, 0.3);
+  color: #ffffff;
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.6; }
+}

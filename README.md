@@ -5,7 +5,7 @@ I'm a (soon-to-be) **Computer Engineering** student with a passion for programmi
 My workflow/setup consists of: 
 - My desktop PC which I use for **VMs, gaming, and recording videos**. I dual boot w/ Arch + KDE and Windows 11. 
     - Arch is for notetaking and occasional reverse engineering whilst Windows is for gaming. 
-- My Thinkpad which is currently running Void Linux w/ i3. Dotfiles can be found [**here.**](https://github.com/nubbsterr/nubbsterr/tree/main/dotfiles)
+- My Thinkpad which is currently running Arch Linux w/ Hyprland! Dotfiles can be found [**here.**](https://github.com/nubbsterr/nubbsterr/tree/main/dotfiles)
 
 My current activities are:
 * Grinding **HTB** Academy/Labs a bunch
