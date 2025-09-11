@@ -26,8 +26,8 @@
     }
   },
   "clock": {
-    "format": "{:%H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "format": "{:%B %d - %H:%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
   "network": {
     "format-wifi": "{essid} ({signalStrength}%) ",

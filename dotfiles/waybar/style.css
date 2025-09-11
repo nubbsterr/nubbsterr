@@ -1,12 +1,12 @@
 * {
   border: none;
-  font-family: "JetBrains Mono", sans-serif;
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
   font-size: 14px;
   color: #ffffff;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 16px;
   transition: background-color 0.3s ease;
 }
