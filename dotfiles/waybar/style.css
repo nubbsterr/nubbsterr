@@ -32,8 +32,8 @@ window#waybar {
 }
 
 #clock,
-#pulseaudio,
 #network,
+#wireplumber,
 #cpu,
 #memory,
 #battery {
@@ -45,15 +45,15 @@ window#waybar {
 }
 
 #clock:hover,
-#pulseaudio:hover,
 #network:hover,
+#wireplumber:hover,
 #cpu:hover,
 #memory:hover,
 #battery:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-#pulseaudio.muted {
+#wireplumber.muted {
   background: rgba(255, 0, 0, 0.3);
 }
 

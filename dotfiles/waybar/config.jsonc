@@ -9,7 +9,7 @@
   "margin-right": 6,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["network", "cpu", "memory", "battery"],
+  "modules-right": ["network", "wireplumber", "cpu", "memory", "battery"],
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
@@ -35,11 +35,19 @@
     "format-disconnected": "Disconnected ⚠",
     "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
   },
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "  Muted",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
   "cpu": {
     "format": "{usage}% "
   },
   "memory": {
-    "format": "{used:0.1f}G/{total:0.1f}G "
+    "format": "{used:0.1f}G "
   },
   "battery": {
     "states": {
