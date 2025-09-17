@@ -3,15 +3,15 @@
 I'm a **Computer Engineering** student with a passion for programming, robotics and **cybersecurity!**
 
 My workflow/setup consists of: 
-- My desktop PC which I use for **VMs, gaming, and recording videos**. I dual boot w/ Arch + KDE and Windows 11 (windows SUCKS it keeps installing updates behind my back). 
-    - Arch is for notetaking and occasional reverse engineering whilst Windows is for gaming. 
+- My desktop PC which I use for **VMs, gaming, and recording videos**. I dual boot w/ NixOS + i3 and Windows 11 (windows SUCKS it keeps installing updates behind my back). 
+    - Nix is currently for notetaking and my daily driver, whilst Windows is for gaming. I plan to get some rev tools (Detect-it-easy and Binja) on here sometime so I can do some crackme stuff here and there. 
 - My Thinkpad which is currently running Arch Linux w/ Hyprland! Dotfiles can be found [**here.**](https://github.com/nubbsterr/nubbsterr/tree/main/dotfiles)
 
 
 My current activities are:
+- Grinding uni homework >:(
 * Grinding **HTB** Academy/Labs a bunch
 * Posting lab attempts and Limbus Company videos on my [**YT channel!**](https://www.youtube.com/@0xnubb)
-* Working on my [**portfolio**](https://github.com/nubbsterr/web)
-* Working on my [**port scanner**](https://github.com/nubbsterr/nubbscan) 
+* Working on my [**portfolio**](https://github.com/nubbsterr/web), as well as other projects which you can find here!
 
 I am always open to chat on Discord, so feel free to send me a DM @ nubbieeee :)
