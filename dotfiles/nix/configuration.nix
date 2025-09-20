@@ -30,17 +30,20 @@
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-	    i3status
+	i3status
         i3blocks
-	    i3lock
-	    xss-lock
+	i3lock
+	xss-lock
       ];
     };
   };
 
   services.displayManager.ly.enable = true;
-  services.picom.enable = true;
   programs.i3lock.enable = true;
+
+  # virtualbox installed + add self to vboxusers group
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "nubb" ];
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -72,6 +75,8 @@
     redshift
     bat
     btop
+    picom # compositor for x11
+    libreoffice # solely to edit docx lol
     vesktop # modified discord client, testing for a bit
     flameshot # screenshot tool
     dunst # notif daemon
