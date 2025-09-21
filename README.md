@@ -1,15 +1,16 @@
 ## ![svg](https://readme-typing-svg.herokuapp.com?font=B612+Mono&duration=2500&pause=1000&color=FFFFFF&width=435&lines=Hey+there%2C+I'm+Nubb.)
 
-I'm a **Computer Engineering** student with a passion for programming, robotics and **cybersecurity!**
+I'm a **Computer Engineering** student with a passion for programming, robotics and **cybersecurity!** 
 
 My workflow/setup consists of: 
 - My desktop PC which I use for **VMs, gaming, and recording videos**. I dual boot w/ NixOS + i3 and Windows 11 (windows SUCKS it keeps installing updates behind my back). 
     - Nix is currently for notetaking and my daily driver, whilst Windows is for gaming. I plan to get some rev tools (Detect-it-easy and Binja) on here sometime so I can do some crackme stuff here and there. 
-- My Thinkpad which is currently running Arch Linux w/ Hyprland! Dotfiles can be found [**here.**](https://github.com/nubbsterr/nubbsterr/tree/main/dotfiles)
+- ThinkPad running literally anything (might try Gentoo sometime, maybe something w/ OpenRC or runit init systems for a change?)
 
+Dotfiles can be found [**here.**](https://github.com/nubbsterr/nubbsterr/tree/main/dotfiles)
 
 My current activities are:
-- Grinding uni homework >:(
+* Grinding uni homework >:(
 * Grinding **HTB** Academy/Labs a bunch
 * Posting lab attempts and Limbus Company videos on my [**YT channel!**](https://www.youtube.com/@0xnubb)
 * Working on my [**portfolio**](https://github.com/nubbsterr/web), as well as other projects which you can find here!

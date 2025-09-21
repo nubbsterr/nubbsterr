@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # prints mem usage percent
 ram_usage=$(free -g | awk '/^Mem:/ {print $3}')

@@ -41,13 +41,19 @@
   programs.i3lock.enable = true;
   programs.bash = {
     shellAliases = {
-      cat="bat";
+      cat="bat --theme=ansi";
+      bat="bat --theme=ansi";
       nixup="sudo nixos-rebuild switch";
       killkvm="sudo modprobe -r kvm_intel";
       svim="sudoedit";
     };
   };
-  programs.neovim.defaultEditor = true;
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
 
   # virtualbox installed + add self to vboxusers group
   virtualisation.virtualbox.host.enable = true;
