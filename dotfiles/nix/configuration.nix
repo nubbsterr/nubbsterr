@@ -30,9 +30,8 @@
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-	i3status
         i3blocks
-	i3lock
+	i3lock-color
 	xss-lock
       ];
     };
@@ -40,6 +39,15 @@
 
   services.displayManager.ly.enable = true;
   programs.i3lock.enable = true;
+  programs.bash = {
+    shellAliases = {
+      cat="bat";
+      nixup="sudo nixos-rebuild switch";
+      killkvm="sudo modprobe -r kvm_intel";
+      svim="sudoedit";
+    };
+  };
+  programs.neovim.defaultEditor = true;
 
   # virtualbox installed + add self to vboxusers group
   virtualisation.virtualbox.host.enable = true;
@@ -61,7 +69,6 @@
     ];
   };
 
-  # Allow unfree to get binaryninja, see package list below
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     vim 
@@ -74,14 +81,22 @@
     git
     redshift
     bat
+    unzip
     btop
-    picom # compositor for x11
+    gcc
+    neovim 
+    ripgrep 	# telescope live_grep 
+    fd		# telescope find_files
+    xtitle  	# show window title in status bar instead of on windows
+    mpv     	# media player 
+    feh     	# image viewer
+    picom       # compositor for x11
     libreoffice # solely to edit docx lol
-    vesktop # modified discord client, testing for a bit
-    flameshot # screenshot tool
-    dunst # notif daemon
-    libnotify # to use notify-send to make notifs
-    rclone # to sync local folders to drive
+    vesktop     # modified discord client, testing for a bit
+    flameshot   # screenshot tool
+    dunst       # notif daemon
+    libnotify   # to use notify-send to make notifs
+    rclone      # to sync local folders to drive
   ];
 
   # Install some extra fonts; chinese/korean/JP and emojis

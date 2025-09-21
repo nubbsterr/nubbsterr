@@ -4,21 +4,12 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 14
 
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
+# screenlock and things
+set $lockscreen ~/.config/i3/scripts/lock.sh
+bindsym $mod+l exec $lockscreen 
+
 exec --no-startup-id dex --autostart --environment i3
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-# xset will make screen dim after 5 min, lock another 30 sec later
-exec --no-startup-id xset s 300 30
-exec --no-startup-id xss-lock --transfer-sleep-lock i3lock --nofork -i ~/walls/wp12329531.png
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id xss-lock --transfer-sleep-lock  -- $lockscreen --nofork
 exec --no-startup-id nm-applet
 
 # Pipewire to adjust audio w/ wpctl
@@ -52,12 +43,6 @@ bindsym $mod+b exec brave
 
 # open vesktop
 bindsym $mod+v exec vesktop
-
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -195,6 +180,12 @@ bar {
         binding_mode       #2F343A #900000 #FFFFFF
     }
 }
+
+# remove window titlebar thing
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
+
 
 # gaps setup
 gaps inner 10px
