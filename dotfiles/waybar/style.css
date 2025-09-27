@@ -1,68 +1,93 @@
 * {
-  border: none;
-  font-family: "JetBrainsMono Nerd Font", sans-serif;
-  font-size: 14px;
-  color: #ffffff;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 16px;
+    font-weight: bold;
 }
-
 window#waybar {
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 16px;
-  transition: background-color 0.3s ease;
+    background: #2E2A27; /* Warm dark gray */
+    color: #E8D5B7; /* Soft beige text */
+    border-bottom: 2px solid #4A4035; /* Subtle warm brown border */
 }
 
+/* Workspaces */
 #workspaces button {
-  padding: 0 8px;
-  margin: 0 4px;
-  background: transparent;
-  color: #ffffff;
-  border-radius: 12px;
-  min-width: 24px;
-  transition: all 0.2s ease;
+    padding: 0 8px;
+    background: transparent;
+    color: #E8D5B7; /* Beige */
+    border-bottom: 2px solid transparent;
 }
 
 #workspaces button:hover {
-  background: rgba(255, 255, 255, 0.2);
+    background: #4A4035; /* Warm brown */
+    color: #F4E4C1; /* Lighter beige */
 }
 
 #workspaces button.active {
-  background: rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-  border-radius: 12px;
+    background: #5B4F43; /* Slightly lighter warm brown */
+    color: #F4E4C1;
+    border-bottom: 2px solid #D9A76A; /* Soft amber accent */
 }
 
-#clock,
-#network,
-#wireplumber,
-#cpu,
-#memory,
-#battery {
-  padding: 0 12px;
-  margin: 0 4px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  transition: all 0.2s ease;
+/* Window module */
+#window {
+    padding: 0 10px;
+    color: #E8D5B7;
 }
 
-#clock:hover,
-#network:hover,
-#wireplumber:hover,
-#cpu:hover,
-#memory:hover,
-#battery:hover {
-  background: rgba(255, 255, 255, 0.2);
+/* Clock */
+#clock {
+    padding: 0 10px;
+    background: #3A352F; /* Slightly lighter warm gray */
+    color: #F4E4C1;
+    border-radius: 8px;
+}
+
+/* Network */
+#network {
+    padding: 0 10px;
+    color: #E8D5B7;
+}
+
+#network.disconnected {
+    color: #D9A76A; /* Amber for warning */
+}
+
+/* CPU */
+#cpu {
+    padding: 0 10px;
+    color: #E8D5B7;
+}
+
+/* Memory */
+#memory {
+    padding: 0 10px;
+    color: #E8D5B7;
+}
+
+/* Wireplumber (Volume) */
+#wireplumber {
+    padding: 0 10px;
+    color: #E8D5B7;
 }
 
 #wireplumber.muted {
-  background: rgba(255, 0, 0, 0.3);
+    color: #D9A76A; /* Amber for muted state */
 }
 
-#battery.critical:not(.charging) {
-  background: rgba(255, 0, 0, 0.3);
-  color: #ffffff;
-  animation: blink 1s ease-in-out infinite;
+/* Tray */
+#tray {
+    padding: 0 10px;
+    background: #2E2A27;
 }
 
-@keyframes blink {
-  50% { opacity: 0.6; }
+/* Separator */
+#custom-sep {
+    color: #5B4F43; /* Warm brown */
+    padding: 0 5px;
+}
+
+/* Hover effects for interactive modules */
+#network:hover, #cpu:hover, #memory:hover, #wireplumber:hover {
+    background: #4A4035; 
+    color: #F4E4C1;
 }

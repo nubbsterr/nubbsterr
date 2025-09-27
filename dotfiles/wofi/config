@@ -1,14 +1,13 @@
 # mode & placement
 show=drun
-location=top           
 width=700
 lines=8
-columns=2              
+columns=2
 dynamic_lines=false
 
 # icons
-allow_images=true      
-image_size=36          
+allow_images=true
+image_size=36
 
 # search & UX
 matching=fuzzy
@@ -17,7 +16,7 @@ hide_scroll=false
 prompt=
 
 # terminal
-term=foot
+term=kitty
 
 # keybinds (vim-ish)
 key_up=Ctrl-k

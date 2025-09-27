@@ -1,14 +1,13 @@
-# PS1='(\D{%H:%M:%S}) \[\e[38;5;141m\]\u\[\e[0m\] in \[\e[38;5;115m\]\W\[\e[38;5;209m\] λ \[\e[0m\]'
-background_opacity 0.7
+background_opacity 0.8
 font_size 16
 background_blur 1
 
 enable_audio_bell no
 cursor_trail 1
 cursor_shape block
-
+shell_integration no-cursor
 
 # BEGIN_KITTY_THEME
-# zenbones_dark
+# Kanagawa_dragon
 include current-theme.conf
 # END_KITTY_THEME

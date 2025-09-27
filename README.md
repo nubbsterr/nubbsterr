@@ -3,8 +3,8 @@
 I'm a **Computer Engineering** student with a passion for programming, robotics and **cybersecurity!** 
 
 My workflow/setup consists of: 
-- My desktop PC which I use for **VMs, gaming, and recording videos**. I dual boot w/ NixOS + i3 and Windows 11 (windows SUCKS it keeps installing updates behind my back). 
-    - Nix is currently for notetaking and my daily driver, whilst Windows is for gaming. I plan to get some rev tools (Detect-it-easy and Binja) on here sometime so I can do some crackme stuff here and there. 
+- My desktop PC which I use for **VMs, gaming, and recording videos**. I dual boot w/ Arch + Hyprland and Windows 11 (windows SUCKS it keeps installing updates behind my back). 
+    - Arch is currently for notetaking and my daily driver, whilst Windows is for gaming. I plan to get some rev tools (Detect-it-easy and Binja) on here sometime so I can do some crackme stuff here and there. 
 - ThinkPad running literally anything (might try Gentoo sometime, maybe something w/ OpenRC or runit init systems for a change?)
 
 Dotfiles can be found [**here.**](https://github.com/nubbsterr/nubbsterr/tree/main/dotfiles)
