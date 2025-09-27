@@ -29,7 +29,7 @@
         "timezone": "Canada/Eastern",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%H:%M}",
-        "format": "{:%a %I:%M %p}"
+        "format": "{:%a, %B %d %I:%M %p}"
     },
     "wireplumber": {
         "format": "{icon} {volume}%",

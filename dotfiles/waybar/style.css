@@ -1,93 +1,88 @@
+/* pywal16 goodier */
+@import url("file:///home/nubb/.cache/wal/colors-waybar.css");
+
 * {
     font-family: "JetBrainsMono Nerd Font", monospace;
     font-size: 16px;
     font-weight: bold;
 }
 window#waybar {
-    background: #2E2A27; /* Warm dark gray */
-    color: #E8D5B7; /* Soft beige text */
-    border-bottom: 2px solid #4A4035; /* Subtle warm brown border */
+    background: @background; 
+    color: @foreground; 
+    border-bottom: 2px solid @background; 
 }
 
 /* Workspaces */
 #workspaces button {
     padding: 0 8px;
     background: transparent;
-    color: #E8D5B7; /* Beige */
+    color: @foreground; 
     border-bottom: 2px solid transparent;
 }
 
 #workspaces button:hover {
-    background: #4A4035; /* Warm brown */
-    color: #F4E4C1; /* Lighter beige */
+    background: @color8; 
+    color: @color13; 
 }
 
 #workspaces button.active {
-    background: #5B4F43; /* Slightly lighter warm brown */
-    color: #F4E4C1;
-    border-bottom: 2px solid #D9A76A; /* Soft amber accent */
+    background: @background; 
+    color: @color5;
+    border-bottom: 2px solid @color5; 
 }
 
-/* Window module */
 #window {
     padding: 0 10px;
-    color: #E8D5B7;
+    color: @foreground;
 }
 
-/* Clock */
 #clock {
     padding: 0 10px;
-    background: #3A352F; /* Slightly lighter warm gray */
-    color: #F4E4C1;
+    background: @background; 
+    color: @foreground;
     border-radius: 8px;
 }
 
-/* Network */
 #network {
     padding: 0 10px;
-    color: #E8D5B7;
+    color: @foreground;
 }
 
 #network.disconnected {
-    color: #D9A76A; /* Amber for warning */
+    color: @color13; 
 }
 
-/* CPU */
 #cpu {
     padding: 0 10px;
-    color: #E8D5B7;
+    color: @foreground;
 }
 
-/* Memory */
 #memory {
     padding: 0 10px;
-    color: #E8D5B7;
+    color: @foreground;
 }
 
-/* Wireplumber (Volume) */
 #wireplumber {
     padding: 0 10px;
-    color: #E8D5B7;
+    color: @foreground;
 }
 
 #wireplumber.muted {
-    color: #D9A76A; /* Amber for muted state */
+    color: @color13; 
 }
 
-/* Tray */
 #tray {
     padding: 0 10px;
-    background: #2E2A27;
+    background: @color0;
 }
 
 /* Separator */
 #custom-sep {
-    color: #5B4F43; /* Warm brown */
+    color: @color2;
     padding: 0 5px;
 }
 
-/* Hover effects for interactive modules */
 #network:hover, #cpu:hover, #memory:hover, #wireplumber:hover {
-    background: #4A4035; 
-    color: #F4E4C1;
+    background: @color8; 
+    color: @color13;
 }
