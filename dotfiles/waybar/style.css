@@ -76,13 +76,15 @@ window#waybar {
     background: @color0;
 }
 
-/* Separator */
-#custom-sep {
-    color: @color2;
+#custom-power {
     padding: 0 5px;
 }
 
-#network:hover, #cpu:hover, #memory:hover, #wireplumber:hover {
+#custom-sep {
+    padding: 0 5px;
+}
+
+#network:hover, #cpu:hover, #memory:hover, #wireplumber:hover, #clock:hover, #custom-power:hover {
     background: @color8; 
     color: @color13;
 }

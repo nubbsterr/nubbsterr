@@ -5,11 +5,11 @@ My NixOS config is outdated so don't use it; you can take the packages and other
 Some Arch packages to install ahead of using my setup (some are QoL and not strictly required!):
 
 ```
-fastfetch waybar wofi hyprland hyprsunset hyprlock hyprpaper hypridle neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages dunst unzip 7z
+btop tree bat fastfetch waybar wofi hyprland hyprsunset hyprlock hyprpaper hypridle neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages dunst unzip 7zip git neovim foot
 ```
 
 Some **AUR** packages to install:
 
 ```
-python-pywal16 
+python-pywal16
 ```

@@ -5,7 +5,7 @@
     "spacing": 4,
     "modules-left": ["hyprland/workspaces", "custom/sep", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "custom/sep", "cpu", "custom/sep", "memory", "custom/sep", "wireplumber", "custom/sep", "tray"],
+    "modules-right": ["network", "custom/sep", "cpu", "custom/sep", "memory", "custom/sep", "wireplumber", "custom/sep", "custom/power", "custom/sep", "tray"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -19,6 +19,11 @@
     "hyprland/window" : {
         "max-length": 40,
         "seperate-outputs": false
+    },
+    "custom/power": {
+        "format": "󰈆",
+        "on-click": "wlogout",
+        "tooltop": false
     },
     "custom/sep": {
         "format": "|",
