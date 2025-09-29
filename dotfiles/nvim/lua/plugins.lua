@@ -62,6 +62,16 @@ require("lazy").setup({
         lualine_z = { "location" },                             -- Line/column
       },
     })
-  end,
-},
+    end,
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({
+        '*',  -- Apply to all filetypes
+        css = { css = true },  
+        html = { names = true }, 
+      })
+    end,
+  },
 })
