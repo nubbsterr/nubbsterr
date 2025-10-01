@@ -1,6 +1,5 @@
-NOTE! Only my waybar and kitty terminal work with Pywal at the moment, which is honestly fine by me. Wofi, dunst and Wlogout are not configured to work with Pywal which is whatev once again; waybar is all I need really in terms of that level of customization.
-
-My NixOS config is outdated so don't use it; you can take the packages and other settings from it but do NOT copy over the NixOS version setting as that may brick stuff!
+> [!NOTE]
+> My NixOS config is outdated so don't use it; you can take the packages and other settings from it but do NOT copy over the NixOS version setting as that may brick stuff!
 
 Some Arch packages to install ahead of using my setup (some are QoL and not strictly required!):
 
@@ -24,12 +23,6 @@ cd paru
 makepkg -si
 ```
 
-Also use brave as my browser (might try qutebrowser or Zen sometime):
-
-```
-curl -fsSl https://dl.brave.com/install.sh | sh
-```
-
 ---
 
 Below are some more AUR/Arch packages that I have for my setup, but aren't strictly needed for configuring my dots:
@@ -41,5 +34,5 @@ vesktop binaryninja-free
 
 Arch packages:
 ```
-libreoffice-still hunspell hunspell-en_ca virtualbox virtualbox-host-dkms nvidia-dkms nvidia-utils 
+libreoffice-still hunspell hunspell-en_ca virtualbox virtualbox-host-dkms nvidia-dkms nvidia-utils qutebrowser python-adblock mpv feh
 ```

@@ -7,21 +7,26 @@
     font-weight: bold;
 }
 window#waybar {
-    background: @background; 
+    background: transparent; 
     color: @foreground; 
-    border-bottom: 2px solid @background; 
 }
 
-/* Workspaces */
+.modules-left,
+.modules-right,
+.modules-center {
+    background: @background;
+    border-radius: 8px;
+    margin: 4px 2px;
+    padding: 0 5px;
+}
+
 #workspaces button {
     padding: 0 8px;
-    background: transparent;
+    background: @background;
     color: @foreground; 
-    border-bottom: 2px solid transparent;
 }
 
 #workspaces button:hover {
-    background: @color8; 
     color: @color13; 
 }
 
@@ -31,40 +36,13 @@ window#waybar {
     border-bottom: 2px solid @color5; 
 }
 
-#window {
-    padding: 0 10px;
-    color: @foreground;
-}
-
-#clock {
-    padding: 0 10px;
-    background: @background; 
-    color: @foreground;
-    border-radius: 8px;
-}
-
-#network {
+#window, #clock, #network, #cpu, #memory, #wireplumber, #custom-power  {
     padding: 0 10px;
     color: @foreground;
 }
 
 #network.disconnected {
     color: @color13; 
-}
-
-#cpu {
-    padding: 0 10px;
-    color: @foreground;
-}
-
-#memory {
-    padding: 0 10px;
-    color: @foreground;
-}
-
-#wireplumber {
-    padding: 0 10px;
-    color: @foreground;
 }
 
 #wireplumber.muted {
@@ -76,15 +54,10 @@ window#waybar {
     background: @color0;
 }
 
-#custom-power {
-    padding: 0 5px;
-}
-
 #custom-sep {
     padding: 0 5px;
 }
 
 #network:hover, #cpu:hover, #memory:hover, #wireplumber:hover, #clock:hover, #custom-power:hover {
-    background: @color8; 
     color: @color13;
 }

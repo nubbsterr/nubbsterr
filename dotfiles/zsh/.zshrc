@@ -22,11 +22,23 @@ alias {vim,vi,v}='nvim'
 alias pac='sudo pacman -S'
 alias pacup='sudo pacman -Syu'
 alias pacrm='sudo pacman -Rns'
-
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push origin main'
 
 export EDITOR='nvim'
 
 fastfetch
+
+last_upgrade=$(tac /var/log/pacman.log | grep -m 1 "starting full system upgrade" | cut -d' ' -f1 | tr -d '[]')
+if [ -n "$last_upgrade" ]; then
+  t1=$(date +%s -d "$last_upgrade")
+  t2=$(date +%s)
+  days=$(( (t2 - t1) / 86400 ))
+  echo "It's been $days days since last pacman -Syu!"
+else
+  echo "No full system upgrade found in logs"
+fi   
 
 # Git configuration for secrets
 # git-credential-manager configure
