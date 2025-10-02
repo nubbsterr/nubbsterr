@@ -21,7 +21,7 @@
         "seperate-outputs": false
     },
     "custom/power": {
-        "format": "󰈆",
+        "format": "⏻",
         "on-click": "wlogout",
         "tooltop": false
     },
@@ -63,3 +63,18 @@
         "spacing": 10
     }
 }
+
+/* 
+
+To have battery life, add:
+
+"battery": {
+    "format": "󰁹 {capacity}%",
+    "format-charging": "󰂄 {capacity}%"
+}
+
+Also add battery module to modules-right at root 
+
+Then add #battery to the places where all the other modules are.
+
+*/
