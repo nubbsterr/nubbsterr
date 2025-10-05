@@ -1,13 +1,15 @@
+// NOTE: if you wish to use this with yprland, make sure to replace all instances of "niri" with hyprland!
+
 {
     "layer": "top",
     "position": "top",
     "height": 30,
     "spacing": 4,
-    "modules-left": ["hyprland/workspaces", "custom/sep", "hyprland/window"],
+    "modules-left": ["niri/workspaces", "custom/sep", "niri/window"],
     "modules-center": ["clock"],
     "modules-right": ["network", "custom/sep", "cpu", "custom/sep", "memory", "custom/sep", "wireplumber", "custom/sep", "custom/power", "custom/sep", "tray"],
 
-    "hyprland/workspaces": {
+    "niri/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "format": "{icon}",
@@ -22,7 +24,7 @@
     },
     "custom/power": {
         "format": "⏻",
-        "on-click": "wlogout",
+        "on-click": "bash ~/scripts/power.sh",
         "tooltop": false
     },
     "custom/sep": {
@@ -49,8 +51,7 @@
         "format-ethernet": "Ethernet",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "nm-connection-editor"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "cpu": {
         "format": "CPU: {usage}% "
