@@ -54,6 +54,7 @@ layout {
     
     // You can change how the focus ring looks.
     focus-ring {
+        off 
         // How many logical pixels the ring extends out from the windows.
         width 2
 
@@ -94,7 +95,7 @@ layout {
 }
 // Add lines like this to spawn processes at startup.
 spawn-at-startup "waybar"
-spawn-at-startup "swaybg -i /home/nubb/walls/imaginary_river_landscape_2016.147.1.jpg -m fill" 
+spawn-at-startup "swaybg -i /home/nubb/walls/glow.png -m fill" 
 spawn-at-startup "swayidle -w timeout 270 'brightnessctl -s set 10' resume 'brightnessctl -r' timeout 300 'swaylock' timeout 330 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors && brightnessctl -r' timeout 1800 'systemctl suspend' before-sleep 'swaylock'" 
 spawn-at-startup "sunsetr"
 spawn-at-startup "dunst -conf ~/.config/dunst/dunstrc"
@@ -183,6 +184,7 @@ binds {
     Mod+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+B hotkey-overlay-title="Open Browser: brave" { spawn "brave"; }
     Mod+R hotkey-overlay-title="Reload Waybar" { spawn-sh "bash ~/scripts/waybar.sh"; }
+    Mod+W hotkey-overlay-title="Set wallpaper" { spawn-sh "bash ~/scripts/wal.sh"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -253,7 +255,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    Mod+W { toggle-column-tabbed-display; }
+    Mod+Shift+W { toggle-column-tabbed-display; }
 
     // Actions to switch layouts.
     Mod+Space       { switch-layout "next"; }

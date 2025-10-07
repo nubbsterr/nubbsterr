@@ -15,7 +15,16 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- plenary.nvim: Required dependency for Telescope
   { "nvim-lua/plenary.nvim" },
-
+  -- Markdown viewer for neovim!
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+  },
   -- Telescope: Fuzzy finder
   {
     "nvim-telescope/telescope.nvim",
@@ -31,7 +40,6 @@ require("lazy").setup({
       })
     end,
   },
-
   -- nvim-treesitter: Modern syntax highlighting and parsing
   {
     "nvim-treesitter/nvim-treesitter",
@@ -43,6 +51,7 @@ require("lazy").setup({
       })
     end,
   },
+  -- Status line!
   {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },  -- Icons
@@ -64,6 +73,7 @@ require("lazy").setup({
     })
     end,
   },
+  -- See hex colours in neovim
   {
     "norcalli/nvim-colorizer.lua",
     config = function()

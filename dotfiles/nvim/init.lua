@@ -11,6 +11,9 @@ vim.cmd('colorscheme habamax')
 -- Transparency
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 
+-- Spellchecking
+vim.cmd(':setlocal spell spelllang=en_us')
+
 -- Keybinds
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>wq", "<cmd>wq<cr>", { desc = "Save and exit current buffer" })

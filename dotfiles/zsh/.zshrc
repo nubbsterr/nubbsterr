@@ -8,6 +8,7 @@ SAVEHIST=10000
 setopt HIST_IGNORE_DUPS     # Ignore duplicate commands in history
 setopt HIST_IGNORE_SPACE    # Ignore commands starting with a space
 setopt SHARE_HISTORY        # Share history across sessions
+setopt CORRECT              # Correct syntax errors with commands
 
 setopt PROMPT_SUBST         # Prompt expansion
 NEWLINE=$'\n'
@@ -15,6 +16,9 @@ PROMPT='%F{blue}%n@%m%f %B%~%b%f${NEWLINE}❯%f '
 
 # Initialize zoxide so it functions lul
 eval "$(zoxide init zsh)"
+
+# Fzf bindings for zsh
+source <(fzf --zsh)
 
 # Autosuggestions and syntax highlighting!
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -29,11 +33,14 @@ alias pac='sudo pacman -S'
 alias pacup='sudo pacman -Syu'
 alias pacrm='sudo pacman -Rns'
 alias pacclean='sudo pacman -Rns $(pacman -Qdtq)'
+alias pacsearch='pacman -Q | grep'
+alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m'
 alias gp='git push origin main'
 alias rcsync='rclone sync -P'
 alias src='source ~/.zshrc'
+alias zshrc='v ~/.zshrc'
 alias chwal='bash ~/scripts/wal.sh'
 
 # Allow nvim to be ran as sudo without breaking stuff + bat to get syntax highlighting on manpages
@@ -46,7 +53,8 @@ gcb() {
     gcc -Wextra -Wall -Werror "$1" -o "$filename" && "./$filename"
 }
 
-fastfetch
+# cuz uptime is important ye
+uptime
 
 # Show last day pacman -Syu ran; update every 2 days
 date_last_up=$(tac /var/log/pacman.log | grep -m 1 'full system upgrade' | cut -d ' ' -f 1 | tr -d '[]' | cut -d 'T' -f 1)
