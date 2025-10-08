@@ -5,21 +5,12 @@
 
 WALLS_DIR="$HOME/walls"
 
-SELECTED=$(find "$WALLS_DIR" -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -exec basename {} \; | fuzzel --dmenu --prompt "Select wallpaper: ")
-
-if [[ -z "$SELECTED" ]]; then
-    notify-send "No wallpaper selected."
-    exit 1
-fi
+SELECTED=$(find "$WALLS_DIR" -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -exec basename {} \; | fuzzel --dmenu --prompt "Select wallpaper: ") || exit 0
 
 WALLPAPER="$WALLS_DIR/$SELECTED"
 
-if [[ ! -f "$WALLPAPER" ]]; then
-    notify-send "Error: Selected wallpaper $WALLPAPER does not exist."
-    exit 1
-fi
-
-wal -i $WALLPAPER
+# only doing this cuz 1) looks pretty and 2) colourschemes are mega broken rn lul
+wal -i $WALLPAPER --theme tokyonight-moon
 if [[ $XDG_SESSION_DESKTOP != "Hyprland" ]]; then
     pkill swaybg
     swaybg -i $WALLPAPER -m fil &l

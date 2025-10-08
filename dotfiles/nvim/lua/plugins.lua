@@ -13,6 +13,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+        vim.cmd.colorscheme "tokyonight-moon"
+    end
+  },
   -- plenary.nvim: Required dependency for Telescope
   { "nvim-lua/plenary.nvim" },
   -- Markdown viewer for neovim!
@@ -58,7 +67,7 @@ require("lazy").setup({
   config = function()
     require("lualine").setup({
       options = {
-        theme = "codedark",  
+        theme = "tokyonight-moon",  
         section_separators = "",         
         component_separators = "",
       },

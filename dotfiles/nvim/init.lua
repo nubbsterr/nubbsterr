@@ -6,7 +6,7 @@ vim.opt.number = true         -- Show absolute line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.cursorline = true     
 vim.opt.termguicolors = true  -- Enable true color support (required for many themes and transparency)
-vim.cmd('colorscheme habamax')
+-- Colourscheme is set in plugins.lua!!!!!!!
 
 -- Transparency
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

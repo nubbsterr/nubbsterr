@@ -43,14 +43,12 @@ Below are some more AUR/Arch packages that I have for my setup, but aren't stric
 
 AUR:
 ```
-vesktop newscheck binaryninja-free
+ani-cli vesktop newscheck binaryninja-free code-marketplace
 ```
-
-**You do not need binja for a normal setup btw, it's just for RE lol.**
 
 **Note for newscheck, run `sudo usermod -a -G newscheck $USER` per the package note.**
 
 Arch packages:
 ```
-libreoffice-still hunspell hunspell-en_ca virtualbox virtualbox-host-dkms nvidia-dkms nvidia-utils mpv feh
+code libreoffice-still hunspell hunspell-en_ca virtualbox virtualbox-host-dkms nvidia-dkms nvidia-utils mpv feh
 ```

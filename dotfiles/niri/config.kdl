@@ -18,6 +18,12 @@ input {
         repeat-delay 200
         repeat-rate 35
     }
+    //touchpad {
+    //    tap
+        // accel-speed 0.2
+        // accel-profile "flat"
+        // scroll-factor 1.0
+    //}
     mouse {
         accel-speed 0.3
         accel-profile "flat"
@@ -95,10 +101,10 @@ layout {
 }
 // Add lines like this to spawn processes at startup.
 spawn-at-startup "waybar"
-spawn-at-startup "swaybg -i /home/nubb/walls/glow.png -m fill" 
-spawn-at-startup "swayidle -w timeout 270 'brightnessctl -s set 10' resume 'brightnessctl -r' timeout 300 'swaylock' timeout 330 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors && brightnessctl -r' timeout 1800 'systemctl suspend' before-sleep 'swaylock'" 
+spawn-at-startup "swaybg" "-i" "/home/nubb/walls/glow.png" "-m" "fill" 
+spawn-at-startup "swayidle" "-w" "timeout" "270" "brightnessctl -s set 10" "resume" "brightnessctl -r" "timeout" "300" "swaylock" "timeout" "330" "niri msg action power-off-monitors" "resume" "niri msg action power-on-monitors && brightnessctl -r" "timeout" "1800" "systemctl suspend" "before-sleep" "swaylock" 
 spawn-at-startup "sunsetr"
-spawn-at-startup "dunst -conf ~/.config/dunst/dunstrc"
+spawn-at-startup "dunst" "-conf" "~/.config/dunst/dunstrc"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -185,6 +191,8 @@ binds {
     Mod+B hotkey-overlay-title="Open Browser: brave" { spawn "brave"; }
     Mod+R hotkey-overlay-title="Reload Waybar" { spawn-sh "bash ~/scripts/waybar.sh"; }
     Mod+W hotkey-overlay-title="Set wallpaper" { spawn-sh "bash ~/scripts/wal.sh"; }
+    Mod+P hotkey-overlay-title="Power menu" { spawn-sh "bash ~/scripts/power.sh"; }
+    Mod+N hotkey-overlay-title="Notes menu" { spawn-sh "bash ~/scripts/note.sh"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -262,7 +270,7 @@ binds {
     Mod+Shift+Space { switch-layout "prev"; }
 
     Print { screenshot; }
-    Mod+Print { screenshot-window; }
+    Mod+Print { screenshot-screen; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
