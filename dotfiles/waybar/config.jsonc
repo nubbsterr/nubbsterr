@@ -7,7 +7,7 @@
     "spacing": 4,
     "modules-left": ["niri/workspaces", "custom/sep", "niri/window"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "custom/sep", "cpu", "custom/sep", "memory", "custom/sep", "wireplumber", "custom/sep", "custom/power", "custom/sep", "tray"],
+    "modules-right": ["network", "custom/sep", "cpu", "memory", "custom/sep", "wireplumber", "custom/sep", "tray"],
 
     "niri/workspaces": {
         "disable-scroll": true,
@@ -18,14 +18,9 @@
             "*" : 5
         }
     },
-    "hyprland/window" : {
+    "niri/window" : {
         "max-length": 40,
         "seperate-outputs": false
-    },
-    "custom/power": {
-        "format": "⏻",
-        "on-click": "bash ~/scripts/power.sh",
-        "tooltop": false
     },
     "custom/sep": {
         "format": "|",
@@ -47,17 +42,19 @@
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "Ethernet",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "max-length": "40",
+        "tooltip-format": "{signalStrength}%, {bandwidthUpBytes} Up | {bandwidthDownBytes} Down"
     },
     "cpu": {
-        "format": "CPU: {usage}% "
+        "format": "{usage}% "
     },
     "memory": {
-        "format": "Mem: {used:0.1f}G 󰍛",
+        "format": "{used:0.1f}G ",
         "tooltip-format": "Usage: {used:0.1f}G / {total:0.1f}G"
     },
     "tray": {
@@ -65,7 +62,7 @@
     }
 }
 
-/* 
+/*
 
 To have battery life, add:
 
@@ -75,7 +72,5 @@ To have battery life, add:
 }
 
 Also add battery module to modules-right at root 
-
 Then add #battery to the places where all the other modules are.
-
 */

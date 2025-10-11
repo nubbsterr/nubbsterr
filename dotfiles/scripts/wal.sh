@@ -9,12 +9,12 @@ SELECTED=$(find "$WALLS_DIR" -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.
 
 WALLPAPER="$WALLS_DIR/$SELECTED"
 
-# only doing this cuz 1) looks pretty and 2) colourschemes are mega broken rn lul
-wal -i $WALLPAPER --theme tokyonight-moon
+# haishoku backend needs python-setuptools from Extra + python-haishoku from AUR!
+wal -i $WALLPAPER -n --backend haishoku
 if [[ $XDG_SESSION_DESKTOP != "Hyprland" ]]; then
     pkill swaybg
     swaybg -i $WALLPAPER -m fil &l
-    notify-send "Wallpaper set using swaybg to $1."
+    notify-send "Wallpaper set using swaybg to $WALLPAPER."
 else
     hyprctl hyprpaper reload ,"$WALLPAPER"
     echo "preload = $(realpath $WALLPAPER)" > ~/.config/hypr/hyprpaper.conf

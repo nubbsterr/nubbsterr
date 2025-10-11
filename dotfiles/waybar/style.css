@@ -1,4 +1,4 @@
-/* pywal16 goodier */
+/* pywal goodies */
 @import url("file:///home/nubb/.cache/wal/colors-waybar.css");
 
 * {
@@ -6,15 +6,16 @@
     font-size: 16px;
     font-weight: bold;
 }
+
 window#waybar {
-    background: transparent; 
-    color: @foreground; 
+    background: alpha(@color0, 0.95);
+    color: @foreground;
 }
 
 .modules-left,
 .modules-right,
 .modules-center {
-    background: @background;
+    background: transparent;
     border-radius: 4px;
     margin: 4px 2px;
     padding: 0 5px;
@@ -22,42 +23,40 @@ window#waybar {
 
 #workspaces button {
     padding: 0 8px;
-    background: @background;
-    color: @foreground; 
-}
-
-#workspaces button:hover {
-    color: @color13; 
-}
-
-#workspaces button.active {
-    background: @background; 
-    color: @color5;
-    border-bottom: 2px solid @color5; 
-}
-
-#window, #clock, #network, #cpu, #memory, #wireplumber, #custom-power  {
-    padding: 0 10px;
     color: @foreground;
 }
 
+#workspaces button:hover {
+    color: @color3; 
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: @color3;
+    border-bottom: 2px solid @blue; 
+}
+
+#window, #clock, #network, #cpu, #memory, #wireplumber {
+    padding: 0 10px;
+}
+
 #network.disconnected {
-    color: @color13; 
+    color: @color9; 
 }
 
 #wireplumber.muted {
-    color: @color13; 
+    color: @color9; 
 }
 
 #tray {
     padding: 0 10px;
-    background: @color0;
 }
 
 #custom-sep {
+    color: @color7;
     padding: 0 5px;
 }
 
-#network:hover, #cpu:hover, #memory:hover, #wireplumber:hover, #clock:hover, #custom-power:hover {
-    color: @color13;
+#network:hover, #cpu:hover, #memory:hover, #wireplumber:hover, #clock:hover {
+    color: @color3;
 }

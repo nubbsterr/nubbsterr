@@ -18,13 +18,10 @@ $notes"
 selected=$(echo "$options" | fuzzel --dmenu -p "Select note [New note]: ") || exit 0
 
 if [[ "$selected" == "New note" ]]; then
-    mkdir ~/Notes # if not already made
-    full_new_dir="$HOME/Notes"
-
     note_name="$(date +'%Y-%m-%d')_note.md"
-    full_path="$full_new_dir/$note_name"
+    full_path="$full_dir/$note_name"
 
-    notify-send "New note created!"
+    notify-send "New note created in $full_dir!"
     foot -e nvim "$full_path"
 else
     notify-send "Editing note $selected!"

@@ -40,7 +40,7 @@ output "HDMI-A-1" {
 prefer-no-csd
 
 layout {
-    gaps 5
+    gaps 8
     center-focused-column "never"
 
     preset-column-widths {
@@ -102,7 +102,7 @@ layout {
 // Add lines like this to spawn processes at startup.
 spawn-at-startup "waybar"
 spawn-at-startup "swaybg" "-i" "/home/nubb/walls/glow.png" "-m" "fill" 
-spawn-at-startup "swayidle" "-w" "timeout" "270" "brightnessctl -s set 10" "resume" "brightnessctl -r" "timeout" "300" "swaylock" "timeout" "330" "niri msg action power-off-monitors" "resume" "niri msg action power-on-monitors && brightnessctl -r" "timeout" "1800" "systemctl suspend" "before-sleep" "swaylock" 
+spawn-at-startup "swayidle" "-w" "timeout" "270" "brightnessctl -s set 10" "resume" "brightnessctl -r" "timeout" "300" "swaylock -f" "timeout" "330" "niri msg actions power-off monitors" "resume" "niri msg action power-on-monitors && brightnessctl -r" "timeout" "1800" "systemctl suspend" "before-sleep" "swaylock -f" 
 spawn-at-startup "sunsetr"
 spawn-at-startup "dunst" "-conf" "~/.config/dunst/dunstrc"
 
@@ -193,6 +193,7 @@ binds {
     Mod+W hotkey-overlay-title="Set wallpaper" { spawn-sh "bash ~/scripts/wal.sh"; }
     Mod+P hotkey-overlay-title="Power menu" { spawn-sh "bash ~/scripts/power.sh"; }
     Mod+N hotkey-overlay-title="Notes menu" { spawn-sh "bash ~/scripts/note.sh"; }
+    Mod+S hotkey-overlay-title="Script menu" { spawn-sh "bash ~/scripts/pickscript.sh"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.

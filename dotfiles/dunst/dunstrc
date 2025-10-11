@@ -31,24 +31,24 @@
 
     browser = /usr/bin/xdg-open  # opens url in default browser
 
-    background = "#2e2e2e"
-    foreground = "#dddddd"
-
     frame_width = 2
     separator_height = 2  # Height of separator between notifications.
     separator_color = frame  
     sort = yes
 
 [urgency_low]
-    background = "#333333"
+    background = "#222222"
+    foreground = "#aaaaaa"
     timeout = 5
 
 [urgency_normal]
-    background = "#333333"
+    background = "#333333"    # neutral gray background
+    foreground = "#ffffff"
     timeout = 8
 
 [urgency_critical]
-    background = "#550000"
+    background = "#550000"    # dark red background
+    foreground = "#ffffff"
     frame_color = "#ff0000"
     timeout = 0
     default_icon = dialog-warning

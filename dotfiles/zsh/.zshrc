@@ -11,8 +11,7 @@ setopt SHARE_HISTORY        # Share history across sessions
 setopt CORRECT              # Correct syntax errors with commands
 
 setopt PROMPT_SUBST         # Prompt expansion
-NEWLINE=$'\n'
-PROMPT='%F{blue}%n@%m%f %B%~%b%f${NEWLINE}❯%f '
+PROMPT='%F{blue}%B%~%b%f ❯%f '
 
 # Initialize zoxide so it functions lul
 eval "$(zoxide init zsh)"
@@ -54,7 +53,8 @@ gcb() {
 }
 
 # cuz uptime is important ye
-uptime
+echo " $(uptime -p)"
+echo "󰣇 $(uname -r)"
 
 # Show last day pacman -Syu ran; update every 2 days
 date_last_up=$(tac /var/log/pacman.log | grep -m 1 'full system upgrade' | cut -d ' ' -f 1 | tr -d '[]' | cut -d 'T' -f 1)
