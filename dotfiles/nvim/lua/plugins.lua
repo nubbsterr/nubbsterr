@@ -13,6 +13,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- Pywal integration
+    {
+        'uZer/pywal16.nvim',
+        config = function()
+            vim.cmd.colorscheme("pywal16")
+        end,
+    },
     -- LSP configurations defaults
     {
         "neovim/nvim-lspconfig",
@@ -81,15 +88,6 @@ require("lazy").setup({
             })
         end,
     },
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-        config = function()
-            vim.cmd.colorscheme "minisummer"
-        end
-    },
     -- plenary.nvim: Required dependency for Telescope
     { "nvim-lua/plenary.nvim" },
     -- Markdown viewer for neovim!
@@ -135,7 +133,7 @@ require("lazy").setup({
         config = function()
             require("lualine").setup({
                 options = {
-                    theme = "codedark",
+                    theme = "auto",
                     section_separators = "",
                     component_separators = "",
                 },

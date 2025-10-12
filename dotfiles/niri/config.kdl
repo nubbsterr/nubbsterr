@@ -60,8 +60,8 @@ layout {
     
     // You can change how the focus ring looks.
     focus-ring {
-        off 
         // How many logical pixels the ring extends out from the windows.
+        off
         width 2
 
         // Colors can be set in a variety of ways:
@@ -75,11 +75,13 @@ layout {
         // Color of the ring on inactive monitors.
         // The focus ring only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
-        inactive-color "#505050"
+        inactive-color "#00000000"
     }
 
     border {
-        off
+        width 1 
+        active-gradient from="#f38ba8" to="#f9e2af" angle=45 relative-to="workspace-view"
+        inactive-gradient from="#585b70" to="#7f849c" angle=45 relative-to="workspace-view"
     }
 
     shadow {
@@ -100,11 +102,11 @@ layout {
     }
 }
 // Add lines like this to spawn processes at startup.
+// fun fact u can run hyrpland tools in niri!!!!!!!!!!
 spawn-at-startup "waybar"
-spawn-at-startup "swaybg" "-i" "/home/nubb/walls/glow.png" "-m" "fill" 
-spawn-at-startup "swayidle" "-w" "timeout" "270" "brightnessctl -s set 10" "resume" "brightnessctl -r" "timeout" "300" "swaylock -f" "timeout" "330" "niri msg actions power-off monitors" "resume" "niri msg action power-on-monitors && brightnessctl -r" "timeout" "1800" "systemctl suspend" "before-sleep" "swaylock -f" 
+spawn-at-startup "hyprpaper" 
+spawn-at-startup "hypridle"
 spawn-at-startup "sunsetr"
-spawn-at-startup "dunst" "-conf" "~/.config/dunst/dunstrc"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -124,10 +126,40 @@ window-rule {
     open-maximized true
 }
 
-// Then, for Alacritty, set open-maximized back to false.
+// Then, for terminal, set open-maximized back to false.
 window-rule {
     match app-id="foot"
     open-maximized false
+}
+
+// Block out mako notifications from screencasts.
+layer-rule {
+    match namespace="^notifications$"
+
+    block-out-from "screencast"
+}
+
+// Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    border {
+        inactive-color "#7d0d2d"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
 }
 
 
@@ -184,10 +216,9 @@ binds {
     // Mod+/ shows a list of important hotkeys.
     Mod+Slash { show-hotkey-overlay; }
 
-    // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+Shift+L hotkey-overlay-title="Lock the Screen: swaylock-effects" { spawn-sh "bash ~/scripts/lock.sh"; }
     Mod+B hotkey-overlay-title="Open Browser: brave" { spawn "brave"; }
     Mod+R hotkey-overlay-title="Reload Waybar" { spawn-sh "bash ~/scripts/waybar.sh"; }
     Mod+W hotkey-overlay-title="Set wallpaper" { spawn-sh "bash ~/scripts/wal.sh"; }
@@ -213,7 +244,7 @@ binds {
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
-    Mod+Q repeat=false { close-window; }
+    Mod+Q { close-window; }
 
     Mod+J  { focus-column-left; }
     Mod+K  { focus-window-down; }
@@ -272,6 +303,9 @@ binds {
 
     Print { screenshot; }
     Mod+Print { screenshot-screen; }
+
+    Mod+Shift+S hotkey-overlay-title="Set dynamic cast window when recording" { set-dynamic-cast-window; }
+    Mod+Shift+X hotkey-overlay-title="Clear dynamic cast window." { clear-dynamic-cast-target; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here

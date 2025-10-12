@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Prompt for the base directory relative to $HOME for searching notes
-base_dir=$(echo "$(ls $HOME)" | fuzzel --dmenu -p "Directory: ") || exit 0
+base_dir=$(echo "$(ls $HOME)" | fuzzel --dmenu -p "Directory where notes are: ") || exit 0
 full_dir="$HOME/$base_dir"
 
 # Ensure the directory exists

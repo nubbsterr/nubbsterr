@@ -6,8 +6,8 @@
     "height": 30,
     "spacing": 4,
     "modules-left": ["niri/workspaces", "custom/sep", "niri/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["network", "custom/sep", "cpu", "memory", "custom/sep", "wireplumber", "custom/sep", "tray"],
+    "modules-center": ["clock", "custom/weather"],
+    "modules-right": ["network", "custom/sep", "cpu", "memory", "custom/sep", "custom/gpu", "custom/sep", "wireplumber", "custom/sep", "tray"],
 
     "niri/workspaces": {
         "disable-scroll": true,
@@ -21,6 +21,17 @@
     "niri/window" : {
         "max-length": 40,
         "seperate-outputs": false
+    },
+    "custom/gpu": {
+        "format": "{}",
+        "exec": "bash ~/scripts/gpu.sh",
+        "interval": 10
+    },
+    "custom/weather": {
+        "interval": 3600,
+        "exec": "curl 'wttr.in/Kitchener?format=1'",
+        "format": "({})",
+        "tooltip": "lovely weather today"
     },
     "custom/sep": {
         "format": "|",

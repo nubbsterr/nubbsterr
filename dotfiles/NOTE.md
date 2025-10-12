@@ -7,19 +7,19 @@
 Some Arch packages to install ahead of using my **HYPRLAND** setup (some are QoL and not strictly required!):
 
 ```bash
-sudo pacman -S python-setuptools zoxide htop tree bat fastfetch waybar fuzzel foot hyprland sunsetr hyprlock hyprpaper hypridle neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages dunst unzip 7zip git neovim
+sudo pacman -S python-setuptools zoxide htop tree bat fastfetch waybar fuzzel foot hyprland sunsetr hyprlock hyprpaper hypridle xdg-desktop-portal-hyprland neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git neovim
 ```
 
 If you want to run my Niri dots, install the following:
 
 ```bash
-sudo pacman -S niri swaybg swayidle xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal
+sudo pacman -S niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal
 ```
 
 And if you wanna rock LSPs with my nvim config:
 
 ```bash
-sudo pacman -S bash-language-server lua-language-server marksman clang pyright
+sudo pacman -S bash-language-server clang pyright
 ```
 
 > [!NOTE]

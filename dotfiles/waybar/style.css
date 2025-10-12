@@ -8,14 +8,14 @@
 }
 
 window#waybar {
-    background: alpha(@color0, 0.95);
+    background: transparent;
     color: @foreground;
 }
 
 .modules-left,
 .modules-right,
 .modules-center {
-    background: transparent;
+    background: alpha(@color0, 0.95);
     border-radius: 4px;
     margin: 4px 2px;
     padding: 0 5px;
@@ -36,16 +36,16 @@ window#waybar {
     border-bottom: 2px solid @blue; 
 }
 
-#window, #clock, #network, #cpu, #memory, #wireplumber {
+#window, #clock, #custom-gpu, #custom-weather, #network, #cpu, #memory, #wireplumber {
     padding: 0 10px;
 }
 
 #network.disconnected {
-    color: @color9; 
+    color: @color12; 
 }
 
 #wireplumber.muted {
-    color: @color9; 
+    color: @color12; 
 }
 
 #tray {
@@ -57,6 +57,6 @@ window#waybar {
     padding: 0 5px;
 }
 
-#network:hover, #cpu:hover, #memory:hover, #wireplumber:hover, #clock:hover {
+#network:hover, #cpu:hover, #memory:hover, #wireplumber:hover, #clock:hover, #custom-weather:hover, #custom-gpu:hover {
     color: @color3;
 }
