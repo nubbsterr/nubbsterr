@@ -23,16 +23,20 @@ source <(fzf --zsh)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Allow nvim to be ran as sudo without breaking stuff + bat to get syntax highlighting on manpages
+export EDITOR='nvim'
+export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman --theme=ansi'"
+
 alias ls='ls --color=auto'
 alias cd='z'
 alias grep='grep --color=auto'
 alias {vim,vi,v}='nvim'
 alias {bat,cat}='bat --theme=ansi --style=numbers,changes'
-alias pac='sudo pacman -S'
+alias pac='pacman -Slq | fzf --multi --preview "pacman -Si {1}" | xargs -ro sudo pacman -S'
 alias pacup='sudo pacman -Syu'
-alias pacrm='sudo pacman -Rns'
+alias pacrm='pacman -Qq | fzf --multi --preview "pacman -Qi {1}" | xargs -ro sudo pacman -Rns'
 alias pacclean='sudo pacman -Rns $(pacman -Qdtq)'
-alias pacsearch='pacman -Q | grep'
+alias pacsearch='pacman -Qq | fzf --preview "pacman -Qi {1}"'
 alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m'
@@ -40,11 +44,7 @@ alias gp='git push origin main'
 alias rcsync='rclone sync -P'
 alias src='source ~/.zshrc'
 alias zshrc='v ~/.zshrc'
-alias chwal='bash ~/scripts/wal.sh'
-
-# Allow nvim to be ran as sudo without breaking stuff + bat to get syntax highlighting on manpages
-export EDITOR='nvim'
-export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman --theme=ansi'"
+alias manf='man -k . | sort | fzf | awk "{print \$1}" | xargs man'
 
 # gcb = gcc build ig lol
 gcb() {
@@ -66,6 +66,9 @@ if [ -n "$date_last_up" ]; then
 else
     echo "No full system update found in pacman transaction logs!!!!!"
 fi   
+
+# Show unneeded pkgs
+echo "You have $(pacman -Qdtq | wc -l) unneeded packages. Uninstall w/ pacclean."
 
 # For git configuration for secrets, do the following
 # git-credential-manager configure
