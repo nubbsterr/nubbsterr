@@ -1,0 +1,82 @@
+// NOTE: if you wish to use this with yprland, make sure to replace all instances of "niri" with hyprland!
+
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": ["niri/workspaces", "custom/sep", "niri/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "custom/sep", "cpu", "memory", "custom/sep", "custom/gpu", "custom/sep", "wireplumber", "custom/sep", "tray"],
+
+    "niri/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "*" : 5
+        }
+    },
+    "niri/window" : {
+        "max-length": 40,
+        "seperate-outputs": false
+    },
+    "custom/gpu": {
+        "format": "{}",
+        "exec": "bash ~/scripts/gpu.sh",
+        "interval": 10,
+        "on-click": "foot nvtop"
+    },
+    "custom/sep": {
+        "format": "|",
+        "interval": 0,
+        "tooltip": false
+    },
+    "clock": {
+        "timezone": "Canada/Eastern",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%H:%M}",
+        "format": "{:%a, %B %d %I:%M %p}"
+    },
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "Ethernet",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "max-length": "40",
+        "tooltip-format": "{signalStrength}%, {bandwidthUpBytes} Up | {bandwidthDownBytes} Down"
+    },
+    "cpu": {
+        "format": "{usage}% "
+    },
+    "memory": {
+        "format": "{used:0.1f}G ",
+        "tooltip-format": "Usage: {used:0.1f}G / {total:0.1f}G"
+    },
+    "tray": {
+        "spacing": 10
+    }
+}
+
+/*
+
+To have battery life, add:
+
+"battery": {
+    "format": "󰁹 {capacity}%",
+    "format-charging": "󰂄 {capacity}%"
+}
+
+Also add battery module to modules-right at root 
+Then add #battery to the places where all the other modules are.
+*/

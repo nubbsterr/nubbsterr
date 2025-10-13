@@ -11,7 +11,8 @@ setopt SHARE_HISTORY        # Share history across sessions
 setopt CORRECT              # Correct syntax errors with commands
 
 setopt PROMPT_SUBST         # Prompt expansion
-PROMPT='%F{blue}%B%~%b%f ❯%f '
+PROMPT='❯ '
+RPROMPT='%F{green}%B%~%b%f'
 
 # Initialize zoxide so it functions lul
 eval "$(zoxide init zsh)"
@@ -35,8 +36,10 @@ alias {bat,cat}='bat --theme=ansi --style=numbers,changes'
 alias pac='pacman -Slq | fzf --multi --preview "pacman -Si {1}" | xargs -ro sudo pacman -S'
 alias pacup='sudo pacman -Syu'
 alias pacrm='pacman -Qq | fzf --multi --preview "pacman -Qi {1}" | xargs -ro sudo pacman -Rns'
-alias pacclean='sudo pacman -Rns $(pacman -Qdtq)'
-alias pacsearch='pacman -Qq | fzf --preview "pacman -Qi {1}"'
+alias pacrns='sudo pacman -Rns $(pacman -Qdtq)'
+alias pacgrep='pacman -Qq | fzf --preview "pacman -Qi {1}"'
+alias aur='paru -Slq | fzf --multi --preview "paru -Si {1}" | xargs -ro paru -S'
+alias aurm='paru -Qq | fzf --multi --preview "paru -Qi {1}" | xargs -ro paru -Rns'
 alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m'
@@ -45,6 +48,7 @@ alias rcsync='rclone sync -P'
 alias src='source ~/.zshrc'
 alias zshrc='v ~/.zshrc'
 alias manf='man -k . | sort | fzf | awk "{print \$1}" | xargs man'
+alias hyprpicker='hyprpicker -a'
 
 # gcb = gcc build ig lol
 gcb() {
@@ -52,8 +56,12 @@ gcb() {
     gcc -Wextra -Wall -Werror "$1" -o "$filename" && "./$filename"
 }
 
-# cuz uptime is important ye
-echo " $(uptime -p)"
+# cuz uptime and sleep is important ye
+if [[ "$(date +%H)" > 22 ]]; then
+    echo " $(uptime -p) - Go to sleep soon!"
+else
+    echo " $(uptime -p)"
+fi
 echo "󰣇 $(uname -r)"
 
 # Show last day pacman -Syu ran; update every 2 days
@@ -62,13 +70,11 @@ day=$(date -d $date_last_up +"%A, %B %d")
 if [ -n "$date_last_up" ]; then
     echo ""
     echo "Last upgrade was on $(date -d $date_last_up +'%A, %B %d')!"
-    echo "Check Arch news w/ 'newcheck read -p bat' before updating!\n"
 else
     echo "No full system update found in pacman transaction logs!!!!!"
 fi   
 
-# Show unneeded pkgs
-echo "You have $(pacman -Qdtq | wc -l) unneeded packages. Uninstall w/ pacclean."
+echo "You have $(pacman -Qdtq | wc -l) unneeded packages.\n"
 
 # For git configuration for secrets, do the following
 # git-credential-manager configure

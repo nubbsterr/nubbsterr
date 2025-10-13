@@ -1,87 +1,113 @@
-// NOTE: if you wish to use this with yprland, make sure to replace all instances of "niri" with hyprland!
-
 {
-    "layer": "top",
-    "position": "top",
-    "height": 30,
-    "spacing": 4,
-    "modules-left": ["niri/workspaces", "custom/sep", "niri/window"],
-    "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["network", "custom/sep", "cpu", "memory", "custom/sep", "custom/gpu", "custom/sep", "wireplumber", "custom/sep", "tray"],
-
-    "niri/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "format": "{icon}",
-        "on-click": "activate",
-        "persistent-workspaces": {
-            "*" : 5
-        }
-    },
-    "niri/window" : {
-        "max-length": 40,
-        "seperate-outputs": false
-    },
-    "custom/gpu": {
-        "format": "{}",
-        "exec": "bash ~/scripts/gpu.sh",
-        "interval": 10
-    },
-    "custom/weather": {
-        "interval": 3600,
-        "exec": "curl 'wttr.in/Kitchener?format=1'",
-        "format": "({})",
-        "tooltip": "lovely weather today"
-    },
-    "custom/sep": {
-        "format": "|",
-        "interval": 0,
-        "tooltip": false
-    },
-    "clock": {
-        "timezone": "Canada/Eastern",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%H:%M}",
-        "format": "{:%a, %B %d %I:%M %p}"
-    },
-    "wireplumber": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰝟 Muted",
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-    },
-    "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "Ethernet",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "max-length": "40",
-        "tooltip-format": "{signalStrength}%, {bandwidthUpBytes} Up | {bandwidthDownBytes} Down"
-    },
-    "cpu": {
+  "layer": "top",
+  "position": "top",
+  "autohide": true,
+  "autohide-blocked": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  /* === Modules Order === */
+  "modules-left": [
+    "custom/archicon",
+    "clock",
+    "cpu",
+    "memory",
+    "custom/gpu"
+  ],
+  "modules-center": [
+    "niri/workspaces"
+  ],
+  "modules-right": [
+    "wlr/taskbar",
+    "idle_inhibitor",
+    "pulseaudio/slider",
+    "pulseaudio",
+    "network"
+  ],
+  /* === Modules Left === */
+  "custom/archicon": {
+    "format": "",
+    "on-click": "bash ~/scripts/power.sh",
+    "tooltip": false
+  },
+  "clock": {
+    "timezone": "Canada/Eastern",
+    "tooltip-format": "{calendar}",
+    "format": "{:%a, %B %d %I:%M %p}",
+    "format-alt": "{:%H:%M %p}",
+    "calendar": {
+      "mode": "month"
+    }
+  },
+  "cpu": {
         "format": "{usage}% "
-    },
-    "memory": {
+  },
+  "memory": {
         "format": "{used:0.1f}G ",
         "tooltip-format": "Usage: {used:0.1f}G / {total:0.1f}G"
+  },
+  "custom/gpu": {
+    "format": "{}",
+    "exec": "bash ~/scripts/gpu.sh",
+    "interval": 10,
+    "on-click": "foot nvtop"
+  },
+  /* === Modules Center === */
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": ""
     },
-    "tray": {
-        "spacing": 10
+    "persistent-workspaces": {
+      "*": 3
+    },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "show-special": true
+  },
+  /* === Modules Right === */
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "all-outputs": true,
+    "active-first": true,
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "fuzzel"
+    ]
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
     }
+  },
+  "pulseaudio/slider": {
+    "format": "{volume}%",
+    "format-muted": " MUTE",
+    "step": 5,
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": " {format_source}",
+    "format-icons": {
+      "default": [
+        "",
+        ""
+      ]
+    }
+  },
+  "network": {
+    "format": "{essid}",
+    "format-ethernet": "{ifname} 󰈀",
+    "format-disconnected": " ",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },
 }
-
-/*
-
-To have battery life, add:
-
-"battery": {
-    "format": "󰁹 {capacity}%",
-    "format-charging": "󰂄 {capacity}%"
-}
-
-Also add battery module to modules-right at root 
-Then add #battery to the places where all the other modules are.
-*/

@@ -1,0 +1,62 @@
+/* pywal goodies */
+@import url("file:///home/nubb/.cache/wal/colors-waybar.css");
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: transparent;
+    color: @foreground;
+}
+
+.modules-left,
+.modules-right,
+.modules-center {
+    background: alpha(@color0, 0.95);
+    border-radius: 4px;
+    margin: 4px 2px;
+    padding: 0 5px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: @foreground;
+}
+
+#workspaces button:hover {
+    color: @color3; 
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: @color3;
+    border-bottom: 2px solid @blue; 
+}
+
+#window, #clock, #custom-gpu, #network, #cpu, #memory, #wireplumber {
+    padding: 0 10px;
+}
+
+#network.disconnected {
+    color: @color12; 
+}
+
+#wireplumber.muted {
+    color: @color12; 
+}
+
+#tray {
+    padding: 0 10px;
+}
+
+#custom-sep {
+    color: @color7;
+    padding: 0 5px;
+}
+
+#network:hover, #cpu:hover, #memory:hover, #wireplumber:hover, #clock:hover, #custom-gpu:hover {
+    color: @color3;
+}

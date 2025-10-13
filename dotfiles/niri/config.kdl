@@ -79,7 +79,7 @@ layout {
     }
 
     border {
-        width 1 
+        width 1
         active-gradient from="#f38ba8" to="#f9e2af" angle=45 relative-to="workspace-view"
         inactive-gradient from="#585b70" to="#7f849c" angle=45 relative-to="workspace-view"
     }
@@ -104,7 +104,7 @@ layout {
 // Add lines like this to spawn processes at startup.
 // fun fact u can run hyrpland tools in niri!!!!!!!!!!
 spawn-at-startup "waybar"
-spawn-at-startup "hyprpaper" 
+spawn-at-startup "swaybg" "-i" "/home/nubb/walls/G0vq4JebcAINMK1.jpeg" "-m" "fill" 
 spawn-at-startup "hypridle"
 spawn-at-startup "sunsetr"
 

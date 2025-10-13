@@ -1,19 +1,17 @@
 > [!NOTE]
-> My NixOS config is outdated so don't use it; you can take the packages and other settings from it but do NOT copy over the NixOS version setting as that may brick stuff!
-
-> [!NOTE]
 > If you ever need wallpapers go here for some cool ones: https://github.com/dharmx/walls
+> Wallhaven is also pretty nice.
 
 Some Arch packages to install ahead of using my **HYPRLAND** setup (some are QoL and not strictly required!):
 
 ```bash
-sudo pacman -S python-setuptools zoxide htop tree bat fastfetch waybar fuzzel foot hyprland sunsetr hyprlock hyprpaper hypridle xdg-desktop-portal-hyprland neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git neovim
+sudo pacman -S python-setuptools zoxide htop tree bat waybar fuzzel foot hyprland sunsetr hyprlock hyprpaper hypridle xdg-desktop-portal-hyprland neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git neovim
 ```
 
 If you want to run my Niri dots, install the following:
 
 ```bash
-sudo pacman -S niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal
+sudo pacman -S niri swaybg xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal
 ```
 
 And if you wanna rock LSPs with my nvim config:
@@ -22,10 +20,11 @@ And if you wanna rock LSPs with my nvim config:
 sudo pacman -S bash-language-server clang pyright
 ```
 
-> [!NOTE]
-> `xdg-desktop-portal-gnome` legit isn't installing for me soooooooooo screensharing just won't work LOL. If you want Hyprland screensharding, get `xdg-desktop-portal` and `xdg-desktop-portal-hyprland`.
-> [!NOTE]
-> `niri validate` is a lil broken and i'm like 90% certain the Wiki docs on GitHub are out-of-date lol.
+---
+
+Additionally, I am trying out [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) on Niri, as a pseudo-DE environment. Waybar and stuff is nice but having extra goodies never hurts and it's always possible to just uninstall everything and go back to normal.
+
+Just follow installation instructions and it's ggs.
 
 ---
 

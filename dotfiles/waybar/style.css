@@ -1,62 +1,154 @@
 /* pywal goodies */
 @import url("file:///home/nubb/.cache/wal/colors-waybar.css");
 
+/* -- Global rules -- */
 * {
-    font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 16px;
-    font-weight: bold;
+  border: none;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 16px;
+  min-height: 10px;
 }
 
 window#waybar {
-    background: transparent;
-    color: @foreground;
+  background: transparent;
 }
 
-.modules-left,
-.modules-right,
-.modules-center {
-    background: alpha(@color0, 0.95);
-    border-radius: 4px;
-    margin: 4px 2px;
-    padding: 0 5px;
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+/* - Genera rules for visible modules -- */
+#custom-archicon,
+#clock,
+#cpu,
+#memory,
+#custom-gpu,
+#idle_inhibitor,
+#pulseaudio,
+#pulseaudio-slider,
+#network,
+#language {
+  color: @foreground;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: none;
+}
+
+/* Separation to the left */
+#custom-archicon,
+#cpu,
+#idle_inhibitor {
+  margin-left: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* Separation to the rigth */
+#clock, #custom-gpu {
+  margin-right: 5px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* -- Specific styles -- */
+
+/* Modules left */
+#custom-archicon {
+  font-size: 20px;
+  color: #89B4FA;
+  background: @background;
+  padding-right: 17px;
+}
+
+#custom-archicon:hover {
+    color: #89B8FF;
+}
+
+#clock, #cpu, #memory, #custom-gpu {
+    color: @foreground;
+    background: @background;
+}
+
+/* Modules center */
+#workspaces {
+  background: alpha(@background, 0.5);
+  border-radius: 10px;
+  margin: 6px 5px;
+  padding: 0px 6px;
 }
 
 #workspaces button {
-    padding: 0 8px;
-    color: @foreground;
-}
-
-#workspaces button:hover {
-    color: @color3; 
-    background: transparent;
+  color: @color1;
+  background: transparent;
+  padding: 4px 4px;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
 #workspaces button.active {
-    color: @color3;
-    border-bottom: 2px solid @blue; 
+  color: @color2;
+  text-shadow: 0 0 4px @background;
 }
 
-#window, #clock, #custom-gpu, #custom-weather, #network, #cpu, #memory, #wireplumber {
-    padding: 0 10px;
+#workspaces button:hover {
+  color: @color4;
 }
 
-#network.disconnected {
-    color: @color12; 
+#workspaces button.active:hover {}
+
+/* Modules right */
+#taskbar {
+  background: alpha(@background, 0.5);
+  border-radius: 10px;
+  padding: 0px 5px;
+  margin: 6px 5px;
 }
 
-#wireplumber.muted {
-    color: @color12; 
+#taskbar button {
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
-#tray {
-    padding: 0 10px;
+#taskbar button.active {
+  background: alpha(@background, 0.5);
 }
 
-#custom-sep {
-    color: @color7;
-    padding: 0 5px;
+#taskbar button:hover {
+  background: alpha(@background, 0.5);
 }
 
-#network:hover, #cpu:hover, #memory:hover, #wireplumber:hover, #clock:hover, #custom-weather:hover, #custom-gpu:hover {
-    color: @color3;
+#idle_inhibitor {
+  background: @color2;
+  color: @background;
+  padding-right: 15px;
+}
+
+#pulseaudio {
+  min-width: 55px;
+  color: @foreground;
+  background: @background;
+}
+
+#pulseaudio-slider {
+  color: @background;
+  background: @color2;
+  min-width: 50px;
+}
+
+#pulseaudio-slider slider {}
+
+#pulseaudio-slider trough {
+    background-color: @background;
+}
+#pulseaudio-slider highlight {
+    background-color: @green;
+}
+
+#network {
+  background: @background;
+  color: @foreground;
+  padding-right: 13px;
 }
