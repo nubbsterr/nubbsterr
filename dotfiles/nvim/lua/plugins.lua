@@ -20,39 +20,42 @@ require("lazy").setup({
             vim.cmd.colorscheme("pywal16")
         end,
     },
-    -- LSP configurations defaults
+    -- file explorer
     {
-        "neovim/nvim-lspconfig",
-        dependencies = { "hrsh7th/cmp-nvim-lsp" },
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
         config = function()
-            local lspconfig = require("lspconfig")
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
-    
-            local on_attach = function(client, bufnr)
-                local opts = { buffer = bufnr, noremap = true, silent = true }
-                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-                vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-                vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-            end
-        
-            -- will change to vim.lsp once guides come out ig
-            lspconfig.bashls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig.pyright.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig.clangd.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
+            require("nvim-tree").setup {}
         end,
     },
+    -- tabs in nvim
+    { 
+        'romgrk/barbar.nvim',
+        dependencies = {
+            'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+        },
+        init = function() vim.g.barbar_auto_setup = false end,
+        opts = {
+        -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+            animation = true,
+        -- insert_at_start = true,
+        -- …etc.
+        },
+        version = '^1.0.0', -- optional: only update when a new 1.x version is released
+    },
+    -- because vim.lsp is complete trash
+    {
+        'mrcjkb/rustaceanvim',
+        version = '^6', -- Recommended
+        lazy = false, -- This plugin is already lazy
+    },
+    -- lspconfig trash
+    { "neovim/nvim-lspconfig", },
     -- Autocompletion with nvim-cmp
     {
         "hrsh7th/nvim-cmp",

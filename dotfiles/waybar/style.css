@@ -23,6 +23,7 @@ window#waybar.hidden {
 #cpu,
 #memory,
 #custom-gpu,
+#privacy,
 #idle_inhibitor,
 #pulseaudio,
 #pulseaudio-slider,
@@ -39,7 +40,7 @@ window#waybar.hidden {
 /* Separation to the left */
 #custom-archicon,
 #cpu,
-#idle_inhibitor {
+#privacy {
   margin-left: 5px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -57,7 +58,7 @@ window#waybar.hidden {
 /* Modules left */
 #custom-archicon {
   font-size: 20px;
-  color: #89B4FA;
+  color: @color5;
   background: @background;
   padding-right: 17px;
 }
@@ -87,7 +88,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-  color: @color2;
+  color: @color5;
   text-shadow: 0 0 4px @background;
 }
 
@@ -120,8 +121,13 @@ window#waybar.hidden {
   background: alpha(@background, 0.5);
 }
 
+#privacy {
+  background: @color5;
+  color: @background;
+}
+
 #idle_inhibitor {
-  background: @color2;
+  background: @color5;
   color: @background;
   padding-right: 15px;
 }
@@ -134,7 +140,7 @@ window#waybar.hidden {
 
 #pulseaudio-slider {
   color: @background;
-  background: @color2;
+  background: @color5;
   min-width: 50px;
 }
 

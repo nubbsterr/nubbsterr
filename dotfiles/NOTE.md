@@ -5,7 +5,7 @@
 Some Arch packages to install ahead of using my **HYPRLAND** setup (some are QoL and not strictly required!):
 
 ```bash
-sudo pacman -S python-setuptools zoxide htop tree bat waybar fuzzel foot hyprland sunsetr hyprlock hyprpaper hypridle xdg-desktop-portal-hyprland neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git neovim
+sudo pacman -S fzf zsh python-setuptools zoxide nvtop htop bat waybar fuzzel foot hyprland sunsetr hyprlock hyprpaper hypridle xdg-desktop-portal-hyprland neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git neovim
 ```
 
 If you want to run my Niri dots, install the following:
@@ -19,12 +19,6 @@ And if you wanna rock LSPs with my nvim config:
 ```bash
 sudo pacman -S bash-language-server clang pyright
 ```
-
----
-
-Additionally, I am trying out [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) on Niri, as a pseudo-DE environment. Waybar and stuff is nice but having extra goodies never hurts and it's always possible to just uninstall everything and go back to normal.
-
-Just follow installation instructions and it's ggs.
 
 ---
 

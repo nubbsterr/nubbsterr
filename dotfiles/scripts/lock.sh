@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# NOTE, not using this anymore, in favour of hyprlock
 
 # quite literally the default on github for swaylock-effects
 # src: https://github.com/mortie/swaylock-effects
