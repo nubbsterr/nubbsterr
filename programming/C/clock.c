@@ -15,9 +15,8 @@ int main() {
 
         // Arrow operator will deref the pointer p_time so we can then get the struct fields, if we do *p_time.field, then we get the field and then deref which is no good
         // zero pad everything so its all aligned ye
-        // carriage return will basically erase the line we're on, rather than using newline to print stuff, we can just chill on one line
-        // doesn't work for me tho and idk why
-        printf("\n%02d:%02d:%02d", p_time->tm_hour, p_time->tm_min, p_time->tm_sec);
+        printf("\r%02d:%02d:%02d", p_time->tm_hour, p_time->tm_min, p_time->tm_sec);
+        fflush(stdout);  // to flush the output buffer, on Linux this is needed for some reason lul
         sleep(1);
     }
 

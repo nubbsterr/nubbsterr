@@ -108,6 +108,7 @@ spawn-at-startup "swaybg" "-i" "/home/nubb/walls/G0vq4JebcAINMK1.jpeg" "-m" "fil
 spawn-at-startup "hypridle"
 spawn-at-startup "sunsetr"
 
+
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
@@ -218,8 +219,8 @@ binds {
 
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+Shift+L hotkey-overlay-title="Lock the Screen: swaylock-effects" { spawn-sh "bash ~/scripts/lock.sh"; }
-    Mod+B hotkey-overlay-title="Open Browser: brave" { spawn "brave"; }
+    Mod+Shift+L hotkey-overlay-title="Lock the Screen: swaylock-effects" { spawn "hyprlock"; }
+    Mod+B hotkey-overlay-title="Open Browser: zen" { spawn "zen-browser"; }
     Mod+R hotkey-overlay-title="Reload Waybar" { spawn-sh "bash ~/scripts/waybar.sh"; }
     Mod+W hotkey-overlay-title="Set wallpaper" { spawn-sh "bash ~/scripts/wal.sh"; }
     Mod+P hotkey-overlay-title="Power menu" { spawn-sh "bash ~/scripts/power.sh"; }
