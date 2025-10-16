@@ -7,7 +7,7 @@ My workflow/setup consists of:
     - Arch is currently for notetaking and my daily driver, whilst Windows is for gaming. I plan to get some rev tools (Detect-it-easy and Binja) on here sometime so I can do some crackme stuff here and there (suck at RE tho atm but we'll get there). 
 
 Dotfiles can be found [**here.**](https://github.com/nubbsterr/nubbsterr/tree/main/dotfiles)
-![Le rice](https://github.com/nubbsterr/nubbsterr/tree/main/rice.png)
+![Le rice](rice.png)
 
 My current activities are:
 * Grinding uni homework >:(
