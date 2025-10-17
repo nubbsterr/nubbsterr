@@ -20,18 +20,6 @@ require("lazy").setup({
             vim.cmd.colorscheme("pywal16")
         end,
     },
-    -- file explorer
-    {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        lazy = false,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        config = function()
-            require("nvim-tree").setup {}
-        end,
-    },
     -- tabs in nvim
     { 
         'romgrk/barbar.nvim',
@@ -47,12 +35,6 @@ require("lazy").setup({
         -- …etc.
         },
         version = '^1.0.0', -- optional: only update when a new 1.x version is released
-    },
-    -- because vim.lsp is complete trash
-    {
-        'mrcjkb/rustaceanvim',
-        version = '^6', -- Recommended
-        lazy = false, -- This plugin is already lazy
     },
     -- lspconfig trash
     { "neovim/nvim-lspconfig", },

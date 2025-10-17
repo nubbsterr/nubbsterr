@@ -104,10 +104,9 @@ layout {
 // Add lines like this to spawn processes at startup.
 // fun fact u can run hyrpland tools in niri!!!!!!!!!!
 spawn-at-startup "waybar"
-spawn-at-startup "swaybg" "-i" "/home/nubb/walls/G0vq4JebcAINMK1.jpeg" "-m" "fill" 
+spawn-at-startup "swww-daemon" // fun fact, swww REMEMBERS the wallpaper you ran!!!!!!!!!!!!
 spawn-at-startup "hypridle"
 spawn-at-startup "sunsetr"
-
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"

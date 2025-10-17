@@ -5,13 +5,13 @@
 Some Arch packages to install ahead of using my **HYPRLAND** setup (some are QoL and not strictly required!):
 
 ```bash
-sudo pacman -S fzf zsh python-setuptools zoxide nvtop htop bat waybar fuzzel foot hyprland sunsetr hyprlock hyprpaper hypridle xdg-desktop-portal-hyprland neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git neovim
+sudo pacman -S swww zathura zathura-pdf-poppler zathura-cb fzf zsh python-setuptools zoxide nvtop htop bat waybar fuzzel foot hyprland sunsetr hyprlock hypridle xdg-desktop-portal-hyprland neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git neovim
 ```
 
 If you want to run my Niri dots, install the following:
 
 ```bash
-sudo pacman -S niri swaybg xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal
+sudo pacman -S niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal
 ```
 
 And if you wanna rock LSPs with my nvim config:
@@ -36,12 +36,12 @@ Below are some more AUR/Arch packages that I have for my setup, but aren't stric
 
 AUR:
 ```bash
-paru -S swaylock-effects-git python-pywal16 python-haishoku ani-cli vesktop newscheck binaryninja-free code-marketplace
+paru -S python-pywal16 python-haishoku ani-cli vesktop newscheck binaryninja-free
 ```
 
 **Note for newscheck, run `sudo usermod -a -G newscheck $USER` per the package note.**
 
 Arch packages:
 ```bash
-sudo pacman -S code libreoffice-still hunspell hunspell-en_ca virtualbox virtualbox-host-dkms nvidia-dkms nvidia-utils mpv feh
+sudo pacman -S libreoffice-still hunspell hunspell-en_ca virtualbox virtualbox-host-dkms nvidia-dkms nvidia-utils mpv feh
 ```

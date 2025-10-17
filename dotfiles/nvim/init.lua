@@ -134,9 +134,7 @@ vim.keymap.set("n", "<leader>wq", "<cmd>wq<cr>", { desc = "Save and exit current
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save current buffer" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Exit current buffer" })
 vim.keymap.set("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Open Lazy.nvim menu" })
-
--- Nvim Tree
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Open NvimTree file explorer" })
+vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Open NetRW" })
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in current directory" })
