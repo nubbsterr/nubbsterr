@@ -67,6 +67,21 @@ window#waybar.hidden {
     color: #89B8FF;
 }
 
+menu {
+    border-radius: 10px;
+    background: @background;
+    color: @foreground;
+}
+
+menuitem {
+    border-radius: 5px;
+}
+
+menuitem:hover {
+    background: @color5;
+    color: @background;
+}
+
 #clock, #cpu, #memory, #custom-gpu {
     color: @foreground;
     background: @background;

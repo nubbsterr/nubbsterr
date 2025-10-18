@@ -5,7 +5,7 @@
 Some Arch packages to install ahead of using my **HYPRLAND** setup (some are QoL and not strictly required!):
 
 ```bash
-sudo pacman -S swww zathura zathura-pdf-poppler zathura-cb fzf zsh python-setuptools zoxide nvtop htop bat waybar fuzzel foot hyprland sunsetr hyprlock hypridle xdg-desktop-portal-hyprland neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git neovim
+sudo pacman -S chafa swww zathura zathura-pdf-poppler zathura-cb fzf zsh python-setuptools zoxide nvtop htop bat waybar fuzzel foot hyprland sunsetr hyprlock hypridle xdg-desktop-portal-hyprland neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git neovim ranger
 ```
 
 If you want to run my Niri dots, install the following:

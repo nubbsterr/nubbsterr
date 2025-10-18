@@ -28,8 +28,19 @@
   /* === Modules Left === */
   "custom/archicon": {
     "format": "",
-    "on-click": "bash ~/scripts/power.sh",
-    "tooltip": false
+    "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/power.xml",
+        "menu-actions": {
+            "shutdown": "systemctl poweroff",
+            "reboot": "systemctl reboot",
+            "reboot to uefi": "systemctl reboot --firmware-setup",
+            "suspend": "systemctl suspend",
+            "log out (niri)": "niri msg action quit",
+            "log out (hyprland)": "hyprctl dispatch exit"
+        }
+    /*"on-click": "bash ~/scripts/power.sh",
+    "tooltip": false*/
   },
   "clock": {
     "timezone": "Canada/Eastern",
@@ -120,14 +131,10 @@
     }
   },
   "pulseaudio/slider": {
-    "format": "{volume}%",
-    "format-muted": " MUTE",
-    "step": 5,
-    "tooltip": false
   },
   "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-muted": " {format_source}",
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 Muted",
     "format-icons": {
       "default": [
         "",

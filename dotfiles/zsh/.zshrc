@@ -29,6 +29,7 @@ export EDITOR='nvim'
 export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman --theme=ansi'"
 
 alias ls='ls --color=auto'
+alias rr='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias cd='z'
 alias grep='grep --color=auto'
 alias {vim,vi,v}='nvim'
@@ -53,11 +54,11 @@ alias hyprpicker='hyprpicker -a'
 # gcb = gcc build ig lol
 gcb() {
     local filename="${1%.*}"
-    gcc -Wextra -Wall -Werror "$1" -o "$filename" && "./$filename"
+    gcc -Wextra -Wall "$1" -o "$filename" && "./$filename"
 }
 
 # cuz uptime and sleep is important ye
-if [[ "$(date +%H)" > 22 ]]; then
+if [[ "$(date +%H)" -ge 22 ]]; then
     echo " $(uptime -p) - Go to sleep soon!"
 else
     echo " $(uptime -p)"
