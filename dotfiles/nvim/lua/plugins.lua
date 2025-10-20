@@ -18,8 +18,17 @@ require("lazy").setup({
         'uZer/pywal16.nvim',
         config = function()
             vim.cmd.colorscheme("pywal16")
-        end,
+        end
     },
+    -- nice dashboard on startup 
+    {
+        "goolord/alpha-nvim",
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        end
+    },
+    -- neat gruvbox theme
+    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
     -- lspconfig trash
     { "neovim/nvim-lspconfig", },
     -- Autocompletion with nvim-cmp
@@ -57,8 +66,6 @@ require("lazy").setup({
             })
         end,
     },
-    -- plenary.nvim: Required dependency for Telescope
-    { "nvim-lua/plenary.nvim" },
     -- Markdown viewer for neovim!
     {
         "MeanderingProgrammer/render-markdown.nvim",
@@ -103,8 +110,9 @@ require("lazy").setup({
             require("lualine").setup({
                 options = {
                     theme = "auto",
-                    section_separators = "",
-                    component_separators = "",
+                    icons_enabled = true,
+                    component_separators = { left = "", right = "" },
+	                section_separators = { left = "", right = "" },
                 },
                 sections = {
                     lualine_a = { "mode" },                   -- Current mode

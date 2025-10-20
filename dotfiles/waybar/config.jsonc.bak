@@ -5,10 +5,23 @@
     "position": "top",
     "height": 30,
     "spacing": 4,
-    "modules-left": ["niri/workspaces", "custom/sep", "niri/window"],
+    "modules-left": ["custom/archicon", "niri/workspaces", "custom/sep", "niri/window"],
     "modules-center": ["clock"],
     "modules-right": ["network", "custom/sep", "cpu", "memory", "custom/sep", "custom/gpu", "custom/sep", "wireplumber", "custom/sep", "tray"],
-
+    "custom/archicon": {
+        "format": "",
+        "tooltip": false,
+            "menu": "on-click",
+            "menu-file": "~/.config/waybar/power.xml",
+            "menu-actions": {
+                "shutdown": "systemctl poweroff",
+                "reboot": "systemctl reboot",
+                "reboot to uefi": "systemctl reboot --firmware-setup",
+                "suspend": "systemctl suspend",
+                "log out (niri)": "niri msg action quit",
+                "log out (hyprland)": "hyprctl dispatch exit"
+        }
+    },
     "niri/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -48,13 +61,13 @@
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "Ethernet",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "max-length": "40",
-        "tooltip-format": "{signalStrength}%, {bandwidthUpBytes} Up | {bandwidthDownBytes} Down"
+        "format": "{essid}",
+        "format-ethernet": "{ifname} 󰈀",
+        "format-disconnected": " ",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
     },
     "cpu": {
         "format": "{usage}% "

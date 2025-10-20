@@ -137,10 +137,29 @@ vim.keymap.set("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Open Lazy.nvim menu
 vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Open NetRW" })
 
 -- Telescope
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in current directory" })
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", { desc = "Fuzzy find files in current directory" })
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep (search text) across files" })
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "List and switch open buffers" })
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Search Neovim help tags" })
 
 -- Load plugins
 require("plugins")
+require("gruvbox").setup({
+  terminal_colors = true, -- add neovim terminal colors
+  undercurl = true,
+  underline = true,
+  bold = true,
+  italic = {
+    strings = true,
+    emphasis = true,
+    comments = true,
+    operators = false,
+    folds = true,
+  },
+  strikethrough = true,
+  contrast = "hard", -- can be "hard", "soft" or empty string
+  dim_inactive = false,
+  transparent_mode = false,
+})
+vim.o.background = "dark"
+vim.cmd("colorscheme gruvbox")

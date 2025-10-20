@@ -2,23 +2,49 @@
 @import url("file:///home/nubb/.cache/wal/colors-waybar.css");
 
 * {
+    border: none;
     font-family: "JetBrainsMono Nerd Font", monospace;
     font-size: 16px;
-    font-weight: bold;
 }
 
 window#waybar {
-    background: transparent;
+    background: @background;
     color: @foreground;
 }
 
 .modules-left,
 .modules-right,
 .modules-center {
-    background: alpha(@color0, 0.95);
+    background: @transparent;
     border-radius: 4px;
     margin: 4px 2px;
     padding: 0 5px;
+}
+
+#custom-archicon {
+  font-size: 20px;
+  color: @color5;
+  background: @background;
+  padding-right: 17px;
+}
+
+#custom-archicon:hover {
+    color: #89B8FF;
+}
+
+menu {
+    border-radius: 10px;
+    background: @background;
+    color: @foreground;
+}
+
+menuitem {
+    border-radius: 5px;
+}
+
+menuitem:hover {
+    background: @color5;
+    color: @background;
 }
 
 #workspaces button {

@@ -3,21 +3,21 @@
 
 /* -- Global rules -- */
 * {
-  border: none;
-  font-family: "JetbrainsMono Nerd Font";
-  font-size: 16px;
-  min-height: 10px;
+    border: none;
+    font-family: "JetbrainsMono Nerd Font";
+    font-size: 16px;
+    min-height: 10px;
 }
 
 window#waybar {
-  background: transparent;
+    background: transparent;
+    color: @foreground;
 }
 
 window#waybar.hidden {
-  opacity: 0.2;
+    opacity: 0.2;
 }
 
-/* - Genera rules for visible modules -- */
 #custom-archicon,
 #clock,
 #cpu,
@@ -27,44 +27,47 @@ window#waybar.hidden {
 #idle_inhibitor,
 #pulseaudio,
 #pulseaudio-slider,
-#network,
-#language {
-  color: @foreground;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  padding-left: 10px;
-  padding-right: 10px;
-  transition: none;
+#network {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
 }
 
-/* Separation to the left */
-#custom-archicon,
-#cpu,
-#privacy {
-  margin-left: 5px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+/* border to left */
+#custom-archicon, #cpu, #privacy { 
+    margin-left: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
-/* Separation to the rigth */
-#clock, #custom-gpu {
-  margin-right: 5px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+/* border to right */
+#custom-gpu, #network, #workspaces {
+    margin-right: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-/* -- Specific styles -- */
-
-/* Modules left */
 #custom-archicon {
-  font-size: 20px;
-  color: @color5;
-  background: @background;
-  padding-right: 17px;
+    font-size: 20px;
+    background: @background;
+    color: @color1;
+    padding-right: 17px;
 }
 
 #custom-archicon:hover {
-    color: #89B8FF;
+    color: #89B9FF;
+}
+
+#cpu, #memory, #custom-gpu {
+    color: @foreground;
+    background: @background;
+}
+
+#clock {
+    background: @background;
+    border-radius: 10px;
 }
 
 menu {
@@ -78,85 +81,48 @@ menuitem {
 }
 
 menuitem:hover {
-    background: @color5;
+    background: @color1;
     color: @background;
 }
 
-#clock, #cpu, #memory, #custom-gpu {
-    color: @foreground;
-    background: @background;
-}
-
-/* Modules center */
 #workspaces {
-  background: alpha(@background, 0.5);
-  border-radius: 10px;
-  margin: 6px 5px;
-  padding: 0px 6px;
+    background: @background;
+    color: @foreground;
+    margin: 6 0px; /* same level as other elements + prevents it from looking stupid and hitting the screen border */
 }
 
 #workspaces button {
-  color: @color1;
-  background: transparent;
-  padding: 4px 4px;
-  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
-}
-
-#workspaces button.active {
-  color: @color5;
-  text-shadow: 0 0 4px @background;
+    color: @color1;
 }
 
 #workspaces button:hover {
-  color: @color4;
+    color: @color1;
+    background: @background;
 }
 
 #workspaces button.active:hover {}
 
-/* Modules right */
-#taskbar {
-  background: alpha(@background, 0.5);
-  border-radius: 10px;
-  padding: 0px 5px;
-  margin: 6px 5px;
-}
-
-#taskbar button {
-  padding: 0px 5px;
-  margin: 0px 3px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-#taskbar button.active {
-  background: alpha(@background, 0.5);
-}
-
-#taskbar button:hover {
-  background: alpha(@background, 0.5);
-}
-
 #privacy {
-  background: @color5;
-  color: @background;
+    background: @color1;
+    color: @background;
 }
 
 #idle_inhibitor {
-  background: @color5;
-  color: @background;
-  padding-right: 15px;
+    background: @color1;
+    color: @background;
+    padding-right: 15px;
 }
 
 #pulseaudio {
-  min-width: 55px;
-  color: @foreground;
-  background: @background;
+    min-width: 55px;
+    color: @foreground;
+    background: @background;
 }
 
 #pulseaudio-slider {
-  color: @background;
-  background: @color5;
-  min-width: 50px;
+    color: @background;
+    background: @color1;
+    min-width: 50px;
 }
 
 #pulseaudio-slider slider {}
@@ -169,7 +135,6 @@ menuitem:hover {
 }
 
 #network {
-  background: @background;
-  color: @foreground;
-  padding-right: 13px;
+    background: @background;
+    color: @foreground;
 }

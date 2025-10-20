@@ -5,7 +5,7 @@
 Some Arch packages to install ahead of using my **HYPRLAND** setup (some are QoL and not strictly required!):
 
 ```bash
-sudo pacman -S chafa swww zathura zathura-pdf-poppler zathura-cb fzf zsh python-setuptools zoxide nvtop htop bat waybar fuzzel foot hyprland sunsetr hyprlock hypridle xdg-desktop-portal-hyprland neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git neovim ranger
+sudo pacman -S chafa swww zathura zathura-pdf-poppler zathura-cb fzf zsh python-setuptools zoxide nvtop htop bat waybar fuzzel foot hyprland sunsetr hyprlock hypridle xdg-desktop-portal-hyprland neovim xorg-xwayland wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git neovim yazi
 ```
 
 If you want to run my Niri dots, install the following:
@@ -13,6 +13,8 @@ If you want to run my Niri dots, install the following:
 ```bash
 sudo pacman -S niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal
 ```
+
+Note that Nautilus will install by default. If you want dark theme for it and other GTK4 apps, run `$ gsettings set org.gnome.desktop.interface color-scheme prefer-dark`.
 
 And if you wanna rock LSPs with my nvim config:
 
