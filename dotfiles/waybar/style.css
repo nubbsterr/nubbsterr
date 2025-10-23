@@ -22,11 +22,12 @@ window#waybar.hidden {
 #clock,
 #cpu,
 #memory,
+#battery,
 #custom-gpu,
 #privacy,
+#mpris,
 #idle_inhibitor,
 #pulseaudio,
-#pulseaudio-slider,
 #network {
     margin-top: 6px;
     margin-bottom: 6px;
@@ -38,15 +39,15 @@ window#waybar.hidden {
 /* border to left */
 #custom-archicon, #cpu, #privacy { 
     margin-left: 5px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 /* border to right */
-#custom-gpu, #network, #workspaces {
+#custom-gpu, #clock, #workspaces {
     margin-right: 5px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 #custom-archicon {
@@ -67,17 +68,12 @@ window#waybar.hidden {
 
 #clock {
     background: @background;
-    border-radius: 10px;
 }
 
 menu {
-    border-radius: 10px;
+    border-radius: 5px;
     background: @background;
     color: @foreground;
-}
-
-menuitem {
-    border-radius: 5px;
 }
 
 menuitem:hover {
@@ -95,14 +91,24 @@ menuitem:hover {
     color: @color1;
 }
 
+#workspaces button.active {
+    color: @background;
+    background: @color1;
+}
+
 #workspaces button:hover {
-    color: @color1;
-    background: @background;
+    color: @background;
+    background: @color1;
 }
 
 #workspaces button.active:hover {}
 
 #privacy {
+    background: @color1;
+    color: @background;
+}
+
+#mpris {
     background: @color1;
     color: @background;
 }
@@ -117,21 +123,6 @@ menuitem:hover {
     min-width: 55px;
     color: @foreground;
     background: @background;
-}
-
-#pulseaudio-slider {
-    color: @background;
-    background: @color1;
-    min-width: 50px;
-}
-
-#pulseaudio-slider slider {}
-
-#pulseaudio-slider trough {
-    background-color: @background;
-}
-#pulseaudio-slider highlight {
-    background-color: @green;
 }
 
 #network {

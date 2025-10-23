@@ -10,17 +10,17 @@
       "niri/workspaces",
       "cpu",
       "memory",
+      "battery",
       "custom/gpu"
   ],
-  "modules-center": [
-      "clock"
-  ],
+  "modules-center": [],
   "modules-right": [
       "privacy",
+      "mpris",
       "idle_inhibitor",
-      "pulseaudio/slider",
       "pulseaudio",
-      "network"
+      "network",
+      "clock"
   ],
   "custom/archicon": {
       "format": "󰣇",
@@ -52,6 +52,9 @@
       "format": "{used:0.1f}G ",
       "tooltip-format": "Usage: {used:0.1f}G / {total:0.1f}G"
   },
+  "battery": {
+      "format": "󰁹 {capacity}%"
+  },
   "custom/gpu": {
       "format": "{}",
       "exec": "bash ~/scripts/gpu.sh",
@@ -60,9 +63,6 @@
   },
   "niri/workspaces": {
       "format": "{icon}",
-      "format-icons": {
-          "active": ""
-      },
       "persistent-workspaces": {
           "*": 3
     },
@@ -103,6 +103,18 @@
 		  }
 	  ]
   },
+  "mpris": {
+	"format": "{player_icon} {dynamic}",
+	"format-paused": "{status_icon} <i>{dynamic}</i>",
+    "max-length": 30,
+	"player-icons": {
+		"default": "▶",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "⏸"
+	}
+  },
   "idle_inhibitor": {
       "format": "{icon}",
       "format-icons": {
@@ -110,7 +122,6 @@
           "deactivated": ""
       }
   },
-  "pulseaudio/slider": {},
   "pulseaudio": {
       "format": "{icon} {volume}%",
       "format-muted": "󰝟 Muted",
@@ -122,12 +133,12 @@
       }
   },
   "network": {
-      "format": "{essid}",
+      "format": "  {essid}",
       "format-ethernet": "{ifname} 󰈀",
       "format-disconnected": " ",
       "tooltip-format": "{ifname} via {gwaddr}",
       "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
       "tooltip-format-disconnected": "Disconnected",
       "max-length": 50
-  },
+  }
 }

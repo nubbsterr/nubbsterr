@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# load new wallpaper and load new pywal colours using fuzzel!
+# load new wallpaper and load new pywal colours
 # also checks if on hyprland or niri
 
 WALLS_DIR="$HOME/walls"

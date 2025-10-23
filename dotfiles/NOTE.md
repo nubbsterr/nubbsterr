@@ -34,11 +34,17 @@ makepkg -si
 
 ---
 
+Because uni LOVES wanting us to learn project management, `projectlibre` is something I have on my thinkpad. You can easily get it from the AUR.
+
+If the AUR build breaks, then download the tarball from sourceforge and have `jre-openjdk` installed. Extract the tarball w/ `tar -xzf` then run the shell script.
+
+---
+
 Below are some more AUR/Arch packages that I have for my setup, but aren't strictly needed for configuring my dots:
 
 AUR:
 ```bash
-paru -S python-pywal16 python-haishoku ani-cli vesktop newscheck binaryninja-free
+paru -S quran-companion python-pywal16 python-haishoku ani-cli vesktop newscheck binaryninja-free
 ```
 
 **Note for newscheck, run `sudo usermod -a -G newscheck $USER` per the package note.**

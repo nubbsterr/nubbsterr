@@ -108,6 +108,7 @@ spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon" // fun fact, swww REMEMBERS the wallpaper you ran!!!!!!!!!!!!
 spawn-at-startup "hypridle"
 spawn-at-startup "sunsetr"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store" // add things to clipboard history!
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -230,10 +231,14 @@ binds {
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "bash ~/scripts/notify-pulse up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "bash ~/scripts/notify-pulse down"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "bash ~/scripts/notify-pulse toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "bash ~/scripts/notify-pulse toggle"; }
+    //XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+    //XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    //XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    //XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
@@ -245,7 +250,7 @@ binds {
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
-    Mod+Q { close-window; }
+    Mod+Q repeat=false { close-window; }
 
     Mod+J  { focus-column-left; }
     Mod+K  { focus-window-down; }
