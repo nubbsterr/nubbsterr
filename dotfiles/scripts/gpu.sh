@@ -3,4 +3,8 @@
 GPU_UTIL=$(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits)
 GPU_TEMP=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
 
-echo "󰣇 $GPU_UTIL%  $GPU_TEMP"
+if [[ $? -ne 0 ]]; then # no gpu 
+    echo ""
+else 
+    echo "󰣇 $GPU_UTIL%  $GPU_TEMP"
+fi

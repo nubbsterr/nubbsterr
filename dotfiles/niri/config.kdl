@@ -80,9 +80,9 @@ layout {
 
     border {
         width 0
-        active-color "#5cb8ff"
-        urgent-color "#9b0000" 
-        inactive-gradient from="#585b70" to="#7f849c" angle=45 relative-to="workspace-view"
+        active-color "#83a598"
+        urgent-color "#cc241d" 
+        inactive-color "#282828"
     }
 
     shadow {
@@ -130,7 +130,7 @@ window-rule {
 
 // Then, for terminal, set open-maximized back to false.
 window-rule {
-    match app-id="foot"
+    match app-id="kitty"
     open-maximized false
 }
 
@@ -218,12 +218,12 @@ binds {
     // Mod+/ shows a list of important hotkeys.
     Mod+Slash { show-hotkey-overlay; }
 
-    Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+Shift+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+B hotkey-overlay-title="Open Browser: zen" { spawn "zen-browser"; }
     Mod+R hotkey-overlay-title="Reload Waybar" { spawn-sh "bash ~/scripts/waybar.sh"; }
-    Mod+W hotkey-overlay-title="Set wallpaper" { spawn-sh "foot bash ~/scripts/wal.sh"; }
+    Mod+W hotkey-overlay-title="Set wallpaper" { spawn-sh "kitty bash ~/scripts/wal.sh"; }
     Mod+P hotkey-overlay-title="Power menu" { spawn-sh "bash ~/scripts/power.sh"; }
     Mod+N hotkey-overlay-title="Notes menu" { spawn-sh "bash ~/scripts/note.sh"; }
     Mod+S hotkey-overlay-title="Script menu" { spawn-sh "bash ~/scripts/pickscript.sh"; }
@@ -231,14 +231,10 @@ binds {
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "bash ~/scripts/notify-pulse up"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "bash ~/scripts/notify-pulse down"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "bash ~/scripts/notify-pulse toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "bash ~/scripts/notify-pulse toggle"; }
-    //XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
-    //XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    //XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    //XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),

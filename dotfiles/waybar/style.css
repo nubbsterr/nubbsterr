@@ -1,17 +1,16 @@
-/* pywal goodies */
-@import url("file:///home/nubb/.cache/wal/colors-waybar.css");
+/* matugen goodies */
+@import "colors.css";
 
-/* -- Global rules -- */
 * {
     border: none;
     font-family: "JetbrainsMono Nerd Font";
     font-size: 16px;
-    min-height: 10px;
+    min-height: 20px;
 }
 
 window#waybar {
     background: transparent;
-    color: @foreground;
+    color: @on_background;
 }
 
 window#waybar.hidden {
@@ -29,6 +28,8 @@ window#waybar.hidden {
 #idle_inhibitor,
 #pulseaudio,
 #network {
+    color: @on_background;
+    background: @background;
     margin-top: 6px;
     margin-bottom: 6px;
     padding-left: 10px;
@@ -53,7 +54,7 @@ window#waybar.hidden {
 #custom-archicon {
     font-size: 20px;
     background: @background;
-    color: @color1;
+    color: @primary;
     padding-right: 17px;
 }
 
@@ -61,71 +62,66 @@ window#waybar.hidden {
     color: #89B9FF;
 }
 
-#cpu, #memory, #custom-gpu {
-    color: @foreground;
-    background: @background;
-}
-
-#clock {
-    background: @background;
-}
-
 menu {
     border-radius: 5px;
     background: @background;
-    color: @foreground;
+    color: @on_background;
 }
 
 menuitem:hover {
-    background: @color1;
+    background: @primary;
     color: @background;
 }
 
 #workspaces {
     background: @background;
-    color: @foreground;
+    color: @on_background;
     margin: 6 0px; /* same level as other elements + prevents it from looking stupid and hitting the screen border */
 }
 
 #workspaces button {
-    color: @color1;
+    color: @on_background;
 }
 
 #workspaces button.active {
     color: @background;
-    background: @color1;
+    background: @primary;
 }
 
 #workspaces button:hover {
     color: @background;
-    background: @color1;
+    background: @primary;
 }
 
 #workspaces button.active:hover {}
 
 #privacy {
-    background: @color1;
+    background: @primary;
     color: @background;
 }
 
 #mpris {
-    background: @color1;
+    background: @primary;
     color: @background;
 }
 
 #idle_inhibitor {
-    background: @color1;
+    background: @primary;
     color: @background;
     padding-right: 15px;
 }
 
 #pulseaudio {
     min-width: 55px;
-    color: @foreground;
+    color: @on_background;
     background: @background;
 }
 
 #network {
     background: @background;
-    color: @foreground;
+    color: @on_background;
+}
+
+#network.disconnected, #network.disabled, #pulseaudio.muted {
+    color: @on_error;
 }
