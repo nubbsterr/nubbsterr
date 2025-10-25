@@ -10,14 +10,15 @@
       "battery",
       "custom/gpu"
   ],
-  "modules-center": [],
+  "modules-center": [
+      "clock"
+  ],
   "modules-right": [
       "privacy",
       "mpris",
       "idle_inhibitor",
       "pulseaudio",
-      "network",
-      "clock"
+      "network"
   ],
   "custom/archicon": {
       "format": "󰣇",
@@ -56,7 +57,7 @@
       "format": "{}",
       "exec": "bash ~/scripts/gpu.sh",
       "interval": 10,
-      "on-click": "foot nvtop"
+      "on-click": "kitty nvtop"
   },
   "niri/workspaces": {
       "format": "{icon}",

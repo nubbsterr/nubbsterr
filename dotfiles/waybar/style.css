@@ -5,7 +5,7 @@
     border: none;
     font-family: "JetbrainsMono Nerd Font";
     font-size: 16px;
-    min-height: 20px;
+    min-height: 30px;
 }
 
 window#waybar {
@@ -45,7 +45,7 @@ window#waybar.hidden {
 }
 
 /* border to right */
-#custom-gpu, #clock, #workspaces {
+#custom-gpu, #network, #workspaces {
     margin-right: 5px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -60,6 +60,10 @@ window#waybar.hidden {
 
 #custom-archicon:hover {
     color: #89B9FF;
+}
+
+#clock {
+    border-radius: 5px;
 }
 
 menu {
@@ -123,5 +127,5 @@ menuitem:hover {
 }
 
 #network.disconnected, #network.disabled, #pulseaudio.muted {
-    color: @on_error;
+    color: @primary;
 }

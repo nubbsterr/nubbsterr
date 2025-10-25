@@ -1,7 +1,8 @@
-theme = "earl_grey"
+theme = "matugen"
 
 [editor]
 line-number = "relative"
+true-color = true
 mouse = false
 
 [editor.cursor-shape]

@@ -11,7 +11,7 @@ setopt SHARE_HISTORY        # Share history across sessions
 setopt CORRECT              # Correct syntax errors with commands
 
 setopt PROMPT_SUBST         # Prompt expansion
-PROMPT='❯ '
+PROMPT='󰘧 '
 RPROMPT='%F{green}[%B%~%b]%f'
 
 # Initialize zoxide so it functions lul
@@ -67,26 +67,6 @@ function y() {
 
 # display jp quotes, very neat, src: https://github.com/hxpe-dev/kotofetch
 kotofetch
-
-# cuz uptime and sleep is important ye
-if [[ "$(date +%H)" -ge 22 ]]; then
-    echo " $(uptime -p) - Go to sleep soon!"
-else
-    echo " $(uptime -p)"
-fi
-echo "󰣇 $(uname -r)"
-
-# Show last day pacman -Syu ran; update every 2 days
-date_last_up=$(tac /var/log/pacman.log | grep -m 1 'full system upgrade' | cut -d ' ' -f 1 | tr -d '[]' | cut -d 'T' -f 1)
-day=$(date -d $date_last_up +"%A, %B %d")
-if [ -n "$date_last_up" ]; then
-    echo ""
-    echo "Last upgrade was on $(date -d $date_last_up +'%A, %B %d')!"
-else
-    echo "No full system update found in pacman transaction logs!!!!!"
-fi   
-
-echo "You have $(pacman -Qdtq | wc -l) unneeded packages.\n"
 
 # For git configuration for secrets, do the following
 # git-credential-manager configure
