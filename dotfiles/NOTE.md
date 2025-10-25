@@ -9,7 +9,7 @@ sudo pacman -S clangd pyright bash-language-server chafa swww zathura zathura-pd
 ```
 
 ```bash
-paru -S matugen-bin
+paru -S matugen-bin kotofetch
 ```
 
 Note that Nautilus will install by default. If you want dark theme for it and other GTK4 apps, run `$ gsettings set org.gnome.desktop.interface color-scheme prefer-dark`.
