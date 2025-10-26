@@ -22,11 +22,9 @@ window#waybar.hidden {
 #cpu,
 #memory,
 #battery,
-#custom-gpu,
 #custom-pkgs,
 #privacy,
 #mpris,
-#idle_inhibitor,
 #pulseaudio,
 #network {
     color: @on_background;
@@ -39,14 +37,14 @@ window#waybar.hidden {
 }
 
 /* border to left */
-#custom-archicon, #cpu, #privacy { 
+#custom-archicon, #cpu { 
     margin-left: 5px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
 /* border to right */
-#custom-gpu, #network, #workspaces {
+#memory, #workspaces {
     margin-right: 5px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -63,8 +61,10 @@ window#waybar.hidden {
     color: #89B9FF;
 }
 
-#clock, #custom-pkgs {
+#battery, #clock, #custom-pkgs, #mpris, #privacy, #pulseaudio, #network {
     border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 menu {
@@ -110,21 +110,10 @@ menuitem:hover {
     color: @background;
 }
 
-#idle_inhibitor {
-    background: @primary;
-    color: @background;
-    padding-right: 15px;
-}
-
 #pulseaudio {
     min-width: 55px;
     color: @on_background;
     background: @background;
-}
-
-#network {
-    background: @background;
-    color: @on_background;
 }
 
 #network.disconnected, #network.disabled, #pulseaudio.muted {

@@ -42,6 +42,7 @@ prefer-no-csd
 layout {
     gaps 8
     center-focused-column "never"
+    background-color "transparent"; // to allow overview bg to leak into workspaces, see layer rules
 
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
@@ -140,6 +141,17 @@ layer-rule {
 
     block-out-from "screencast"
 }
+
+// Show wallpaper on overview backdrop instead of grey bg
+layer-rule {
+    match namespace="^swww-daemon$"
+    place-within-backdrop true
+}
+
+// above layer rule relies on this other setting, otherwise the bg is grey cuz we basically shift the wallpaper into the overview background
+// layout {
+//    background-color "transparent"
+//}
 
 // Indicate screencasted windows with red colors.
 window-rule {

@@ -4,48 +4,38 @@
   "modules-left": [
       "custom/archicon",
       "niri/workspaces",
-      "cpu",
-      "memory",
-      "battery",
-      "custom/gpu",
-      "custom/pkgs"
+      "custom/pkgs",
+      "mpris",
+      "privacy"
   ],
   "modules-center": [
       "clock"
   ],
   "modules-right": [
-      "privacy",
-      "mpris",
-      "idle_inhibitor",
+      "cpu",
+      "memory",
       "pulseaudio",
-      "network"
+      "network",
+      "battery",
   ],
   "custom/archicon": {
       "format": "󰣇",
       "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "~/.config/waybar/power.xml",
-        "menu-actions": {
-            "shutdown": "systemctl poweroff",
-            "reboot": "systemctl reboot",
-            "reboot to uefi": "systemctl reboot --firmware-setup",
-            "suspend": "systemctl suspend",
-            "log out (niri)": "niri msg action quit",
-            "log out (hyprland)": "hyprctl dispatch exit"
-        }
+      "on-click": "bash ~/scripts/power.sh"
   },
   "custom/pkgs": {
-      "format": "󰏓",
-      "exec": "tac /var/log/pacman.log | grep -m 1 'full system upgrade' | cut -d ' ' -f 1 | tr -d '[]' | cut -d 'T' -f 1 | date +'%A, %b %d'",  
-      "on-click": "kitty sudo pacman -Syu",
+      "format": "󰅢  {}",
+      "exec": "checkupdates | wc -l",  
+      "on-click": "kitty 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar",
       "interval": "once",
-      "tooltip-format": "Last upgrade was on {}!"
+      "tooltip": false,
+      "signal": 8
   },
   "clock": {
       "timezone": "Canada/Eastern",
       "tooltip-format": "{calendar}",
       "format": "{:%a, %B %d %I:%M %p}",
-      "format-alt": "{:%H:%M}",
+      "format-alt": "{:%I:%M %p}",
       "calendar": {
           "mode": "month"
       }
@@ -54,17 +44,11 @@
       "format": "{usage}% "
   },
   "memory": {
-      "format": "{used:0.1f}G ",
+      "format": "{used:0.1f}G  ",
       "tooltip-format": "Usage: {used:0.1f}G / {total:0.1f}G"
   },
   "battery": {
       "format": "󰁹 {capacity}%"
-  },
-  "custom/gpu": {
-      "format": "{}",
-      "exec": "bash ~/scripts/gpu.sh",
-      "interval": 10,
-      "on-click": "kitty nvtop"
   },
   "niri/workspaces": {
       "format": "{icon}",
@@ -111,7 +95,7 @@
   "mpris": {
 	    "format": "{player_icon} {dynamic}",
 	    "format-paused": "{status_icon} <i>{dynamic}</i>",
-	    "max-length": 30,
+	    "max-length": 20,
 	    "player-icons": {
 	        "default": "▶",
 	        "mpv": "🎵"
@@ -119,13 +103,6 @@
 	    "status-icons": {
 	        "paused": "⏸"
 	    }
-  },
-  "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-          "activated": "",
-          "deactivated": ""
-      }
   },
   "pulseaudio": {
       "format": "{icon} {volume}%",
@@ -145,5 +122,9 @@
       "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
       "tooltip-format-disconnected": "Disconnected",
       "max-length": 50
+  },
+  "tray": {
+      "icon-size": 21,
+      "spacing": 10,
   }
 }
