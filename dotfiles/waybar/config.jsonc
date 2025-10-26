@@ -1,6 +1,5 @@
 {
   "layer": "top",
-  /* floaty look to the bar */
   "position": "top",
   "modules-left": [
       "custom/archicon",
@@ -8,7 +7,8 @@
       "cpu",
       "memory",
       "battery",
-      "custom/gpu"
+      "custom/gpu",
+      "custom/pkgs"
   ],
   "modules-center": [
       "clock"
@@ -33,6 +33,13 @@
             "log out (niri)": "niri msg action quit",
             "log out (hyprland)": "hyprctl dispatch exit"
         }
+  },
+  "custom/pkgs": {
+      "format": "󰏓",
+      "exec": "tac /var/log/pacman.log | grep -m 1 'full system upgrade' | cut -d ' ' -f 1 | tr -d '[]' | cut -d 'T' -f 1 | date +'%A, %b %d'",  
+      "on-click": "kitty sudo pacman -Syu",
+      "interval": "once",
+      "tooltip-format": "Last upgrade was on {}!"
   },
   "clock": {
       "timezone": "Canada/Eastern",
@@ -63,7 +70,7 @@
       "format": "{icon}",
       "persistent-workspaces": {
           "*": 3
-    },
+      },
       "disable-scroll": true,
       "all-outputs": true,
       "show-special": true
@@ -75,43 +82,43 @@
       "modules": [
           {
               "type": "screenshare",
-			  "tooltip": true,
-			  "tooltip-icon-size": 24
-		  },
-		  {
-			  "type": "audio-out",
-			  "tooltip": true,
-			  "tooltip-icon-size": 24
-		  },
-		  {
-			  "type": "audio-in",
-			  "tooltip": true,
-			  "tooltip-icon-size": 24
-		  }
-	  ],
+              "tooltip": true,
+              "tooltip-icon-size": 24
+		      },
+		      {
+		          "type": "audio-out",
+		          "tooltip": true,
+		          "tooltip-icon-size": 24
+		      },
+		      {
+		          "type": "audio-in",
+		          "tooltip": true,
+		          "tooltip-icon-size": 24
+		      }
+		  ],
       "ignore-monitor": true,
       "ignore": [
-		  {
-              "type": "audio-in",
-			  "name": "cava"
-		  },
-		  {
-			  "type": "screenshare",
-			  "name": "obs"
-		  }
-	  ]
+		      {
+		          "type": "audio-in",
+		          "name": "cava"
+		      },
+		      {
+		          "type": "screenshare",
+		          "name": "obs"
+		      }
+		  ]
   },
   "mpris": {
-	"format": "{player_icon} {dynamic}",
-	"format-paused": "{status_icon} <i>{dynamic}</i>",
-    "max-length": 30,
-	"player-icons": {
-		"default": "▶",
-		"mpv": "🎵"
-	},
-	"status-icons": {
-		"paused": "⏸"
-	}
+	    "format": "{player_icon} {dynamic}",
+	    "format-paused": "{status_icon} <i>{dynamic}</i>",
+	    "max-length": 30,
+	    "player-icons": {
+	        "default": "▶",
+	        "mpv": "🎵"
+	    },
+	    "status-icons": {
+	        "paused": "⏸"
+	    }
   },
   "idle_inhibitor": {
       "format": "{icon}",
