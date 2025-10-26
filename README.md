@@ -1,4 +1,5 @@
-![:D](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=F7F7F7&width=435&lines=wassup%3F+%3A)
+![:D](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=F7F7F7&width=435&lines=wassup%3F+%3AD)
+
 I'm a **Computer Engineering** student with a passion for programming, robotics and **cybersecurity!** 
 
 My workflow/setup consists of: 
