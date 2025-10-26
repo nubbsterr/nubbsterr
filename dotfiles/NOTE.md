@@ -5,7 +5,7 @@
 Some Arch/AUR packages to install ahead of using my setup:
 
 ```bash
-sudo pacman -S clangd pyright bash-language-server chafa swww zathura zathura-pdf-poppler zathura-cb fzf zsh python-setuptools zoxide nvtop htop bat waybar fuzzel kitty sunsetr hyprlock hypridle wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git helix niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal
+sudo pacman -S zellij clangd pyright bash-language-server chafa swww zathura zathura-pdf-poppler zathura-cb fzf zsh python-setuptools zoxide nvtop htop bat waybar fuzzel kitty sunsetr hyprlock hypridle wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git helix niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal
 ```
 
 ```bash

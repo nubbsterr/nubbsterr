@@ -11,8 +11,7 @@ setopt SHARE_HISTORY        # Share history across sessions
 setopt CORRECT              # Correct syntax errors with commands
 
 setopt PROMPT_SUBST         # Prompt expansion
-PROMPT='󰘧 '
-RPROMPT='%F{green}[%B%~%b]%f'
+PROMPT='%F{green}%B%~%b%f 󰘧 '
 
 # Initialize zoxide so it functions lul
 eval "$(zoxide init zsh)"
