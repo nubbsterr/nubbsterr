@@ -1,9 +1,10 @@
-theme = "matugen"
+theme = "tokyonight"
 
 [editor]
 line-number = "relative"
 true-color = true
 mouse = false
+cursorline = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -12,3 +13,6 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[editor.lsp]
+display-color-swatches = true

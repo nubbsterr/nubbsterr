@@ -3,13 +3,13 @@
   "position": "top",
   "modules-left": [
       "custom/archicon",
-      "niri/workspaces",
+      "clock",
       "custom/pkgs",
       "mpris",
       "privacy"
   ],
   "modules-center": [
-      "clock"
+      "niri/workspaces"
   ],
   "modules-right": [
       "cpu",
@@ -17,6 +17,7 @@
       "pulseaudio",
       "network",
       "battery",
+      "tray"
   ],
   "custom/archicon": {
       "format": "󰣇",
@@ -27,7 +28,7 @@
       "format": "󰅢  {}",
       "exec": "checkupdates | wc -l",  
       "on-click": "kitty 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar",
-      "interval": "once",
+      "interval": 7200,
       "tooltip": false,
       "signal": 8
   },
@@ -96,12 +97,9 @@
 	    "format": "{player_icon} {dynamic}",
 	    "format-paused": "{status_icon} <i>{dynamic}</i>",
 	    "max-length": 20,
-	    "player-icons": {
-	        "default": "▶",
-	        "mpv": "🎵"
-	    },
 	    "status-icons": {
-	        "paused": "⏸"
+	        "paused": "⏸",
+	        "playing": "▶"
 	    }
   },
   "pulseaudio": {

@@ -26,7 +26,8 @@ window#waybar.hidden {
 #privacy,
 #mpris,
 #pulseaudio,
-#network {
+#network,
+#tray {
     color: @on_background;
     background: @background;
     margin-top: 6px;
@@ -38,30 +39,28 @@ window#waybar.hidden {
 
 /* border to left */
 #custom-archicon, #cpu { 
-    margin-left: 5px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
 /* border to right */
 #memory, #workspaces {
-    margin-right: 5px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
 #custom-archicon {
     font-size: 20px;
-    background: @background;
     color: @primary;
-    padding-right: 17px;
+    margin-left: 5px;
+    padding-right: 15px; /* to make the damned text look centered in the bar */
 }
 
 #custom-archicon:hover {
     color: #89B9FF;
 }
 
-#battery, #clock, #custom-pkgs, #mpris, #privacy, #pulseaudio, #network {
+#custom-archicon, #workspaces, #battery, #clock, #custom-pkgs, #mpris, #privacy, #pulseaudio, #network, #tray {
     border-radius: 10px;
     margin-left: 5px;
     margin-right: 5px;
@@ -113,7 +112,6 @@ menuitem:hover {
 #pulseaudio {
     min-width: 55px;
     color: @on_background;
-    background: @background;
 }
 
 #network.disconnected, #network.disabled, #pulseaudio.muted {

@@ -3,6 +3,7 @@ horizontal_padding = 3
 vertical_padding = 1
 width = 50
 show_translation = "english"
+quote_color = "green"
 translation_color = "dim"
 font_size = "medium"
 bold = true
