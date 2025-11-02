@@ -11,7 +11,7 @@ setopt SHARE_HISTORY        # Share history across sessions
 setopt CORRECT              # Correct syntax errors with commands
 
 setopt PROMPT_SUBST         # Prompt expansion
-PROMPT='%F{green}%B%~%b%f 󰘧 '
+PROMPT='%F{blue}%B%~%b%f 󰘧 '
 
 # Initialize zoxide so it functions lul
 eval "$(zoxide init zsh)"
@@ -28,10 +28,10 @@ export EDITOR='helix'
 export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman --theme=ansi'"
 
 alias ls='ls --color=auto'
-alias rr='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias cd='z'
 alias grep='grep --color=auto'
 alias h='helix'
+alias q='exit'
 alias {bat,cat}='bat --theme=ansi --style=numbers,changes'
 alias pac='pacman -Slq | fzf --multi --preview "pacman -Si {1}" | xargs -ro sudo pacman -S'
 alias pacup='sudo pacman -Syu'
