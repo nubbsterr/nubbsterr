@@ -21,7 +21,6 @@ window#waybar {
 
 #custom-arch {
     color: @tertiary;
-    margin-left: 10px;
 }
 
 #window {
@@ -49,8 +48,6 @@ window#waybar {
     border-radius: 100px;
     color: @on_tertiary;
     background: @tertiary;
-    padding: 0 10px;
-    margin: 2px 0;
 }
 
 #pulseaudio {

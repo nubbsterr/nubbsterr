@@ -1,0 +1,11 @@
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
+
+[[language]]
+name = "markdown"
+language-servers = ["harper-ls"]
+
+[[language]]
+name = "html"
+language-servers = ["harper-ls"]

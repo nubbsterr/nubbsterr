@@ -49,6 +49,7 @@ alias src='source ~/.zshrc'
 alias zshrc='h ~/.zshrc'
 alias manf='man -k . | sort | fzf | awk "{print \$1}" | xargs man'
 alias hyprpicker='hyprpicker -a'
+alias cbonsai="cbonsai -li -b 1"
 
 # gcb = gcc build ig lol
 gcb() {
