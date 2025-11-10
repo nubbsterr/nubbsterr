@@ -1,6 +1,7 @@
 > [!NOTE]
 > If you ever need wallpapers go here for some cool ones: https://github.com/dharmx/walls
 > Wallhaven is also pretty nice.
+> You can get some other cool/cozy/cute ones here: https://github.com/leanghok120/cozywalls/tree/master
 
 Some Arch/AUR packages to install ahead of using my setup:
 
@@ -9,7 +10,7 @@ sudo pacman -S zellij harper clangd pyright bash-language-server chafa swww zath
 ```
 
 ```bash
-paru -S matugen-bin kotofetch cbonsai
+paru -S matugen-bin kotofetch vicinae-bin
 ```
 
 Note that Nautilus will install by default. If you want dark theme for it and other GTK4 apps, run `$ gsettings set org.gnome.desktop.interface color-scheme prefer-dark`.

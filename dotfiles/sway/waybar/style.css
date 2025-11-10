@@ -21,10 +21,7 @@ window#waybar {
 
 #custom-arch {
     color: @tertiary;
-}
-
-#window {
-    color: @primary;
+    margin-left: 10px;
 }
 
 #workspaces button {
@@ -35,19 +32,20 @@ window#waybar {
 
 #workspaces button:hover {
     box-shadow: inherit;
-    color: @on_tertiary;
-    background: @tertiary;
+    color: @tertiary;
+    background: transparent;
 }
 
 #workspaces button.active {
-    background: @primary;
-    color: @on_primary;
+    color: @primary;
 }
 
 #privacy {
     border-radius: 100px;
     color: @on_tertiary;
     background: @tertiary;
+    padding: 0 10px;
+    margin: 2px 0;
 }
 
 #pulseaudio {

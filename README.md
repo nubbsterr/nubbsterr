@@ -9,7 +9,7 @@ My workflow/setup consists of:
 
 [Le rice](assets/rice.png)
 
-[Vertical bar](assets/verticalbar.png)
+[Vertical bar (not on repo anymore since I kinda hate it and don't use it anymore)](assets/verticalbar.png)
 
 Dotfiles can be found [**here.**](https://github.com/nubbsterr/nubbsterr/tree/main/dotfiles)
 

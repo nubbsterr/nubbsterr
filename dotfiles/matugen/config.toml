@@ -8,9 +8,15 @@ input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
-[templates.fuzzel]
-input_path = '~/.config/matugen/templates/fuzzel.ini'
-output_path = '~/.config/fuzzel/colors.ini'
+[templates.sway]
+input_path = '~/.config/matugen/templates/sway-colors.conf'
+output_path = '~/.config/sway/colors.conf'
+post_hook = 'swaymsg reload'
+
+[templates.vicinae]
+input_path = '~/.config/matugen/templates/vicinae.toml'
+output_path = '~/.local/share/vicinae/themes/matugen.toml'
+post_hook = 'vicinae theme set matugen'
 
 [templates.dunst]
 input_path = '~/.config/matugen/templates/dunstrc-colors'
@@ -21,6 +27,10 @@ post_hook = 'dunstctl reload'
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
 post_hook = 'pkill -SIGUSR1 kitty'
+
+[templates.helix]
+input_path = '~/.config/matugen/templates/helix.toml'
+output_path = '~/.config/helix/themes/matugen.toml'
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
