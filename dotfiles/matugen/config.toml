@@ -23,11 +23,6 @@ input_path = '~/.config/matugen/templates/dunstrc-colors'
 output_path = '~/.config/dunst/dunstrc'
 post_hook = 'dunstctl reload'
 
-[templates.kitty]
-input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/colors.conf'
-post_hook = 'pkill -SIGUSR1 kitty'
-
 [templates.helix]
 input_path = '~/.config/matugen/templates/helix.toml'
 output_path = '~/.config/helix/themes/matugen.toml'

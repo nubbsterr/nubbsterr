@@ -6,14 +6,24 @@
 Some Arch/AUR packages to install ahead of using my setup:
 
 ```bash
-sudo pacman -S zellij harper clangd pyright bash-language-server chafa swww zathura zathura-pdf-poppler zathura-cb fzf zsh python-setuptools zoxide nvtop htop bat waybar fuzzel kitty sunsetr hyprlock hypridle wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git helix niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal
+sudo pacman -S zellij harper clangd pyright bash-language-server chafa swww zathura zathura-pdf-poppler zathura-cb fzf zsh python-setuptools zoxide nvtop htop bat waybar kitty sunsetr wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git helix
+```
+
+If you wish to run my Sway dots:
+
+```bash
+sudo pacman -S swaylock-effects swayidle sway
+```
+
+If you wish to run my Niri config:
+
+```bash
+sudo pacman -S niri xdg-desktop-portal-gnome xdg-desktop-portal-gtk swayidle swaylock-effects
 ```
 
 ```bash
 paru -S matugen-bin kotofetch vicinae-bin
 ```
-
-Note that Nautilus will install by default. If you want dark theme for it and other GTK4 apps, run `$ gsettings set org.gnome.desktop.interface color-scheme prefer-dark`.
 
 ---
 

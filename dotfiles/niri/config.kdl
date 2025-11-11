@@ -20,9 +20,9 @@ input {
     }
     //touchpad {
     //    tap
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-factor 1.0
+    //    accel-speed 0.2
+    //    accel-profile "flat"
+    //    scroll-factor 1.0
     //}
     mouse {
         accel-speed 0.3
@@ -40,7 +40,7 @@ output "HDMI-A-1" {
 prefer-no-csd
 
 layout {
-    gaps 8
+    gaps 10
     center-focused-column "never"
     background-color "transparent"; // to allow overview bg to leak into workspaces, see layer rules
 
@@ -107,9 +107,11 @@ layout {
 // fun fact u can run hyrpland tools in niri!!!!!!!!!!
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon" // fun fact, swww REMEMBERS the wallpaper you ran!!!!!!!!!!!!
+spawn-at-startup "vicinae" "server" // lovely app launcher
 spawn-at-startup "hypridle"
 spawn-at-startup "sunsetr"
-spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store" // add things to clipboard history!
+// this is needed for clipview menu !! vicinae does this on its own
+// spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store" // add things to clipboard history!
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -231,13 +233,12 @@ binds {
     Mod+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+D hotkey-overlay-title="Run an Application: vicinae" { spawn "vicinae" "toggle"; }
     Mod+Shift+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+B hotkey-overlay-title="Open Browser: zen" { spawn "zen-browser"; }
     Mod+R hotkey-overlay-title="Reload Waybar" { spawn-sh "bash ~/scripts/waybar.sh"; }
     Mod+W hotkey-overlay-title="Set wallpaper" { spawn-sh "kitty bash ~/scripts/wal.sh"; }
     Mod+P hotkey-overlay-title="Power menu" { spawn-sh "bash ~/scripts/power.sh"; }
-    Mod+N hotkey-overlay-title="Notes menu" { spawn-sh "bash ~/scripts/note.sh"; }
     Mod+S hotkey-overlay-title="Script menu" { spawn-sh "bash ~/scripts/pickscript.sh"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -251,8 +252,8 @@ binds {
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
     // but you need to manually put each argument in separate "" quotes.
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,

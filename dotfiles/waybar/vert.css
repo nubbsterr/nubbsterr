@@ -3,9 +3,6 @@
 
 * {
     border: none;
-    /* just here to fix the stupid black boxes behind text that randomly appaeared recently */
-    background: transparent;
-    color: @on_background;
     font-family: JetBrainsMono Nerd Font Propo;
     font-size: 16px;
     border-radius: 0px;
@@ -22,9 +19,22 @@ window#waybar {
     padding: 0 10px;
 }
 
+/* margin on top/bottom for last 2 modules */
+
+#custom-arch {
+    margin-top: 5px;
+}
+
+#clock {
+    margin-bottom: 5px;
+}
+
 #custom-arch {
     color: @tertiary;
-    margin-left: 10px;
+}
+
+#window {
+    color: @primary;
 }
 
 #workspaces button {
@@ -34,18 +44,20 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background: @source_color;
+    box-shadow: inherit;
+    color: @on_tertiary;
+    background: @tertiary;
 }
 
 #workspaces button.active {
-    background: @source_color;
+    background: @primary;
+    color: @on_primary;
 }
 
 #privacy {
     border-radius: 100px;
-    background: @source_color;
-    padding: 0 10px;
-    margin: 2px 0;
+    color: @on_tertiary;
+    background: @tertiary;
 }
 
 #pulseaudio {
