@@ -13,6 +13,11 @@ input_path = '~/.config/matugen/templates/sway-colors.conf'
 output_path = '~/.config/sway/colors.conf'
 post_hook = 'swaymsg reload'
 
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors.conf'
+post_hook = 'pkill -SIGUSR1 kitty'
+
 [templates.vicinae]
 input_path = '~/.config/matugen/templates/vicinae.toml'
 output_path = '~/.local/share/vicinae/themes/matugen.toml'

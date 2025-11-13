@@ -21,6 +21,12 @@ If you wish to run my Niri config:
 sudo pacman -S niri xdg-desktop-portal-gnome xdg-desktop-portal-gtk swayidle swaylock-effects
 ```
 
+If you wish to run my rmpc/mpd + the lovely playlist download script setup:
+
+```bash
+sudo pacman -S yt-dlp rmpc mpd
+```
+
 ```bash
 paru -S matugen-bin kotofetch vicinae-bin
 ```

@@ -7,9 +7,8 @@ My workflow/setup consists of:
     * Arch is currently for notetaking and my daily driver, whilst Windows is for gaming.
     * may/may not try gentoo one day 
 
-[Le rice](assets/rice.png)
-
-[Vertical bar (not on repo anymore since I kinda hate it and don't use it anymore)](assets/verticalbar.png)
+![rmpc showcase](assets/rmpc.png)
+![desktop/vicinae showcase](assets/vicinae.png)
 
 Dotfiles can be found [**here.**](https://github.com/nubbsterr/nubbsterr/tree/main/dotfiles)
 

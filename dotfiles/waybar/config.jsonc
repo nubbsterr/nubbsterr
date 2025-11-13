@@ -1,5 +1,4 @@
 {
-	"height": 28,
 	"layer": "top",
 	"spacing": 16,
 	"modules-left": [
@@ -12,6 +11,7 @@
 	],
 	"modules-right": [
 		"tray",
+		"mpd",
 		"privacy",
 		"idle_inhibitor",
 		"network",
@@ -20,7 +20,7 @@
 		"pulseaudio",
 		"backlight",
 		"power-profiles-daemon",
-		"battery"
+		"battery",
 	],
 	"custom/arch": {
 		"format": "󰣇",
@@ -30,7 +30,7 @@
 	},
 	"niri/window": {
 		"max-length": 30,
-		"icon": true
+		"icon": false,
 	},
   "cpu": {
     "format": " {usage}%",
@@ -50,11 +50,24 @@
     "icon-size": 21,
     "spacing": 10
   },
+  "mpd": {
+  	"format": "  {stateIcon} {artist} - {title}",
+  	"format-disconnected": " Disconnected",
+    "format-stopped": " Stopped",
+    "max-length": 20,
+  	"interval": 10,
+  	    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
   "clock": {
     "timezone": "Canada/Eastern",
     "tooltip-format": "{calendar}",
     "format": "{:%a, %b %d %I:%M %p}",
-    "format-alt": "{:%H:%M}",
+    "format-alt": "{:%I:%M %p}",
     "calendar": {
       "mode": "month"
     }

@@ -3,13 +3,10 @@
 
 * {
     border: none;
-    /* just here to fix the stupid black boxes behind text that randomly appaeared recently */
-    background: transparent;
-    color: @on_background;
     font-family: JetBrainsMono Nerd Font Propo;
     font-size: 16px;
     border-radius: 0px;
-    min-height: 35px;
+    min-height: 40px;
 }
 
 window#waybar {
@@ -20,6 +17,13 @@ window#waybar {
 .modules-right,
 .modules-center {
     padding: 0 10px;
+}
+
+#tray, #mpd {
+    background: @surface_container;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin: 2px 0px;
 }
 
 #custom-arch {
@@ -34,16 +38,24 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background: @source_color;
+    box-shadow: inherit;
+    color: @tertiary;
+    background: transparent;
 }
 
 #workspaces button.active {
-    background: @source_color;
+    background: @primary;
+    color: @on_primary;
+}
+
+#mpd {
+    color: @primary;
 }
 
 #privacy {
     border-radius: 100px;
-    background: @source_color;
+    color: @on_primary;
+    background: @primary;
     padding: 0 10px;
     margin: 2px 0;
 }
@@ -56,6 +68,6 @@ window#waybar {
     color: @on_error;
 }
 
-#idle_inhibitor.activated, #battery.charging, #network.disconnected, #network.disabled, #pulseaudio.muted {
+#mpd.disconnected, #idle_inhibitor.activated, #battery.charging, #network.disconnected, #network.disabled, #pulseaudio.muted {
     color: @tertiary;
 }
