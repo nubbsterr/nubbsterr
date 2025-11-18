@@ -106,10 +106,15 @@ layout {
 // Add lines like this to spawn processes at startup.
 // fun fact u can run hyrpland tools in niri!!!!!!!!!!
 spawn-at-startup "waybar"
-spawn-at-startup "swww-daemon" // fun fact, swww REMEMBERS the wallpaper you ran!!!!!!!!!!!!
+spawn-at-startup "swww-daemon"      // fun fact, swww REMEMBERS the wallpaper you ran!!!!!!!!!!!!
 spawn-at-startup "vicinae" "server" // lovely app launcher
-spawn-at-startup "hypridle"
+
+// issue w/ swayidle here not locking on sleep on my laptop for some reason???????????
+// it's whatev, just make sure to lock ur stuff b4 leaving it unattended :p
+spawn-at-startup "swayidle" "-w" "timeout" "270" "brightnessctl -s set 10%" "resume" "brightnessctl -r" "timeout" "300" "~/scripts/lock.sh" "timeout" "400" "niri msg action power-off-monitors" "before-sleep" "~/scripts/lock.sh"
 spawn-at-startup "sunsetr"
+spawn-at-startup "mpd"              // music player daemon + rmpc
+
 // this is needed for clipview menu !! vicinae does this on its own
 // spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store" // add things to clipboard history!
 
@@ -133,7 +138,7 @@ window-rule {
 
 // Then, for terminal, set open-maximized back to false.
 window-rule {
-    match app-id="kitty"
+    match app-id="ghostty"
     open-maximized false
 }
 
@@ -232,12 +237,12 @@ binds {
     // Mod+/ shows a list of important hotkeys.
     Mod+Slash { show-hotkey-overlay; }
 
-    Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Run an Application: vicinae" { spawn "vicinae" "toggle"; }
     Mod+Shift+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+B hotkey-overlay-title="Open Browser: zen" { spawn "zen-browser"; }
     Mod+R hotkey-overlay-title="Reload Waybar" { spawn-sh "bash ~/scripts/waybar.sh"; }
-    Mod+W hotkey-overlay-title="Set wallpaper" { spawn-sh "kitty bash ~/scripts/wal.sh"; }
+    Mod+W hotkey-overlay-title="Set wallpaper" { spawn-sh "ghostty -e bash ~/scripts/wal.sh"; }
     Mod+P hotkey-overlay-title="Power menu" { spawn-sh "bash ~/scripts/power.sh"; }
     Mod+S hotkey-overlay-title="Script menu" { spawn-sh "bash ~/scripts/pickscript.sh"; }
 

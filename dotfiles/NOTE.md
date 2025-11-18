@@ -6,7 +6,7 @@
 Some Arch/AUR packages to install ahead of using my setup:
 
 ```bash
-sudo pacman -S zellij harper clangd pyright bash-language-server chafa swww zathura zathura-pdf-poppler zathura-cb fzf zsh python-setuptools zoxide nvtop htop bat waybar kitty sunsetr wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git helix
+sudo pacman -S harper clangd pyright bash-language-server chafa swww zathura zathura-pdf-poppler zathura-cb fzf zsh zoxide nvtop htop bat waybar ghostty sunsetr wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git helix
 ```
 
 If you wish to run my Sway dots:
@@ -21,10 +21,10 @@ If you wish to run my Niri config:
 sudo pacman -S niri xdg-desktop-portal-gnome xdg-desktop-portal-gtk swayidle swaylock-effects
 ```
 
-If you wish to run my rmpc/mpd + the lovely playlist download script setup:
+If you wish to run my rmpc/mpd setup (edit the directories in mpd.conf to your liking):
 
 ```bash
-sudo pacman -S yt-dlp rmpc mpd
+sudo pacman -S rmpc mpd
 ```
 
 ```bash
@@ -51,7 +51,7 @@ paru -S quran-companion ani-cli vesktop newscheck binaryninja-free
 
 **Note for newscheck, run `sudo usermod -a -G newscheck $USER` per the package note.**
 
-Arch packages:
+Arch packages (nvidia-dkms is for running the Zen kernel, refer to ArchWiki for more info!!!!!!!!!!!!):
 ```bash
 sudo pacman -S libreoffice-still hunspell hunspell-en_ca virtualbox virtualbox-host-dkms nvidia-dkms nvidia-utils mpv feh
 ```

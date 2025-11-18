@@ -8,15 +8,20 @@ input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
-[templates.sway]
-input_path = '~/.config/matugen/templates/sway-colors.conf'
-output_path = '~/.config/sway/colors.conf'
-post_hook = 'swaymsg reload'
+#[templates.sway]
+#input_path = '~/.config/matugen/templates/sway-colors.conf'
+#output_path = '~/.config/sway/colors.conf'
+#post_hook = 'swaymsg reload'
 
-[templates.kitty]
-input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/colors.conf'
-post_hook = 'pkill -SIGUSR1 kitty'
+#[templates.kitty]
+#input_path = '~/.config/matugen/templates/kitty-colors.conf'
+#output_path = '~/.config/kitty/colors.conf'
+#post_hook = 'pkill -SIGUSR1 kitty'
+
+[templates.ghostty]
+input_path = '~/.config/matugen/templates/ghostty'
+output_path = '~/.config/ghostty/themes/Matugen'
+post_hook = 'pkill -SIGUSR2 ghostty'
 
 [templates.vicinae]
 input_path = '~/.config/matugen/templates/vicinae.toml'
@@ -28,9 +33,9 @@ input_path = '~/.config/matugen/templates/dunstrc-colors'
 output_path = '~/.config/dunst/dunstrc'
 post_hook = 'dunstctl reload'
 
-[templates.helix]
-input_path = '~/.config/matugen/templates/helix.toml'
-output_path = '~/.config/helix/themes/matugen.toml'
+#[templates.helix]
+#input_path = '~/.config/matugen/templates/helix.toml'
+#output_path = '~/.config/helix/themes/matugen.toml'
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk-colors.css'

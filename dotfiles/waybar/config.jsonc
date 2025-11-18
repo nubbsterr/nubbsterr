@@ -15,8 +15,8 @@
 		"privacy",
 		"idle_inhibitor",
 		"network",
-		"cpu",
-		"memory",
+		//"cpu",
+		//"memory",
 		"pulseaudio",
 		"backlight",
 		"power-profiles-daemon",
@@ -29,7 +29,7 @@
 		"on-click": "~/scripts/power.sh"
 	},
 	"niri/window": {
-		"max-length": 30,
+		"max-length": 50,
 		"icon": false,
 	},
   "cpu": {
@@ -51,7 +51,7 @@
     "spacing": 10
   },
   "mpd": {
-  	"format": "  {stateIcon} {artist} - {title}",
+  	"format": " {stateIcon} {artist} - {title}",
   	"format-disconnected": " Disconnected",
     "format-stopped": " Stopped",
     "max-length": 20,
@@ -66,59 +66,51 @@
   "clock": {
     "timezone": "Canada/Eastern",
     "tooltip-format": "{calendar}",
-    "format": "{:%a, %b %d %I:%M %p}",
+    "format": "{:%a, %b %d %H:%M}",
     "format-alt": "{:%I:%M %p}",
     "calendar": {
       "mode": "month"
     }
   },
 	"backlight": {
-		"format": "{icon}",
-		"tooltip-format": "{percent}%",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			""
-		]
-	},
+		"format": "󰃞 {percent}%",
+    "on-scroll-up": "exec brightnessctl set 5%+",
+    "on-scroll-down": "exec brightnessctl set 5%-",
+  },
 	"battery": {
-		"states": {
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{icon}",
-		"format-charging": "{icon}󱐋",
-		"format-plugged": "{icon}",
-		"tooltip-format": "{capacity}% | {timeTo}",
-		"format-icons": [
-			"󰂎",
-			"󰁺",
-			"󰁻",
-			"󰁼",
-			"󰁽",
-			"󰁾",
-			"󰁿",
-			"󰂀",
-			"󰂁",
-			"󰂂",
-			"󰁹"
-		],
-	},
+		"format": "{icon} {capacity}%",
+    "tooltip-format": "{timeTo}\n{power}W",
+    "states": {
+    	"critical": 10,
+      "warning": 25,
+      "medium": 50,
+      "good": 80,
+      "full": 100
+    },
+    "format-icons": {
+    	"critical": "󰁺",
+      "warning": "󰁼",
+      "medium": "󰁾",
+      "good": "󰂁",
+      "full": "󰁹",
+      "charging": "󰂄"
+      }
+  },
 	"network": {
-		"format-wifi": " {essid}",
+		"format-wifi": "{icon} {essid}",
+		"format-icons": [
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		],
 		"format-ethernet": "󰈀 {ifname}",
 		"tooltip-format": "{signalStrength}% {essid}\n{ifname}: {ipaddr}/{cidr}\nvia {gwaddr}",
 		"format-linked": "!󰅛! {ifname}",
 		"format-disconnected": "󰲛"
 	},
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": " {volume}%",
     "tooltip-format": "{desc}\n{volume}%",
     "on-click": "pavucontrol",
     "format-muted": "",

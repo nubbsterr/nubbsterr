@@ -17,8 +17,8 @@ input type:keyboard {
 # keybinds
 set $mod Mod4
 
-bindsym --locked XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%+
-bindsym --locked XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%-
+bindsym --locked XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 1%+
+bindsym --locked XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 1%-
 bindsym --locked XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle
 bindsym --locked XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_SOURCE@ toggle
 
@@ -31,10 +31,15 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id vicinae toggle
-bindsym Print exec grim -g "$(slurp)" | wl-copy
+
+# either select portion of screen OR screenshot entire screen
+bindsym Print exec grim -g "$(slurp -d)" ~/Screenshots/$(date +'Screenshot from %Y-%m-%d %H-%M-%S').png | wl-copy
+bindsym $mod+Print exec grim  ~/Screenshots/$(date +'Screenshot from %Y-%m-%d %H-%M-%S').png | wl-copy
+
 bindsym $mod+b exec brave
-bindsym $mod+v exec vesktop
 bindsym $mod+Shift+s exec ~/scripts/pickscript.sh
+bindsym $mod+Shift+r exec ~/scripts/waybar.sh
+bindsym $mod+Shift+w exec kitty ~/scripts/wal.sh
 bindsym $mod+p exec ~/scripts/power.sh
 
 bindsym $mod+j focus left
@@ -143,10 +148,18 @@ default_border pixel 2
 gaps inner 4px
 gaps outer 6px
 smart_gaps on 
+# warp cursor between windows
+mouse_warping container
 
 # wallpaper, night light, notifs, waybar, and vicinae
+set $lock ~/scripts/lock.sh
 exec waybar
-exec hypridle
+exec swayidle -w timeout 270 'brightnessctl -s set 10%' \
+                resume 'brightnessctl -r' \
+                timeout 300 $lock \
+                timeout 400 'swaymsg "output * power off"' \
+	              resume 'swaymsg "output * power on"' \
+	              before-sleep $lock
 exec vicinae server
 exec swww-daemon
 exec sunsetr

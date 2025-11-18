@@ -31,7 +31,7 @@ Just to summarize the tips I gained from this vid:
 
 My current activities are:
 * Thinking about what projects I should do next
-* Grinding uni homework >:(
+* Grinding uni homework and being a uni slave in general >:(
 * Posting lab attempts and Limbus Company videos on my [**YT channel!**](https://www.youtube.com/@0xnubb)
 * Working on my [**portfolio**](https://github.com/nubbsterr/web), as well as other projects which you can find here!
 

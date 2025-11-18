@@ -1,0 +1,18 @@
+theme = "Matugen"
+
+font-family = "JetBrainsMonoNL Nerd Font" 
+font-size = 16
+font-style = "Regular"
+font-synthetic-style = false
+
+background-opacity = 0.9
+
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = true
+
+keybind = alt+shift+r=reload_config
+keybind = alt+t=new_tab
+keybind = alt+q=close_tab
+keybind = alt+l=next_tab
+keybind = alt+j=previous_tab 
