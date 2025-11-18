@@ -5,7 +5,6 @@ I'm a **Computer Engineering** student with a passion for programming, robotics 
 My workflow/setup consists of: 
 * My desktop PC which I use for **VMs, gaming, and recording videos**. I dual boot w/ Arch + Niri and Windows 11 (windows SUCKS it keeps installing updates behind my back). 
     * Arch is currently for notetaking and my daily driver, whilst Windows is for gaming.
-    * may/may not try gentoo one day 
 
 ![rmpc showcase](assets/rmpc.png)
 ![desktop/vicinae showcase](assets/vicinae.png)

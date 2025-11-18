@@ -24,7 +24,7 @@ sudo pacman -S niri xdg-desktop-portal-gnome xdg-desktop-portal-gtk swayidle swa
 If you wish to run my rmpc/mpd setup (edit the directories in mpd.conf to your liking):
 
 ```bash
-sudo pacman -S rmpc mpd
+sudo pacman -S rmpc mpd nicotine+
 ```
 
 ```bash
