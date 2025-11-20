@@ -20,5 +20,6 @@ int main() {
         sleep(1);
     }
 
+    printf("Here's a flag or something: John OALabs");
     return 0;
 }

@@ -2,7 +2,7 @@
 	"layer": "top",
 	"spacing": 16,
 	"modules-left": [
-		"custom/arch",
+		"custom/power",
 		"niri/workspaces",
 		"niri/window"
 	],
@@ -10,23 +10,36 @@
 		"clock"
 	],
 	"modules-right": [
-		"tray",
 		"mpd",
-		"privacy",
-		"idle_inhibitor",
 		"network",
-		//"cpu",
-		//"memory",
+		"cpu",
+		"memory",
 		"pulseaudio",
 		"backlight",
 		"power-profiles-daemon",
 		"battery",
+		"tray",
 	],
-	"custom/arch": {
-		"format": "󰣇",
+	"custom/power": {
+		"format": "ム",
 		"tooltip-format": "Right-click for system info\nClick to display power menu",
 		"on-click-right": "~/scripts/sysinfo.sh",
 		"on-click": "~/scripts/power.sh"
+	},
+	"niri/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+    	"1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    }
 	},
 	"niri/window": {
 		"max-length": 50,

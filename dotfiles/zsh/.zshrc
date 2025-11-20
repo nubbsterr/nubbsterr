@@ -9,9 +9,11 @@ setopt HIST_IGNORE_DUPS     # Ignore duplicate commands in history
 setopt HIST_IGNORE_SPACE    # Ignore commands starting with a space
 setopt SHARE_HISTORY        # Share history across sessions
 setopt CORRECT              # Correct syntax errors with commands
-
 setopt PROMPT_SUBST         # Prompt expansion
-PROMPT='%F{blue}%B%~%b%f 󰘧 '
+
+NEWLINE=$'\n'
+PROMPT=' %F{blue}%B%~%b${NEWLINE} 󱞩%f '
+RPROMPT='%F{magenta}%T%f'
 
 # Initialize zoxide so it functions lul
 eval "$(zoxide init zsh)"
@@ -31,7 +33,9 @@ alias ls='ls --color=auto'
 alias cd='z'
 alias grep='grep --color=auto'
 alias h='helix'
+alias {v,vi,vim}="nvim"
 alias q='exit'
+alias ff='fastfetch'
 alias {bat,cat}='bat --theme=ansi --style=numbers,changes'
 alias pac='pacman -Slq | fzf --multi --preview "pacman -Si {1}" | xargs -ro sudo pacman -S'
 alias pacup='sudo pacman -Syu'
@@ -49,7 +53,6 @@ alias src='source ~/.zshrc'
 alias zshrc='h ~/.zshrc'
 alias manf='man -k . | sort | fzf | awk "{print \$1}" | xargs man'
 alias hyprpicker='hyprpicker -a'
-alias cbonsai="cbonsai -li -b 1"
 
 # gcb = gcc build ig lol
 gcb() {
@@ -57,6 +60,7 @@ gcb() {
     gcc -Wextra -Wall "$1" -o "$filename" && "./$filename"
 }
 
+# change directory w/ yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"

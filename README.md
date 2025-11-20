@@ -6,7 +6,7 @@ My workflow/setup consists of:
 * My desktop PC which I use for **VMs, gaming, and recording videos**. I dual boot w/ Arch + Niri and Windows 11 (windows SUCKS it keeps installing updates behind my back). 
     * Arch is currently for notetaking and my daily driver, whilst Windows is for gaming.
 
-![rmpc showcase](assets/rmpc.png)
+![ida free 9.2 showcase cuz we love reversing](assets/ida.png)
 ![desktop/vicinae showcase](assets/vicinae.png)
 
 Dotfiles can be found [**here.**](https://github.com/nubbsterr/nubbsterr/tree/main/dotfiles)

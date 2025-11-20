@@ -41,7 +41,7 @@ prefer-no-csd
 
 layout {
     gaps 10
-    center-focused-column "never"
+    center-focused-column "on-overflow"
     background-color "transparent"; // to allow overview bg to leak into workspaces, see layer rules
 
     preset-column-widths {
@@ -61,29 +61,12 @@ layout {
     
     // You can change how the focus ring looks.
     focus-ring {
-        // How many logical pixels the ring extends out from the windows.
         off
         width 2
-
-        // Colors can be set in a variety of ways:
-        // - CSS named colors: "red"
-        // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
-        // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
-
-        // Color of the ring on the active monitor.
-        active-color "#5CB8FF"
-
-        // Color of the ring on inactive monitors.
-        // The focus ring only draws around the active window, so the only place
-        // where you can see its inactive-color is on other monitors.
-        inactive-color "#00000000"
     }
 
     border {
-        width 0
-        active-color "#83a598"
-        urgent-color "#cc241d" 
-        inactive-color "#282828"
+        width 2
     }
 
     shadow {
@@ -111,12 +94,9 @@ spawn-at-startup "vicinae" "server" // lovely app launcher
 
 // issue w/ swayidle here not locking on sleep on my laptop for some reason???????????
 // it's whatev, just make sure to lock ur stuff b4 leaving it unattended :p
-spawn-at-startup "swayidle" "-w" "timeout" "270" "brightnessctl -s set 10%" "resume" "brightnessctl -r" "timeout" "300" "~/scripts/lock.sh" "timeout" "400" "niri msg action power-off-monitors" "before-sleep" "~/scripts/lock.sh"
+spawn-at-startup "swayidle" "-w" "timeout" "270" "brightnessctl -s set 10% && notify-send 'Swayidle' 'Locking in 30 seconds'" "resume" "brightnessctl -r" "timeout" "300" "~/scripts/lock.sh" "timeout" "400" "niri msg action power-off-monitors" "before-sleep" "~/scripts/lock.sh"
 spawn-at-startup "sunsetr"
 spawn-at-startup "mpd"              // music player daemon + rmpc
-
-// this is needed for clipview menu !! vicinae does this on its own
-// spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store" // add things to clipboard history!
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -140,6 +120,12 @@ window-rule {
 window-rule {
     match app-id="ghostty"
     open-maximized false
+}
+
+// rounded windows!!!!!!!!!!!!!!!!!!
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
 }
 
 // Block out mako notifications from screencasts.
@@ -239,7 +225,7 @@ binds {
 
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Run an Application: vicinae" { spawn "vicinae" "toggle"; }
-    Mod+Shift+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Mod+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "~/scripts/lock.sh"; }
     Mod+B hotkey-overlay-title="Open Browser: zen" { spawn "zen-browser"; }
     Mod+R hotkey-overlay-title="Reload Waybar" { spawn-sh "bash ~/scripts/waybar.sh"; }
     Mod+W hotkey-overlay-title="Set wallpaper" { spawn-sh "ghostty -e bash ~/scripts/wal.sh"; }
