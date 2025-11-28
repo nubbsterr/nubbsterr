@@ -1,7 +1,7 @@
 [config.wallpaper]
 command = "swww"
-arguments = ["img", "--transition-type", "center", "--transition-duration", "2"]
-set = true
+arguments = ["img", "--transition-type", "any", "--transition-duration", "2"]
+set = false
 
 [templates.waybar]
 input_path = '~/.config/matugen/templates/colors.css'
@@ -23,10 +23,15 @@ input_path = '~/.config/matugen/templates/ghostty'
 output_path = '~/.config/ghostty/themes/Matugen'
 post_hook = 'pkill -SIGUSR2 ghostty'
 
-[templates.vicinae]
-input_path = '~/.config/matugen/templates/vicinae.toml'
-output_path = '~/.local/share/vicinae/themes/matugen.toml'
-post_hook = 'vicinae theme set matugen'
+# because fuzzel uses GTK_THEME env var but vicinae doesn't??????????????????
+[templates.fuzzel]
+input_path = '~/.config/matugen/templates/colors.ini'
+output_path = '~/.config/fuzzel/colors.ini'
+
+#[templates.vicinae]
+#input_path = '~/.config/matugen/templates/vicinae.toml'
+#output_path = '~/.local/share/vicinae/themes/matugen.toml'
+#post_hook = 'vicinae theme set matugen'
 
 [templates.dunst]
 input_path = '~/.config/matugen/templates/dunstrc-colors'

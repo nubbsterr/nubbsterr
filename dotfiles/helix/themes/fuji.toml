@@ -1,0 +1,109 @@
+# mountain theme, adapted from https://codeberg.org/chimeri/FreeBSD/src/branch/main/default/conf/helix/themes/emacs.toml#
+
+# Syntax highlighting
+"comment" = { fg = "#4c4c4c" }
+"constant" = { fg = "#8a98ac" }
+"constant.builtin" = { fg = "#8f8aac" }
+"function" = { fg = "#8a98ac" }
+"function.call" = { fg = "#8a98ac" }
+"function.macro" = { fg = "#8f8aac" }
+"function.builtin" = { fg = "#8f8aac" }
+"function.special" = { fg = "#8f8aac" }
+"keyword" = { fg = "#8f8aac" }
+"operator" = { fg = "#8f8aac" }
+"punctuation" = { fg = "#4c4c4c" }
+"string" = { fg = "#ac8a8c" }
+"string.special" = { fg = "#ac8a8c", modifiers = ["bold"] }
+"type" = { fg = "#8aac8b" }
+"type.builtin" = { fg = "#8f8aac" }
+"constructor" = { fg = "#8aac8b" }
+"variable" = { fg = "#c6a679" }
+"variable.builtin" = { fg = "#8f8aac" }
+"variable.parameter" = { fg = "#c6a679" }
+"tag" = { fg = "#8a98ac" }
+"label" = { fg = "#8f8aac" }
+"attribute" = { fg = "#8f8aac" }
+"namespace" = { fg = "#8a98ac" }
+"module" = { fg = "#8a98ac" }
+"special" = { fg = "#8a98ac" }
+
+# Markup
+"markup.heading" = { fg = "#c6a679", modifiers = ["bold"] }
+"markup.heading.marker" = { fg = "#4c4c4c" }
+"markup.heading.1" = { fg = "#8a98ac" }
+"markup.heading.2" = { fg = "#c6a679" }
+"markup.heading.3" = { fg = "#8f8aac" }
+"markup.heading.4" = { fg = "#ac8a8c" }
+"markup.heading.5" = { fg = "#8aac8b" }
+"markup.heading.6" = { fg = "#8aacab" }
+"markup.list" = { fg = "#4c4c4c" }
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "#8a98ac", modifiers = ["underlined"] }
+"markup.link.text" = { fg = "#8a98ac" }
+"markup.quote" = { fg = "#f0f0f0" }
+"markup.raw.inline" = { fg = "#8aacab" }
+"markup.raw.block" = { fg = "#8aacab" }
+
+# UI
+"ui.background" = { fg = "#f0f0f0", bg = "#191919" }
+"ui.background.separator" = { fg = "#f0f0f0", bg = "#191919" }
+"ui.cursor" = { fg = "#f0f0f0", bg = "#8aacab" }
+"ui.cursor.primary" = { fg = "#f0f0f0", bg = "#8a98ac" }
+"ui.cursor.match" = { fg = "#191919", bg = "#8aac8b" }
+"ui.cursor.select" = { fg = "#f0f0f0", bg = "#191919" }
+"ui.cursor.insert" = { fg = "#ac8a8c", bg = "#191919" }
+"ui.linenr" = { fg = "#4c4c4c" }
+"ui.linenr.selected" = { fg = "#f0f0f0" }
+"ui.statusline" = { fg = "#f0f0f0", bg = "#262626" }
+"ui.statusline.inactive" = { fg = "#262626", bg = "#4c4c4c" }
+"ui.bufferline" = { fg = "#262626", bg = "#4c4c4c", modifiers = ["underlined"] }
+"ui.bufferline.active" = { fg = "#191919", bg = "#f0f0f0" }
+"ui.bufferline.background" = { bg = "#cccbca" }
+"ui.popup" = { fg = "#f0f0f0", bg = "#191919" }
+"ui.popup.info" = { fg = "#8aac8b", bg = "#191919" }
+"ui.window" = { fg = "#f0f0f0" }
+"ui.help" = { fg = "#ac8a8c", bg = "#191919" }
+"ui.text" = { fg = "#f0f0f0" }
+"ui.text.focus" = { fg = "#8aac8b", bg = "#191919" }
+"ui.menu" = { fg = "#f0f0f0", bg = "#191919" }
+"ui.menu.selected" = { fg = "#ac8a8c", bg = "#191919" }
+"ui.selection" = { bg = "#4c4c4c" }
+"ui.selection.primary" = { bg = "#8a98ac" }
+"ui.virtual.ruler" = { bg = "#4c4c4c" }
+"ui.virtual.inlay-hint" = { fg = "#8a98ac" }
+"ui.cursorline.primary" = { bg = "#262626" }
+"ui.cursorline.secondary" = { bg = "#262626" }
+
+# Diff
+"diff.plus" = { fg = "#8aac8b" }
+"diff.delta" = { fg = "#c6a679" }
+"diff.minus" = { fg = "#ac8a8c" }
+
+# Diagnostics
+"error" = { fg = "#ac8a8c" }
+"warning" = { fg = "#c6a679" }
+"info" = { fg = "#8aac8b" }
+"hint" = { fg = "#8aacab" }
+
+"diagnostic.error" = { underline = { color = "#ac8a8c", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "#c6a679", style = "curl" } }
+"diagnostic.info" = { underline = { color = "#8aac8b", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "#8aacab", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+# Minimal palette defining only the named colors used above
+[palette]
+black = "#191919"
+white = "#f0f0f0"
+red = "#ac8a8c"
+orange = "#c6a679"
+green = "#8aac8b"
+blue = "#8a98ac"
+purple = "#8f8aac"
+cyan = "#8aacab"
+gray = "#393939"
+dark_gray = "#262626"
+light_gray = "#4c4c4c"

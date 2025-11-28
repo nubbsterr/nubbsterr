@@ -1,10 +1,12 @@
+// some bits taken from ericmckevitt's config: https://github.com/ericmckevitt/rmpc-config/blob/main/config.ron
+
 #![enable(implicit_some)]
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
     address: "127.0.0.1:6600",
     password: None,
-    theme: Some("catppuccin_mocha"),
+    theme: Some("fuji"),
     cache_dir: None,
     on_song_change: None,
     volume_step: 5,
@@ -35,12 +37,9 @@
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Queue"),
-            "2":       SwitchToTab("Directories"),
+            "2":       SwitchToTab("Albums"),
             "3":       SwitchToTab("Artists"),
-            "4":       SwitchToTab("Album Artists"),
-            "5":       SwitchToTab("Albums"),
-            "6":       SwitchToTab("Playlists"),
-            "7":       SwitchToTab("Search"),
+            "4":       SwitchToTab("Playlists"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -120,7 +119,7 @@
         album_display_mode: SplitByDate,
         album_sort_by: Date,
     ),
-    tabs: [
+    tabs: [  
         (
             name: "Queue",
             pane: Split(
@@ -129,28 +128,23 @@
             ),
         ),
         (
-            name: "Directories",
-            pane: Pane(Directories),
+            name: "Albums",
+            pane: Pane(Albums),
         ),
         (
             name: "Artists",
             pane: Pane(Artists),
         ),
         (
-            name: "Album Artists",
-            pane: Pane(AlbumArtists),
-        ),
-        (
-            name: "Albums",
-            pane: Pane(Albums),
-        ),
-        (
             name: "Playlists",
             pane: Pane(Playlists),
         ),
         (
-            name: "Search",
-            pane: Pane(Search),
+            name: "Lyrics",
+            pane: Split(
+                direction: Vertical,
+                panes: [(size: "25%", pane: Pane(AlbumArt)), (size: "70%", pane: Pane(Lyrics), vertical_align: Bottom)],
+            ),
         ),
     ],
 )

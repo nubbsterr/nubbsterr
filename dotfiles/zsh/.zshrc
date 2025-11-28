@@ -11,12 +11,16 @@ setopt SHARE_HISTORY        # Share history across sessions
 setopt CORRECT              # Correct syntax errors with commands
 setopt PROMPT_SUBST         # Prompt expansion
 
-NEWLINE=$'\n'
-PROMPT=' %F{blue}%B%~%b${NEWLINE} 󱞩%f '
-RPROMPT='%F{magenta}%T%f'
+# old zsh prompt replaced w/ starship!
+#NEWLINE=$'\n'
+#PROMPT=' %F{blue}%B%~%b${NEWLINE} 󱞩%f '
+#RPROMPT='%F{magenta}%T%f'
 
 # Initialize zoxide so it functions lul
 eval "$(zoxide init zsh)"
+
+# starship prompt!
+eval "$(starship init zsh)"
 
 # Fzf bindings for zsh
 source <(fzf --zsh)
@@ -33,13 +37,13 @@ alias ls='ls --color=auto'
 alias cd='z'
 alias grep='grep --color=auto'
 alias h='helix'
-alias {v,vi,vim}="nvim"
 alias q='exit'
+
 alias ff='fastfetch'
 alias {bat,cat}='bat --theme=ansi --style=numbers,changes'
 alias pac='pacman -Slq | fzf --multi --preview "pacman -Si {1}" | xargs -ro sudo pacman -S'
 alias pacup='sudo pacman -Syu'
-alias pacrm='pacman -Qq | fzf --multi --preview "pacman -Qi {1}" | xargs -ro sudo pacman -Rns'
+alias pacrm='pacman -Qqe | fzf --multi --preview "pacman -Qi {1}" | xargs -ro sudo pacman -Rns'
 alias pacrns='sudo pacman -Rns $(pacman -Qdtq)'
 alias pacgrep='pacman -Qq | fzf --preview "pacman -Qi {1}"'
 alias aur='paru -Slq | fzf --multi --preview "paru -Si {1}" | xargs -ro paru -S'
@@ -51,8 +55,6 @@ alias gp='git push origin main'
 alias rcsync='rclone sync -P'
 alias src='source ~/.zshrc'
 alias zshrc='h ~/.zshrc'
-alias manf='man -k . | sort | fzf | awk "{print \$1}" | xargs man'
-alias hyprpicker='hyprpicker -a'
 
 # gcb = gcc build ig lol
 gcb() {
@@ -71,6 +73,9 @@ function y() {
 
 # display jp quotes, very neat, src: https://github.com/hxpe-dev/kotofetch
 kotofetch
+
+date_last_up=$(tac /var/log/pacman.log | grep -m 1 'full system upgrade' | cut -d ' ' -f 1 | tr -d '[]' | cut -d 'T' -f 1)
+echo " $(uname -r)\nLast upgrade was on $(date -d $date_last_up +'%A, %B %d')!\n$(pacman -Qdtq | wc -l) unneeded packages; $(pacman -Qdtq)"
 
 # For git configuration for secrets, do the following
 # git-credential-manager configure

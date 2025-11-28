@@ -2,7 +2,8 @@
 	"layer": "top",
 	"spacing": 16,
 	"modules-left": [
-		"custom/power",
+		//"custom/power",
+		//"wlr/taskbar",
 		"niri/workspaces",
 		"niri/window"
 	],
@@ -11,6 +12,7 @@
 	],
 	"modules-right": [
 		"mpd",
+		"idle_inhibitor",
 		"network",
 		"cpu",
 		"memory",
@@ -20,26 +22,26 @@
 		"battery",
 		"tray",
 	],
+	"wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 21,
+    "icon-theme": "Numix-Circle",
+    "tooltip-format": "{title} ({state})",
+    "on-click": "activate",
+    "on-click-middle": "close",
+  },
 	"custom/power": {
 		"format": "ム",
 		"tooltip-format": "Right-click for system info\nClick to display power menu",
 		"on-click-right": "~/scripts/sysinfo.sh",
 		"on-click": "~/scripts/power.sh"
 	},
-	"niri/workspaces": {
+	"idle_inhibitor": {
 		"format": "{icon}",
 		"format-icons": {
-    	"1": "一",
-      "2": "二",
-      "3": "三",
-      "4": "四",
-      "5": "五",
-      "6": "六",
-      "7": "七",
-      "8": "八",
-      "9": "九",
-      "10": "十"
-    }
+			"activated": "",
+			"deactivated": ""
+		}
 	},
 	"niri/window": {
 		"max-length": 50,
@@ -147,7 +149,7 @@
 	},
   "privacy": {
     "icon-spacing": 4,
-    "icon-size": 18,
+    "icon-size": 21,
     "transition-duration": 250,
     "modules": [
       { "type": "screenshare", "tooltip": true, "tooltip-icon-size": 24 },

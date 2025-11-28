@@ -6,7 +6,7 @@
 Some Arch/AUR packages to install ahead of using my setup:
 
 ```bash
-sudo pacman -S harper clangd pyright bash-language-server chafa swww zathura zathura-pdf-poppler zathura-cb fzf zsh zoxide nvtop htop bat waybar ghostty sunsetr wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git helix
+sudo pacman -S pavucontrol adw-gtk-theme harper clangd pyright bash-language-server chafa wf-recorder mate-polkit swww zathura zathura-pdf-poppler zathura-cb fzf zsh zoxide nvtop htop bat waybar ghostty sunsetr wireplumber pipwire-pulse noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd mandb man-pages mako unzip 7zip git helix
 ```
 
 If you wish to run my Sway dots:
@@ -19,6 +19,25 @@ If you wish to run my Niri config:
 
 ```bash
 sudo pacman -S niri xdg-desktop-portal-gnome xdg-desktop-portal-gtk swayidle swaylock-effects
+```
+
+If you wish to run virt-manager (for my own reference lol):
+
+```bash
+sudo pacman -S swtpm qemu-base virt-manager libvirt dnsmasq openbsd-netcat bridge-utils
+```
+
+```bash
+sudo systemctl enable libvirtd.service
+sudo systemctl start libvirtd.service
+
+sudo usermod -aG libvirt $USER
+sudo usermod -aG kvm $USER
+# log in/out now
+# follow this guide for making a win11 vm: https://www.youtube.com/watch?v=wxxP39cNJOs&t=193s
+# make sure to use the emulated TPM module
+# when you get to the MS sign in prompt, select organization/school/whatever the non-personal option is, then click sign-in options, then domain-joined!
+# when you get to the point where it wants you to connect, just hit 'Open folder' on the entire CDROM of the virtio drivers
 ```
 
 If you wish to run my rmpc/mpd setup (edit the directories in mpd.conf to your liking):

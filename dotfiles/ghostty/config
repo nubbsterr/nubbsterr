@@ -5,7 +5,9 @@ font-size = 16
 font-style = "Regular"
 font-synthetic-style = false
 
-background-opacity = 0.9
+#background-opacity = 0.9
+window-padding-x = 20
+window-padding-y = 20
 
 shell-integration-features = no-cursor
 cursor-style = block

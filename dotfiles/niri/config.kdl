@@ -36,12 +36,9 @@ output "HDMI-A-1" {
     position x=1280 y=0
 }
 
-// get rid of weird blue tint on terminal (idk why or how it got there) + title bar
-prefer-no-csd
-
 layout {
     gaps 10
-    center-focused-column "on-overflow"
+    center-focused-column "never"
     background-color "transparent"; // to allow overview bg to leak into workspaces, see layer rules
 
     preset-column-widths {
@@ -66,6 +63,7 @@ layout {
     }
 
     border {
+        off
         width 2
     }
 
@@ -86,11 +84,22 @@ layout {
         // bottom 64
     }
 }
+
+// for some reason, csd makes zen rlly slow and idk why??????????????????
+prefer-no-csd
+
+// to get vaapi working!!!!!!!!!!!
+environment {
+    GTK_THEME "adw-gtk3-dark"
+    LIBVA_DRIVER_NAME "nvidia"
+    NVD_BACKEND "direct"
+}
+
 // Add lines like this to spawn processes at startup.
 // fun fact u can run hyrpland tools in niri!!!!!!!!!!
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"      // fun fact, swww REMEMBERS the wallpaper you ran!!!!!!!!!!!!
-spawn-at-startup "vicinae" "server" // lovely app launcher
+spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 
 // issue w/ swayidle here not locking on sleep on my laptop for some reason???????????
 // it's whatev, just make sure to lock ur stuff b4 leaving it unattended :p
@@ -124,7 +133,7 @@ window-rule {
 
 // rounded windows!!!!!!!!!!!!!!!!!!
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 6
     clip-to-geometry true
 }
 
@@ -156,6 +165,7 @@ window-rule {
     }
 
     border {
+        active-color "#f38ba8"
         inactive-color "#7d0d2d"
     }
 
@@ -224,7 +234,8 @@ binds {
     Mod+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+D hotkey-overlay-title="Run an Application: vicinae" { spawn "vicinae" "toggle"; }
+    // vicinae doesn't use GTK_THEME env var for some dumb reason
+    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "~/scripts/lock.sh"; }
     Mod+B hotkey-overlay-title="Open Browser: zen" { spawn "zen-browser"; }
     Mod+R hotkey-overlay-title="Reload Waybar" { spawn-sh "bash ~/scripts/waybar.sh"; }
@@ -256,6 +267,11 @@ binds {
     Mod+K  { focus-window-down; }
     Mod+I  { focus-window-up; }
     Mod+L  { focus-column-right; }
+
+    Mod+Ctrl+J     { move-column-left; }
+    Mod+Ctrl+K     { move-window-down; }
+    Mod+Ctrl+I     { move-window-up; }
+    Mod+Ctrl+L     { move-column-right; }
 
     // You can bind mouse wheel scroll ticks using the following syntax.
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
