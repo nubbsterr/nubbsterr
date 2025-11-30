@@ -18,9 +18,6 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 
-[editor.lsp]
-display-color-swatches = true
-
 [editor.statusline]
 left = ["mode", "spinner"]
 center = ["file-name"]
@@ -31,3 +28,7 @@ mode.insert = "INSERT"
 mode.select = "SELECT"
 diagnostics = ["warning", "error"]
 workspace-diagnostics = ["warning", "error"]
+
+[keys.normal]
+# for C development
+m = { r = ":sh make run", k = ":sh make", m = ":vsplit Makefile"}

@@ -238,10 +238,10 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "~/scripts/lock.sh"; }
     Mod+B hotkey-overlay-title="Open Browser: zen" { spawn "zen-browser"; }
-    Mod+R hotkey-overlay-title="Reload Waybar" { spawn-sh "bash ~/scripts/waybar.sh"; }
-    Mod+W hotkey-overlay-title="Set wallpaper" { spawn-sh "ghostty -e bash ~/scripts/wal.sh"; }
-    Mod+P hotkey-overlay-title="Power menu" { spawn-sh "bash ~/scripts/power.sh"; }
-    Mod+S hotkey-overlay-title="Script menu" { spawn-sh "bash ~/scripts/pickscript.sh"; }
+    Mod+R hotkey-overlay-title="Reload Waybar" { spawn "~/scripts/waybar.sh"; }
+    Mod+W hotkey-overlay-title="Set wallpaper" { spawn "~/scripts/wal.sh"; }
+    Mod+P hotkey-overlay-title="Power menu" { spawn "~/scripts/power.sh"; }
+    Mod+S hotkey-overlay-title="Script menu" { spawn "~/scripts/pickscript.sh"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -323,7 +323,7 @@ binds {
     Mod+Space       { switch-layout "next"; }
     Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
+    Print { spawn "~/scripts/satty.sh"; }
     Mod+Print { screenshot-screen; }
 
     Mod+Shift+S hotkey-overlay-title="Set dynamic cast window when recording" { set-dynamic-cast-window; }

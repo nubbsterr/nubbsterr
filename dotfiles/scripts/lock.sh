@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
-# catppuccin mocha colours
+# mountain theme: https://github.com/mountain-theme/Mountain/blob/master/docs/fuji.org
 BLANK='#00000000'			# clear
-BLACK='1e1e2eff'			# black
-TEXT='#cdd6f4ff'			# white
-WRONG='#f38ba8ff'			# red
-VERIFYING='#a6e3a1ff' # green
-CLEAR='#fab387ff'			# yellow
+BLACK='191919ff'			# black
+TEXT='#F0F0F0ff'			# white
+WRONG='#AC8A8Cff'			# red
+VERIFYING='#8AAC8Bff' # green
+CLEAR='#C6A679ff'			# yellow
 
 swaylock \
 	-F \
 	-f \
 	-l \
 	--font "JetBrainsMono Nerd Font Propo" \
+	--font-size 38 \
 	--screenshots \
 	--clock \
 	--indicator \

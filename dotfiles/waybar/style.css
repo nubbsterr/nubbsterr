@@ -1,71 +1,76 @@
+/* lots of inspiration from danihek: https://github.com/danihek/arch-dotfiles/tree/main?tab=readme-ov-file
+suckless setups are the future
+*/
+
 /* matugen goodies */
 @import "colors.css";
 
 * {
     font-family: JetBrainsMono Nerd Font Propo;
     font-size: 16px;
-    min-height: 38px;
+    min-height: 32px;
 }
 
 window#waybar {
-    background: @background;
-    color: @on_background;
-    border-radius: 20px;
+    background: alpha(@background, 0.99);
+    color: @primary;
+    border: 1px solid @on_background;
+    border-radius: 4px;
 }
 
-.modules-right,
-.modules-center {
-    padding: 0 10px;
+/* all modules except launcher get border */
+#window, #clock, #tray, #mpd, #network, #cpu, #memory, #pulseaudio {
+    margin: 6px 6px 6px 0px;
+    padding: 0px 8px;
+	  border-radius: 4px;
+	  border: 2px solid @primary;
 }
+
+#network {
+	  min-width: 100px;
+}
+
+#cpu,
+#memory,
+#battery,
+#pulseaudio,
+#window,
+#workspaces {
+    min-width: 60px;
+}
+
 
 tooltip {
     background-color: @background;
     border: 1px solid @surface_variant;
-    border-radius: 0;
+    border-radius: 0px;
 }
 
-#tray, #mpd {
-    color: @primary;
-    border-radius: 10px;
+#clock {
+    background: @primary;
+    color: @background;
+    border: 2px solid @background;
 }
 
 #custom-power {
-    color: @tertiary;
+    color: @primary;
     margin-left: 10px;
 }
 
-#workspaces button, #taskbar button {
+#workspaces button {
     color: @surface_bright;
     padding: 2px 10px;
 }
 
-#workspaces button:hover, #taskbar button:hover {
+#workspaces button:hover {
     box-shadow: inherit;
     color: @on_surface;
     background: @background;
 }
 
-#workspaces button.active, #taskbar button.active {
+#workspaces button.active {
     background: @surface_container;
     color: @primary;
-}
-
-/*
-#privacy {
-    border-radius: 100px;
-    color: @on_primary;
-    background: @primary;
-    padding: 0 10px;
-    margin: 2px 0;
-}
-*/
-
-#idle_inhibitor.activated {
-    color: @primary;
-}
-
-#battery.warning:not(.charging), #battery.critical:not(.charging) {
-    color: @on_error;
 }
 
 #mpd.disconnected, #idle_inhibitor.activated, #battery.charging, #network.disconnected, #network.disabled, #pulseaudio.muted {

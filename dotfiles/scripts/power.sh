@@ -2,7 +2,7 @@
 
 #!/usr/bin/env bash
 
-SELECTION="$(printf "󰌾  Lock\n󰤄  Suspend\n󰈆  Log out\n󰑐  Reboot\n󰐥  Shutdown" | vicinae dmenu -p "$(uptime -p)")" || exit 0 
+SELECTION="$(printf "󰌾  Lock\n󰤄  Suspend\n󰈆  Log out\n󰑐  Reboot\n󰐥  Shutdown" | fuzzel --dmenu -l 5 --placeholder  "$(uptime -p)")" || exit 0 
 
 case $SELECTION in
 	*"Lock")

@@ -41,11 +41,12 @@ alias q='exit'
 
 alias ff='fastfetch'
 alias {bat,cat}='bat --theme=ansi --style=numbers,changes'
-alias pac='pacman -Slq | fzf --multi --preview "pacman -Si {1}" | xargs -ro sudo pacman -S'
+alias wf='wf-recorder -f ~/videos/"$(date '+%Y-%m-%d %H:%M:%S').mp4" -r 60 -c h264_nvenc --audio'
+alias pac='pacman -Slq | fzf --multi --preview "pacman -Si {1}" --preview-window down | xargs -ro sudo pacman -S'
 alias pacup='sudo pacman -Syu'
-alias pacrm='pacman -Qqe | fzf --multi --preview "pacman -Qi {1}" | xargs -ro sudo pacman -Rns'
+alias pacrm='pacman -Qqe | fzf --multi --preview "pacman -Qi {1}" --preview-window down | xargs -ro sudo pacman -Rns'
 alias pacrns='sudo pacman -Rns $(pacman -Qdtq)'
-alias pacgrep='pacman -Qq | fzf --preview "pacman -Qi {1}"'
+alias pacgrep='pacman -Qq | fzf --preview "pacman -Qi {1}" --preview-window down'
 alias aur='paru -Slq | fzf --multi --preview "paru -Si {1}" | xargs -ro paru -S'
 alias aurm='paru -Qq | fzf --multi --preview "paru -Qi {1}" | xargs -ro paru -Rns'
 alias gs='git status'
@@ -75,7 +76,7 @@ function y() {
 kotofetch
 
 date_last_up=$(tac /var/log/pacman.log | grep -m 1 'full system upgrade' | cut -d ' ' -f 1 | tr -d '[]' | cut -d 'T' -f 1)
-echo " $(uname -r)\nLast upgrade was on $(date -d $date_last_up +'%A, %B %d')!\n$(pacman -Qdtq | wc -l) unneeded packages; $(pacman -Qdtq)"
+echo "Last upgrade was on $(date -d $date_last_up +'%A, %B %d')!\n$(pacman -Qdtq | wc -l) unneeded packages; $(pacman -Qdtq)"
 
 # For git configuration for secrets, do the following
 # git-credential-manager configure
