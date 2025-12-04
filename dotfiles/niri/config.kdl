@@ -88,6 +88,10 @@ layout {
 // for some reason, csd makes zen rlly slow and idk why??????????????????
 prefer-no-csd
 
+// matugen for borders and alt+tab
+include "colors.kdl"
+
+
 // to get vaapi working!!!!!!!!!!!
 environment {
     GTK_THEME "adw-gtk3-dark"
@@ -99,11 +103,12 @@ environment {
 // fun fact u can run hyrpland tools in niri!!!!!!!!!!
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"      // fun fact, swww REMEMBERS the wallpaper you ran!!!!!!!!!!!!
+spawn-at-startup "swaync"
 spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 
 // issue w/ swayidle here not locking on sleep on my laptop for some reason???????????
 // it's whatev, just make sure to lock ur stuff b4 leaving it unattended :p
-spawn-at-startup "swayidle" "-w" "timeout" "270" "brightnessctl -s set 10% && notify-send 'Swayidle' 'Locking in 30 seconds'" "resume" "brightnessctl -r" "timeout" "300" "~/scripts/lock.sh" "timeout" "400" "niri msg action power-off-monitors" "before-sleep" "~/scripts/lock.sh"
+spawn-at-startup "swayidle" "-w" "timeout" "270" "brightnessctl -s set 10% && notify-send -u critical 'Swayidle' 'Locking in 30 seconds'" "resume" "brightnessctl -r" "timeout" "300" "~/scripts/lock.sh" "timeout" "400" "niri msg action power-off-monitors" "before-sleep" "~/scripts/lock.sh"
 spawn-at-startup "sunsetr"
 spawn-at-startup "mpd"              // music player daemon + rmpc
 
@@ -129,6 +134,13 @@ window-rule {
 window-rule {
     match app-id="ghostty"
     open-maximized false
+}
+
+// file managers open as floating windows! use niri msg windows to get title/app id to match
+window-rule {
+    match title="Yazi"
+    match app-id="Nautilus"
+    open-floating true
 }
 
 // rounded windows!!!!!!!!!!!!!!!!!!
@@ -190,15 +202,15 @@ animations {
     }
 
     window-open {
-        duration-ms 150
-        curve "ease-out-expo"
-    }
+		duration-ms 300
+		curve "cubic-bezier" 0.16 1 0.3 1
+	}
 
     window-close {
-        duration-ms 150
-        curve "ease-out-quad"
-    }
-
+		duration-ms 350
+		curve "cubic-bezier" 0.16 1 0.3 1
+	}
+    
     horizontal-view-movement {
         spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
     }
@@ -234,9 +246,9 @@ binds {
     Mod+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    // vicinae doesn't use GTK_THEME env var for some dumb reason
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "~/scripts/lock.sh"; }
+    Mod+Shift+N hotkey-overlay-title="Open swaync" {spawn "swaync-client" "-t" "-sw"; }
     Mod+B hotkey-overlay-title="Open Browser: zen" { spawn "zen-browser"; }
     Mod+R hotkey-overlay-title="Reload Waybar" { spawn "~/scripts/waybar.sh"; }
     Mod+W hotkey-overlay-title="Set wallpaper" { spawn "~/scripts/wal.sh"; }
@@ -246,16 +258,16 @@ binds {
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "~/scripts/volnotify.sh up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "~/scripts/volnotify.sh down"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "~/scripts/volnotify.sh mute"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
     // but you need to manually put each argument in separate "" quotes.
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "~/scripts/brnotify.sh up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "~/scripts/brnotify.sh down"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,

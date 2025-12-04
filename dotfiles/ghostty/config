@@ -6,8 +6,9 @@ font-style = "Regular"
 font-synthetic-style = false
 
 #background-opacity = 0.9
-window-padding-x = 20
-window-padding-y = 20
+window-padding-x = 8
+window-padding-y = 8
+adjust-cell-width = -5%
 
 shell-integration-features = no-cursor
 cursor-style = block

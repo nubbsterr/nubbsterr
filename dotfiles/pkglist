@@ -8,7 +8,6 @@ bat
 bridge-utils
 brightnessctl
 cava
-cbonsai
 chafa
 clang
 cliphist
@@ -23,12 +22,12 @@ gamescope
 ghostty
 git
 git-credential-manager-bin
+glow
 grim
 grub
 harper
 helix
 htop
-kotofetch
 libnotify
 libva-nvidia-driver
 libva-utils
@@ -46,6 +45,7 @@ matugen-bin
 mpd
 mpv
 networkmanager
+newsboat
 newscheck
 nicotine+
 niri
@@ -59,13 +59,14 @@ obs-studio
 obsidian
 openbsd-netcat
 os-prober
-paru
 paru-debug
 pavucontrol
 pipewire-pulse
+privacy-dots
 pyright
 python-pip
 qemu-base
+quickshell-git
 quran-companion
 raylib
 ripgrep
@@ -94,6 +95,8 @@ xdg-desktop-portal
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xwayland-satellite
+yay
+yay-debug
 yazi
 zathura
 zathura-cb

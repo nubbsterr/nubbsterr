@@ -1,3 +1,41 @@
+" -----------------------------------------------------------------------------
+" Zathura settings
+" -----------------------------------------------------------------------------
+
+" Colors
+set default-bg              "rgba(25, 18, 12, 1)"
+set default-fg              "#efdfd6"
+
+set statusbar-bg            "#4d2600"
+set statusbar-fg            "#ffb77e"
+
+set inputbar-bg             "#4d2600"
+set inputbar-fg             "#ffb77e"
+
+set notification-error-bg   "#690005"
+set notification-error-fg   "#ffb4ab"
+
+set notification-warning-bg "#ffdcc3"
+set notification-warning-fg "#93000a"
+
+set highlight-color         "#ffdcc3"
+set highlight-active-color  "#ffb77e"
+
+set completion-highlight-fg "#4d2600"
+set completion-highlight-bg #ffb77e""
+
+set completion-bg           "#4d2600"
+set completion-fg           "#ffb77e"
+
+set notification-bg         "#4d2600"
+set notification-fg         "#ffb77e"
+
+set recolor                 "true"
+set recolor-lightcolor      "rgba(239, 223, 214, 1)"
+set recolor-darkcolor       "#19120c"
+set recolor-reverse-video   "true"
+set recolor-keephue         "true"
+
 " Clipboard
 set selection-clipboard clipboard
 
@@ -11,6 +49,9 @@ set adjust-open width
 " -----------------------------------------------------------------------------
 " Zathura mappings
 " -----------------------------------------------------------------------------
+
+" Typography
+set font "JetBrainsMono Nerd Font normal 12"
 
 " Zoom in/out
 map [normal]     z zoom in

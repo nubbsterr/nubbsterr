@@ -11,5 +11,4 @@ test -f "$WALLPAPER" || exit 1
 
 # scheme-neutral and content are also good themes to pick
 matugen image $WALLPAPER -t scheme-tonal-spot -m "dark"
-swww img --transition-type any --transition-duration 2 $WALLPAPER
-notify-send "Wallpaper set to $WALLPAPER."
+notify-send "Wallpaper set!" "Wallpaper set to $WALLPAPER."

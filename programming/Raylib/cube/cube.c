@@ -17,7 +17,7 @@ int main() {
   // absolute slideshow
   SetTargetFPS(60);
   // lock the cursor to the window!
-  DisableCursor();
+  //DisableCursor();
 
   while (!WindowShouldClose()) {
     if (IsKeyPressed(KEY_SPACE)) {
@@ -28,7 +28,7 @@ int main() {
     // basically initialize the camera and our window
     BeginDrawing();
       // free cam, we can move w/ WASD and move the camera around w/ the mouse
-      UpdateCamera(&camera, CAMERA_FREE);
+      UpdateCamera(&camera, CAMERA_ORBITAL);
       ClearBackground(BLACK);
       BeginMode3D(camera);
         

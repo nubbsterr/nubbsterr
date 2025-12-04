@@ -20,10 +20,10 @@ sudo usermod -aG kvm $USER
 
 ---
 
-Note that I use Paru as my AUR helper; install as follows:
+Note that I use `yay` as my AUR helper, install as follows:
 
-```
-git clone https://aur.archlinux.org/paru.git
-cd paru
+```bash
+git clone https://aur.archlinux.org/yay.git
+cd yay
 makepkg -si
 ```

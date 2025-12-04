@@ -6,15 +6,15 @@
   "margin-bottom": 0,
   "margin-left": 10,
 	"modules-left": [
-		"custom/power",
-		//"niri/workspaces",
+		"niri/workspaces",
 		"niri/window",
 	],
 	"modules-center": [
-		"clock"
+		"wlr/taskbar",
 	],
 	"modules-right": [
-		//"mpd",
+		"custom/privacy-dots",
+		"tray",
 		"network",
 		"cpu",
 		"memory",
@@ -22,8 +22,24 @@
 		"backlight",
 		"power-profiles-daemon",
 		"battery",
-		"tray",
+		"clock"
 	],
+	"wlr/taskbar": {
+    "format": "{icon}",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "minimize",
+    "on-click-right": "close",
+  },
+	"custom/privacy-dots": {
+  	"exec": "privacy-dots",
+    "return-type": "json",
+    "interval": 3,
+    "format": "{text}",
+    "tooltip": true,
+    "escape": false,
+    "markup": "pango"
+  },
 	"custom/power": {
 		"format": "",
 		"tooltip-format": "Right-click for scripts\nClick to display power menu",
@@ -31,7 +47,7 @@
 		"on-click": "~/scripts/power.sh"
 	},
 	"niri/window": {
-		"max-length": 50,
+		"max-length": 60,
 		"icon": false,
 	},
   "cpu": {
@@ -61,7 +77,7 @@
   "clock": {
     "timezone": "Canada/Eastern",
     "tooltip-format": "{calendar}",
-    "format": "{:%H:%M - %b, %d %a}",
+    "format": "{:%a, %b %d %H:%M}",
     "format-alt": "{:%I:%M %p}",
     "calendar": {
       "mode": "month"
@@ -84,7 +100,7 @@
     },
   },
 	"network": {
-		"format-wifi": "{essid}: {signalStrength}%",
+		"format-wifi": "{essid} {signalStrength}%",
 		"max-length": 30,
 		"format-ethernet": "{ifname}",
 		"tooltip-format": "{signalStrength}% {essid}\n{ifname}: {ipaddr}/{cidr}\nvia {gwaddr}",

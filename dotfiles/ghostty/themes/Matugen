@@ -1,19 +1,12 @@
-# mountain fuji theme + matugen
+# (a bit of) mountain fuji theme + matugen
+# named colour reference here: https://www.ditig.com/256-colors-cheat-sheet
 
-background = #161217
-foreground = #e9e0e7
-cursor-color = #e9e0e7
-cursor-text = #cec3ce
-selection-background = #d3c0d8
-selection-foreground = #382c3e
+cursor-color = efdfd6
+selection-foreground = 422c1a
+selection-background = e3c0a6
 
-# black
-palette = 8=262626
-palette = 0=4c4c4c
-
-# red
-palette = 1=ac8a8c
-palette = 9=c49ea0
+foreground = efdfd6
+background = #19120c
 
 # green
 palette = 2=8aac8b
@@ -24,7 +17,7 @@ palette = 3=aca98a
 palette = 11=c4c19e
 
 # blue
-palette = 4=#e1b7f5
+palette = 4=#ffb77e
 palette = 12=a39ec4
 
 # magenta
@@ -35,6 +28,9 @@ palette = 13=c49ec4
 palette = 6=8aacab
 palette = 14=9ec3c4
 
-# white
-palette = 7=f0f0f0
-palette = 15=e7e7e7
+palette = 0=#19120c
+palette = 1=#ffb4ab
+palette = 7=#c4a895
+palette = 8=#d6c3b6
+palette = 9=#93000a
+palette = 15=#efdfd6

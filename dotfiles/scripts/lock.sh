@@ -11,34 +11,24 @@ swaylock \
 	-F \
 	-f \
 	-l \
-	--font "JetBrainsMono Nerd Font Propo" \
-	--font-size 38 \
 	--screenshots \
 	--clock \
 	--indicator \
 	--indicator-radius 100 \
 	--indicator-thickness 7 \
 	--effect-blur 7x5 \
-	--text-color $TEXT \
-	--inside-caps-lock-color $BLANK \
-	--ring-caps-lock-color $CLEAR \
-	--text-caps-lock-color $TEXT \
-	--ring-clear-color $CLEAR \
-	--inside-clear-color $BLANK \
-	--text-clear-color $TEXT \
-	--inside-ver-color $BLANK \
-	--ring-ver-color $VERIFYING \
-	--inside-wrong-color $BLANK \
-	--ring-wrong-color $WRONG \
-	--inside-color $BLANK \
+	--effect-vignette 0.5:0.5 \
 	--ring-color $BLANK \
-	--line-color $BLANK \
-	--separator-color=$TEXT \
-	--text-ver-color=$TEXT \
-	--text-wrong-color=$TEXT \
-	--layout-text-color=$TEXT \
-	--key-hl-color=$VERIFYING \
-	--bs-hl-color=$WRONG \
-	--separator-color $CLEAR \
+	--key-hl-color $VERIFYING \
+	--text-color $TEXT \
+	--text-ver-color $VERIFYING \
+	--text-wrong-color $WRONG \
+	--line-color 00000000 \
+	--inside-color $BLACK \
+	--inside-ver-color $BLACK \
+	--inside-wrong-color $BLACK \
+	--ring-ver-color $VERIFYING \
+	--ring-wrong-color $WRONG \
+	--separator-color 00000000 \
 	--grace 2 \
 	--fade-in 0.2

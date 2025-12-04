@@ -1,12 +1,21 @@
 [config.wallpaper]
 command = "swww"
 arguments = ["img", "--transition-type", "any", "--transition-duration", "2"]
-set = false
+set = true
 
 [templates.waybar]
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
 post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.niri]
+input_path = '~/.config/matugen/templates/colors.kdl'
+output_path = '~/.config/niri/colors.kdl'
+
+[templates.quickshell]
+input_path = '~/.config/matugen/templates/shell.qml'
+output_path = '~/.config/quickshell/shell.qml'
+
 
 #[templates.sway]
 #input_path = '~/.config/matugen/templates/sway-colors.conf'
@@ -23,7 +32,6 @@ input_path = '~/.config/matugen/templates/ghostty'
 output_path = '~/.config/ghostty/themes/Matugen'
 post_hook = 'pkill -SIGUSR2 ghostty'
 
-# because fuzzel uses GTK_THEME env var but vicinae doesn't??????????????????
 [templates.fuzzel]
 input_path = '~/.config/matugen/templates/colors.ini'
 output_path = '~/.config/fuzzel/colors.ini'
@@ -33,6 +41,10 @@ output_path = '~/.config/fuzzel/colors.ini'
 #output_path = '~/.local/share/vicinae/themes/matugen.toml'
 #post_hook = 'vicinae theme set matugen'
 
+[templates.zathura]
+input_path = '~/.config/matugen/templates/zathura-colors'
+output_path = '~/.config/zathura/zathurarc'
+
 [templates.dunst]
 input_path = '~/.config/matugen/templates/dunstrc-colors'
 output_path = '~/.config/dunst/dunstrc'
@@ -41,6 +53,10 @@ post_hook = 'dunstctl reload'
 #[templates.helix]
 #input_path = '~/.config/matugen/templates/helix.toml'
 #output_path = '~/.config/helix/themes/matugen.toml'
+
+[templates.zed]
+input_path = '~/.config/matugen/templates/zed-colors.json'
+output_path = '~/.config/zed/themes/matugen.json'
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
