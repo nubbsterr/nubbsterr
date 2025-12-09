@@ -1,5 +1,7 @@
 theme = "Matugen"
 
+# custom-shader = shaders/cursor_smear.glsl
+
 font-family = "JetBrainsMonoNL Nerd Font" 
 font-size = 16
 font-style = "Regular"

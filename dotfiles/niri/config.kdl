@@ -108,7 +108,7 @@ spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 
 // issue w/ swayidle here not locking on sleep on my laptop for some reason???????????
 // it's whatev, just make sure to lock ur stuff b4 leaving it unattended :p
-spawn-at-startup "swayidle" "-w" "timeout" "270" "brightnessctl -s set 10% && notify-send -u critical 'Swayidle' 'Locking in 30 seconds'" "resume" "brightnessctl -r" "timeout" "300" "~/scripts/lock.sh" "timeout" "400" "niri msg action power-off-monitors" "before-sleep" "~/scripts/lock.sh"
+spawn-at-startup "swayidle" "-w" "timeout" "270" "brightnessctl -s set 10% && notify-send -u critical 'Swayidle' 'Locking in 30 seconds'" "resume" "brightnessctl -r" "timeout" "300" "~/scripts/lock.sh" "timeout" "400" "niri msg action power-off-monitors" "timeout" "1800" "systemctl suspend" "before-sleep" "~/scripts/lock.sh"
 spawn-at-startup "sunsetr"
 spawn-at-startup "mpd"              // music player daemon + rmpc
 

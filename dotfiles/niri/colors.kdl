@@ -2,8 +2,8 @@ layout {
 	focus-ring {
 		on
 		width 1
-		active-color "#ffb77e"
-		inactive-color "#51443b"
+		active-color "#ffb4aa"
+		inactive-color "#59413e"
 		urgent-color "#93000a"
 	}
 }
@@ -15,7 +15,7 @@ recent-windows {
     open-delay-ms 150
 
     highlight {
-        active-color "#51443b"
+        active-color "#59413e"
         urgent-color "#93000a"
         padding 30
         corner-radius 0

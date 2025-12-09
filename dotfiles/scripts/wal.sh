@@ -10,5 +10,5 @@ WALLPAPER=$(hellpaper $WALLS_DIR)
 test -f "$WALLPAPER" || exit 1
 
 # scheme-neutral and content are also good themes to pick
-matugen image $WALLPAPER -t scheme-tonal-spot -m "dark"
+matugen image $WALLPAPER -t scheme-content -m "dark"
 notify-send "Wallpaper set!" "Wallpaper set to $WALLPAPER."

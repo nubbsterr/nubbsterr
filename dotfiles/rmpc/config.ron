@@ -6,6 +6,7 @@
 (
     address: "127.0.0.1:6600",
     on_song_change: ["~/.config/rmpc/notify"],
+    lyrics_dir: Some("~/music"), // same as mpd music dir, so all lrc files are in the same path as wherever the song is
     password: None,
     theme: Some("fuji"),
     cache_dir: None,
@@ -138,13 +139,6 @@
         (
             name: "Playlists",
             pane: Pane(Playlists),
-        ),
-        (
-            name: "Lyrics",
-            pane: Split(
-                direction: Vertical,
-                panes: [(size: "25%", pane: Pane(AlbumArt)), (size: "70%", pane: Pane(Lyrics), vertical_align: Bottom)],
-            ),
         ),
     ],
 )

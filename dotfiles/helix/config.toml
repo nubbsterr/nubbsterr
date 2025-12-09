@@ -1,10 +1,14 @@
-theme = "fuji"
+theme = "gruber"
 
 [editor]
 line-number = "relative"
 true-color = true
 mouse = false
 cursorline = true
+color-modes = true
+
+[editor.lsp]
+display-messages = false
 
 [editor.inline-diagnostics]
 cursor-line = "hint"
@@ -19,8 +23,8 @@ select = "underline"
 hidden = false
 
 [editor.statusline]
-left = ["mode", "spinner"]
-center = ["file-name"]
+left = ["mode", "spinner", "version-control"]
+center = ["file-name", "read-only-indicator", "file-modification-indicator"]
 right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
 mode.normal = "NORMAL"
@@ -30,5 +34,17 @@ diagnostics = ["warning", "error"]
 workspace-diagnostics = ["warning", "error"]
 
 [keys.normal]
-# for C development
-m = { r = ":sh make run", k = ":sh make", m = ":vsplit Makefile"}
+C-s = ":update"
+C-p = "file_picker"
+
+[keys.normal."m"]
+# for C development; makefile running/edits
+r = ":sh make run"
+k = ":sh make"
+m = ":vsplit Makefile"
+
+[keys.normal."'"]
+f = ":format"
+
+[keys.normal.z]
+q = ":write-quit-all"
