@@ -1,4 +1,4 @@
-theme = "gruber"
+theme = "catppuccin_mocha"
 
 [editor]
 line-number = "relative"
@@ -44,7 +44,12 @@ k = ":sh make"
 m = ":vsplit Makefile"
 
 [keys.normal."'"]
+# diff themes for whenever i feel like swapping; mainly from gruber to fuji/zed for anything that isn't code
 f = ":format"
+c = ":theme catppuccin_mocha"
+j = ":theme fuji"
+g = ":theme gruber"
+z = ":theme zed_onedark"
 
 [keys.normal.z]
 q = ":write-quit-all"

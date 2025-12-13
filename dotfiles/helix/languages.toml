@@ -9,3 +9,15 @@ language-servers = ["harper-ls"]
 [[language]]
 name = "html"
 language-servers = ["harper-ls"]
+
+[[language]]
+name = "c"
+language-servers = ["clangd"]
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = "clang-format", args = ["--style=Google"] }
+
+[[language]]
+name = "cpp"
+language-servers = ["clangd"]
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = "clang-format", args = ["--style=Google"] }

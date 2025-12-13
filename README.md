@@ -4,6 +4,7 @@ I'm a **Computer Engineering** student with a passion for programming, robotics,
 
 I'm currently rather busy with uni. I spend a lot of time on my ThinkPad T450s doing schoolwork, and use my PC at home for mainly web browsing, some gaming (when games don't crash on Steam), etc.
 - I run Arch Linux w/ Niri. I do have Windows dual-booted but I hate using it for anything but gaming.
+- Below you can see some fun stuff w/ Raylib (not my current desktop setup) + my current desktop!
 
 ![raylib!](assets/raylib.png)
 ![desktop showcase](assets/desktop.png)
@@ -12,7 +13,9 @@ I'm currently rather busy with uni. I spend a lot of time on my ThinkPad T450s d
 Dotfiles can be found [**here.**](https://github.com/nubbsterr/nubbsterr/tree/main/dotfiles)
 
 My current activities are:
-* Goofing around w/ Raylib (way too much fun)
+* Goofing around w/ **Raylib** (way too much fun) + rendering graphics APIs **irrelevant** w/ C >:)
+    * + Some other projects and fun snippets live (AoC 2025, TCP socket fun, and other C basics) 
+    * **all of this can be found on my C playground repo [here](https://github.com/nubbsterr/C-playground)**
 * Grinding uni homework and being a uni slave in general >:(
 * Posting lab attempts and Limbus Company videos on my [**YT channel!**](https://www.youtube.com/@0xnubb)
 * Working on my [**portfolio**](https://github.com/nubbsterr/web), as well as other projects which you can find here!

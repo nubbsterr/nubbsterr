@@ -1,0 +1,92 @@
+# Author: BlindSeerStudios
+
+"ui.background" = { fg = "#FFFFFF", bg = "#292A2B" }
+"ui.background.separator" = { fg = "#31F3D1" }
+"ui.cursor" = { bg = "#F56BA6", modifier = ["reversed"] }
+"ui.cursor.match" = { fg = "#31F3D1", modifiers = ["reversed"] }
+"ui.cursor.primary" = { fg = "#F56BA6", modifiers = ["reversed"] }
+"ui.cursor.secondary" = { fg = "#F56BA6", modifiers = ["reversed"] }
+"ui.highlight" = "white"
+# "ui.cursor.primary.insert" = { bg = "#31F3D1", modifiers = ["reversed"] }
+# "ui.cursor.primary.select" = { bg = "#F1A865", modifiers = ["reversed"] }
+"ui.gutter" = "#1A1A1A"
+"ui.gutter.selected" = { fg = "#292A2B" }
+"ui.help" = { fg = "light-gray", bg = "#292A2B" }
+"ui.linenr" = { fg = "light-gray", modifiers = ["dim"] }
+"ui.linenr.selected" = { fg = "white", modifiers = ["bold"] }
+"ui.menu" = { fg = "light-gray", bg = "#1A1A1A" }
+"ui.menu.selected" = { fg = "#31F3D1",  modifiers = ["reversed"] }
+"ui.menu.scroll" = { fg = "#F56BA6" }
+"ui.popup" = { bg = "#1A1A1A" }
+"ui.selection" = { bg = "#4a7391" }
+"ui.statusline" = { fg = "white", bg = "#1A1A1A" }
+"ui.statusline.inactive" = { modifiers = ["dim"] }
+"ui.statusline.normal" = "#F56BA6"
+"ui.statusline.insert" = "#F1A865"
+"ui.statusline.select" = "#31F3D1"
+"ui.text.focus" = { fg = "#31F3D1" }
+"ui.virtual" = { bg = "151616" }
+"ui.virtual.indent-guide" = { fg = "gray", modifiers = ["dim"] }
+"ui.virtual.whitespace" = {}
+"ui.virtual.wrap" = { fg = "gray" }
+"ui.virtual.inlay-hint" = { fg = "light-gray", modifiers = ["dim", "italic"] }
+"ui.virtual.inlay-hint.parameter" = { fg = "#F1A865", modifiers = ["dim", "italic"] }
+"ui.virtual.inlay-hint.type" = { fg = "#1F7CCD", modifiers = ["dim", "italic"] }
+"ui.window" = { fg = "#252729", modifiers = ["dim"] }
+
+"comment" = { fg = "#a4a4a4ff", modifiers = ["italic"] }
+
+"attribute" = "#87BCF6"
+"constant" = { fg = "#F1A865" }
+"constant.numeric" = "#F1A865"
+"constant.character.escape" = "#87BCF6"
+"constructor" = "#87BCF6"
+"function" = "#87BCF6"
+"function.macro" = "light-red"
+"function.builtin" = { fg = "#87BCF6", modifiers = ["bold"] }
+"tag" = { fg = "light-magenta", modifiers = ["dim"] }
+"type" = {fg = "#87BCF6"}
+"type.builtin" = { fg = "#F56BA6" }
+"type.enum.variant" = { fg = "#FFFFFF" }
+"string"  = "#31F3D1"
+"special" = "#F56BA6"
+"variable" = "#FFFFFF"
+"variable.parameter" = { fg = "#87BCF6", modifiers = ["italic"] }
+"variable.other.member" = "#FFFFFF"
+"varibale.builtin" = "#87BCF6"
+"varibale.parameter" = "#87BCF6"
+"varibale.other.member" = "#87BCF6"
+"varibale.other.member.private" = "#87BCF6"
+"keyword" = "#F1A865"
+"keyword.control.exception" = "#F56BA6"
+"keyword.directive" = { fg = "#F1A865", modifiers = ["bold"] }
+"keyword.operator" = { fg = "#87BCF6", modifiers = ["bold"] }
+"keyword.control.conditional" = "#F56BA6"
+"label" = "#31F3D1"
+"namespace" = { fg = "#87BCF6" }
+"punctuation.bracket" = "#1F7CCD"
+
+"markup.heading" = "#87BCF6"
+"markup.list" = "#F1A865"
+"markup.bold" = { fg = "#31F3D1", modifiers = ["bold"] }
+"markup.italic" = { fg = "#87BCF6", modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "magenta", modifiers = ["dim"] }
+"markup.link.text" = "light-magenta"
+"markup.quote" = "#31F3D1"
+"markup.raw" = "light-green"
+
+"diff.plus" = "#87BCF6"
+"diff.delta" = "#31F3D1"
+"diff.minus" = "#F56BA6"
+
+"diagnostic.hint" = { underline = { color = "gray", style = "curl" } }
+"diagnostic.info" = { underline = { color = "#31F3D1", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "#F1A865", style = "curl" } }
+"diagnostic.error" = { underline = { color = "light-red", style = "curl" } }
+
+"info" = "#31F3D1"
+"hint" = { fg = "light-gray", modifiers = ["dim"] }
+"debug" = "white"
+"warning" = "#F1A865"
+"error" = "light-red"

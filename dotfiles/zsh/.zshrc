@@ -1,6 +1,7 @@
-autoload -Uz compinit; compinit                           # Autocompletion!
+autoload -Uz compinit; compinit                           			# qutocompletion!
+autoload -Uz colors; colors
 zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 			# Case-insensitive completion
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -11,20 +12,12 @@ setopt SHARE_HISTORY        # Share history across sessions
 setopt CORRECT              # Correct syntax errors with commands
 setopt PROMPT_SUBST         # Prompt expansion
 
-# old zsh prompt replaced w/ starship!
-#NEWLINE=$'\n'
-#PROMPT='%F{green}%B%~%b%f 󰘧 '
+BACKGROUND_JOBS='%(1j.%F{red}[%j] %f.)'
+PROMPT="%B$BACKGROUND_JOBS%b[%n@%m %~]$ "
 
-# Initialize zoxide so it functions lul
 eval "$(zoxide init zsh)"
-
-# starship prompt!
-eval "$(starship init zsh)"
-
-# Fzf bindings for zsh
 source <(fzf --zsh)
 
-# Autosuggestions and syntax highlighting!
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -36,7 +29,7 @@ export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08
 # !! known issue w/ xwayland-satellite and has been fixed in release 0.8
 alias wlc='wl-copy --clear'
 
-alias ls='ls --color=auto'
+alias ls='ls --group-directories-first --color=auto'
 alias cd='z'
 alias newb='newsboat'
 alias grep='grep --color=auto'
@@ -77,7 +70,7 @@ zle -N Resume
 bindkey "^Z" Resume
 
 date_last_up=$(tac /var/log/pacman.log | grep -m 1 'full system upgrade' | cut -d ' ' -f 1 | tr -d '[]' | cut -d 'T' -f 1)
-echo "Last upgrade was on $(date -d $date_last_up +'%A, %B %d')!\n$(pacman -Qdtq | wc -l) unneeded packages.\n"
+echo "Last upgrade was on $(date -d $date_last_up +'%A, %B %d')!\n$(pacman -Qdtq | wc -l) unneeded packages."
 
 # For git configuration for secrets, do the following
 # git-credential-manager configure

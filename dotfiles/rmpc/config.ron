@@ -5,7 +5,7 @@
 #![enable(unwrap_variant_newtypes)]
 (
     address: "127.0.0.1:6600",
-    on_song_change: ["~/.config/rmpc/notify"],
+    on_song_change: ["~/.config/rmpc/notify_and_fetchlyrics"],
     lyrics_dir: Some("~/music"), // same as mpd music dir, so all lrc files are in the same path as wherever the song is
     password: None,
     theme: Some("fuji"),
@@ -41,6 +41,7 @@
             "2":       SwitchToTab("Albums"),
             "3":       SwitchToTab("Artists"),
             "4":       SwitchToTab("Playlists"),
+            "5":       SwitchToTab("Lyrics"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -139,6 +140,13 @@
         (
             name: "Playlists",
             pane: Pane(Playlists),
+        ),
+        (
+            name: "Lyrics",
+            pane: Split(
+                direction: Vertical,
+                panes: [(size: "35%", pane: Pane(AlbumArt)), (size: "60%", pane: Pane(Lyrics), vertical_align: Bottom)],
+            ),
         ),
     ],
 )

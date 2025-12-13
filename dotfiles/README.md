@@ -3,7 +3,6 @@
 > - make sure to change up the nvidia driver stuff if you 1) aren't running NVIDIA hardware or 2) aren't running the zen kernel/another kernel other than LTS/'linux' kernel
 > - run the `Makefile` in the `dotfiles` directory w/ `make test` first to make sure `make` works lul, then run `make dots`, and hopefully your computer doesn't explode 
 
-
 > [!tip]
 > below are commands for running my virt-manager setup
 ```bash
